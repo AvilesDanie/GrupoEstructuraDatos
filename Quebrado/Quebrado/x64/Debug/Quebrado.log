@@ -1,0 +1,34 @@
+﻿  Fraccion.cpp
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Proceso.h(16,19): error C3646: 'calculo': especificador de invalidación desconocido
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Proceso.h(16,27): error C2065: 'Fraccion': identificador no declarado
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Proceso.h(16,36): error C2146: error de sintaxis: falta ')' delante del identificador 'obj1'
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Proceso.h(16,60): error C2238: símbolos (token) inesperados delante de ';'
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Fraccion.cpp(67,39): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Fraccion.cpp(67,28): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  Quebrado.cpp
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Proceso.h(16,19): error C3646: 'calculo': especificador de invalidación desconocido
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Proceso.h(16,27): error C2065: 'Fraccion': identificador no declarado
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Proceso.h(16,36): error C2146: error de sintaxis: falta ')' delante del identificador 'obj1'
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Proceso.h(16,60): error C2238: símbolos (token) inesperados delante de ';'
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Quebrado.cpp(7,11): error C2259: "Fraccion": no se puede crear una instancia de una clase abstract
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Fraccion.h(13,7): message : vea la declaración de 'Fraccion'
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Quebrado.cpp(7,11): message : debido a los siguientes miembros:
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Quebrado.cpp(7,11): message : 'float Fraccion::calculo(float,float)': es abstracto
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Fraccion.h(43,19): message : vea la declaración de 'Fraccion::calculo'
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Quebrado.cpp(7,11): message : 'Fraccion Fraccion::calculo(Fraccion,Fraccion)': es abstracto
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Fraccion.h(42,22): message : vea la declaración de 'Fraccion::calculo'
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Quebrado.cpp(7,13): error C2259: "Fraccion": no se puede crear una instancia de una clase abstract
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Fraccion.h(13,7): message : vea la declaración de 'Fraccion'
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Quebrado.cpp(7,13): message : debido a los siguientes miembros:
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Quebrado.cpp(7,13): message : 'float Fraccion::calculo(float,float)': es abstracto
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Fraccion.h(43,19): message : vea la declaración de 'Fraccion::calculo'
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Quebrado.cpp(7,13): message : 'Fraccion Fraccion::calculo(Fraccion,Fraccion)': es abstracto
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Fraccion.h(42,22): message : vea la declaración de 'Fraccion::calculo'
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Quebrado.cpp(8,11): error C2259: "Fraccion": no se puede crear una instancia de una clase abstract
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Fraccion.h(13,7): message : vea la declaración de 'Fraccion'
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Quebrado.cpp(8,11): message : debido a los siguientes miembros:
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Quebrado.cpp(8,11): message : 'float Fraccion::calculo(float,float)': es abstracto
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Fraccion.h(43,19): message : vea la declaración de 'Fraccion::calculo'
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Quebrado.cpp(8,11): message : 'Fraccion Fraccion::calculo(Fraccion,Fraccion)': es abstracto
+C:\Users\ASUS\Desktop\ESPE\S3\EstructuraDeDatos\Quebrado\Quebrado\Fraccion.h(42,22): message : vea la declaración de 'Fraccion::calculo'
+  Generando código...
