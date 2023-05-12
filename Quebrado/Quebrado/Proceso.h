@@ -1,7 +1,7 @@
 #include "Fraccion.h"
 /***********************************************************************
  * Module:  Proceso.h
- * Author:  Fernando
+ * Author:  Aviles, Reyes
  * Modified: miércoles, 10 de mayo de 2023 8:20:15
  * Purpose: Declaration of the class Proceso
  ***********************************************************************/

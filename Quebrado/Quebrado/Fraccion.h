@@ -2,7 +2,7 @@
 #include "Proceso.h"
 /***********************************************************************
  * Module:  Fraccion.h
- * Author:  Fernando
+ * Authors:  Aviles, Reyes
  * Modified: miércoles, 10 de mayo de 2023 8:20:15
  * Purpose: Declaration of the class Fraccion
  ***********************************************************************/
@@ -24,15 +24,6 @@ public:
     void setDenominador(float newDenominador);
     Fraccion(float num, float den);
     ~Fraccion();
-
-    /*
-    *
-    Fraccion suma(Fraccion resultado);
-    Fraccion resta(Fraccion resultado);
-    Fraccion multiplicacion(Fraccion resultado);
-    Fraccion division(Fraccion resultado);
-
-    */
 
     void simplificar();
     void imprimir();
