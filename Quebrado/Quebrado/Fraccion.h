@@ -38,9 +38,7 @@ public:
     
     void simplificar();
     void imprimir();
-
-    virtual Fraccion calculo(Fraccion obj1, Fraccion ojb2) = 0;
-    virtual float calculo(float obj1, float obj2) = 0;
+    float calculo(float obj1, float obj2)override;
 
 private:
     int calcular_mcd(int a, int b);

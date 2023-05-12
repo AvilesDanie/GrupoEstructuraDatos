@@ -7,7 +7,11 @@ int main() {
 	Fraccion f1(1, 2);
 	Fraccion f2(3, 4);
 
+	float aux = f1.calculo(f1.getNumerador(), f1.getDenominador());
+	float aux1 = f2.calculo(f2.getNumerador(), f2.getDenominador());
 
+	cout << aux << endl;
+	cout << aux1 << endl;
 	/*
 	
 	Fraccion f3 = f1.suma(f2);

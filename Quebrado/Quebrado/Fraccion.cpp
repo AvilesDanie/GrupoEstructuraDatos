@@ -80,8 +80,8 @@ int Fraccion::calcular_mcd(int a, int b) {
     else {
         return calcular_mcd(b, a % b);
     }
+}
 
-
-
-
+float Fraccion::calculo(float obj1,float obj2) {
+    return obj1 / obj2;
 }
