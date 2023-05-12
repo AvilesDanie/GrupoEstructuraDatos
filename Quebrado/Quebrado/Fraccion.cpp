@@ -1,4 +1,5 @@
 #include "Fraccion.h"
+#include "Proceso.h"
 #include <iostream>
 
 using namespace std;
@@ -82,6 +83,16 @@ int Fraccion::calcular_mcd(int a, int b) {
     }
 }
 
-float Fraccion::calculo(float obj1,float obj2) {
-    return obj1 / obj2;
+Fraccion Fraccion::calculo(Fraccion obj1, Fraccion obj2) {
+    int nuevo_numerador = obj1.getNumerador() * obj2.getDenominador() + obj1.getDenominador() * obj2.getNumerador();
+    int nuevo_denominador = obj1.getDenominador() * obj2.getDenominador();
+    return Fraccion(nuevo_numerador, nuevo_denominador);
 }
+
+float Fraccion::calculo(float obj1, float obj2) {
+    return 0.0;
+}
+
+//float Fraccion::calculo(float obj1,float obj2) {
+//    return obj1 / obj2;
+//}

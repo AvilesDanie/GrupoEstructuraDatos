@@ -1,4 +1,5 @@
 #pragma once
+#include "Proceso.h"
 /***********************************************************************
  * Module:  Fraccion.h
  * Author:  Fernando
@@ -6,11 +7,10 @@
  * Purpose: Declaration of the class Fraccion
  ***********************************************************************/
 
-#include "Proceso.h"
 #if !defined(__Class_Diagram_1_Fraccion_h)
 #define __Class_Diagram_1_Fraccion_h
 
-class Fraccion : public Proceso{
+class Fraccion :public Proceso {
 protected:
 private:
     float numerador;
@@ -25,20 +25,19 @@ public:
     Fraccion(float num, float den);
     ~Fraccion();
 
-    Fraccion();
-
     /*
-    * 
+    *
     Fraccion suma(Fraccion resultado);
     Fraccion resta(Fraccion resultado);
     Fraccion multiplicacion(Fraccion resultado);
     Fraccion division(Fraccion resultado);
-    
+
     */
-    
+
     void simplificar();
     void imprimir();
-    float calculo(float obj1, float obj2)override;
+    Fraccion calculo(Fraccion obj1, Fraccion obj2);
+    float calculo(float obj1, float obj2);
 
 private:
     int calcular_mcd(int a, int b);

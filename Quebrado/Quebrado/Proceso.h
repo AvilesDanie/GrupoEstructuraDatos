@@ -8,11 +8,11 @@
 
 #if !defined(__Class_Diagram_1_Proceso_h)
 #define __Class_Diagram_1_Proceso_h
-
+class Fraccion;
 class Proceso
 {
 public:
-	//virtual Fraccion calculo(Fraccion obj1, Fraccion ojb2) = 0;
+	virtual Fraccion calculo(Fraccion obj1, Fraccion ojb2) = 0;
 	virtual float calculo(float obj1, float obj2) = 0;
 
 protected:
