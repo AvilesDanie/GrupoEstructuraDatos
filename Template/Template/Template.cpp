@@ -4,7 +4,7 @@ Autores: Daniel Aviles, Ariel Reyes
 Fechas de Creacion: 11/05/2023
 Fecha de modificacion: 11/05/2023
 ****************************************************/
-#include "Fraccion.h"
+#include "Fraccion.cpp"
 #include "Operaciones.h"
 #include <iostream>
 
@@ -12,12 +12,13 @@ using namespace std;
 
 int main() {
 
-	Fraccion f1(1, 2);
-	Fraccion f2(3, 4);
+	Fraccion<float> f1(1, 2);
+	Fraccion<float> f2(3, 4);
 	Operaciones o1;
 	cout<<"Suma de fraciones"<< endl;
-	Fraccion f3=o1.calculo(f1, f2);
+	Fraccion<float> f3=o1.calculo(f1, f2);
 	f3.imprimir();
+
 	cout << "Real de la fraccion f1" << endl;
 	float realF1 = o1.calculo(f1.getNumerador(), f1.getDenominador());
 	cout << realF1 << endl;

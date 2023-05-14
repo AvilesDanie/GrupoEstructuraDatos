@@ -1,45 +1,53 @@
 #include "Fraccion.h"
-#include "Proceso.h"
 #include <iostream>
 
 using namespace std;
 
-Fraccion::Fraccion(float num, float den) {
+template <typename T>
+Fraccion<T>::Fraccion(T num, T den) {
     this->denominador = den;
     this->numerador = num;
 }
 
-float Fraccion::getNumerador(void) {
+template <typename T>
+T Fraccion<T>::getNumerador(void) {
     return numerador;
 }
 
-void Fraccion::setNumerador(float newNumerador) {
+template <typename T>
+void Fraccion<T>::setNumerador(T newNumerador) {
     numerador = newNumerador;
 }
 
-float Fraccion::getDenominador(void) {
+template <typename T>
+T Fraccion<T>::getDenominador(void) {
     return denominador;
 }
 
-void Fraccion::setDenominador(float newDenominador) {
+template <typename T>
+void Fraccion<T>::setDenominador(T newDenominador) {
     denominador = newDenominador;
 }
 
-Fraccion::~Fraccion() {
+template <typename T>
+Fraccion<T>::~Fraccion() {
    
 }
 
-void Fraccion::simplificar() {
+template <typename T>
+void Fraccion<T>::simplificar() {
     int mcd = calcular_mcd(numerador, denominador);
     numerador /= mcd;
     denominador /= mcd;
 }
 
-void Fraccion::imprimir() {
+template <typename T>
+void Fraccion<T>::imprimir() {
     cout << numerador << "/" << denominador << endl;
 }
 
-int Fraccion::calcular_mcd(int a, int b) {
+template <typename T>
+T Fraccion<T>::calcular_mcd(T a, T b) {
     if (b == 0) {
         return a;
     }
@@ -47,3 +55,4 @@ int Fraccion::calcular_mcd(int a, int b) {
         return calcular_mcd(b, a % b);
     }
 }
+

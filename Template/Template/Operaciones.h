@@ -7,8 +7,8 @@ class Operaciones:public Proceso
 public:
 	Operaciones();
 	~Operaciones();
-	Fraccion calculo(Fraccion obj1, Fraccion obj2)override;
-	float calculo(float obj1, float obj2)override;
+	Fraccion<float> calculo(Fraccion<float> obj1, Fraccion<float> obj2);
+	float calculo(float obj1, float obj2);
 
 };
 #endif

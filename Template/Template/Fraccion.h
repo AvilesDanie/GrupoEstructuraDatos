@@ -1,5 +1,4 @@
 #pragma once
-#include "Proceso.h"
 /***********************************************************************
  * Module:  Fraccion.h
  * Authors:  Aviles, Reyes
@@ -10,24 +9,25 @@
 #if !defined(FRACCION_H)
 #define FRACCION_H
 
+template <typename T>
 class Fraccion{
 protected:
 private:
-    float numerador;
-    float denominador;
+    T numerador;
+    T denominador;
 
 public:
-    float getNumerador(void);
-    void setNumerador(float newNumerador);
-    float getDenominador(void);
-    void setDenominador(float newDenominador);
-    Fraccion(float num, float den);
+    T getNumerador(void);
+    void setNumerador(T newNumerador);
+    T getDenominador(void);
+    void setDenominador(T newDenominador);
+    Fraccion(T num, T den);
     ~Fraccion();
 
     void simplificar();
     void imprimir();
 private:
-    int calcular_mcd(int a, int b);
+    T calcular_mcd(T a, T b);
 };
 
 #endif
