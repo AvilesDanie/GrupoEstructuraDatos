@@ -1,8 +1,8 @@
 /***************************************************
 Universidad de las Fuerzas Armadas ESPE
 Autores: Daniel Aviles, Ariel Reyes
-Fechas de Creacion: 11/05/2023
-Fecha de modificacion: 11/05/2023
+Fechas de Creacion: 14/05/2023
+Fecha de modificacion: 14/05/2023
 ****************************************************/
 #include "Fraccion.cpp"
 #include "Operaciones.h"
@@ -25,6 +25,7 @@ int main() {
 	cout << "Real de la fraccion f2" << endl;
 	float realF2 = o1.calculo(f2.getNumerador(), f2.getDenominador());
 	cout << realF2 << endl;
+
 	return 0;
 }
 

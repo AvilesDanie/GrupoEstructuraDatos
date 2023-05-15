@@ -2,8 +2,8 @@
 /***********************************************************************
  * Module:  Fraccion.h
  * Authors:  Aviles, Reyes
- * Modified: miércoles, 10 de mayo de 2023 8:20:15
- * Purpose: Declaration of the class Fraccion
+ * Modified: Domingo, 14 de mayo de 2023 16:25:15
+ * Purpose: Declaracion de la clase Fraccion.h
  ***********************************************************************/
 
 #if !defined(FRACCION_H)
@@ -27,7 +27,7 @@ public:
     void simplificar();
     void imprimir();
 private:
-    T calcular_mcd(T a, T b);
+    int calcular_mcd(T a, T b);
 };
 
 #endif
