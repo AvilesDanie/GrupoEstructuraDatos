@@ -1,3 +1,9 @@
+/***********************************************************************
+ * Module:  Matriz2x2.h
+ * Authors:  Aviles, Reyes
+ * Modified: Jueves, 18 de mayo de 2023 08:45:26
+ * Purpose: Declaracion de la clase Matriz2x2.h
+ ***********************************************************************/
 #pragma once
 #ifndef MATRIZ2X2_H
 #define MATRIZ2X2_H
@@ -14,12 +20,15 @@ public:
 
     void setElemento(int fila, int columna, T valor);
 
-    void imprimir() const;
+    void imprimir();
 
-    Matriz2x2<T> operator+(const Matriz2x2& other) const;
+    Matriz2x2<T> operator +(const Matriz2x2& other) const;
 
-    Matriz2x2<T> operator-(const Matriz2x2& other) const;
+    Matriz2x2<T> operator -(const Matriz2x2& other) const;
 
+    Matriz2x2<T> operator *(const Matriz2x2& other) const;
+
+    bool operator ==(const Matriz2x2& other) const;
 };
 
 #endif
