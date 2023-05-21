@@ -127,7 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Matriz.cpp" />
     <ClCompile Include="Multiplicacion de matriz recursividad.cpp" />
+    <ClCompile Include="Operaciones.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Matriz.h" />
+    <ClInclude Include="Operaciones.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

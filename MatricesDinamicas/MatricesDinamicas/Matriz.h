@@ -7,6 +7,7 @@ private:
 public:
 	Matriz();
 	Matriz(int**, int);
+	Matriz(int);
 	int getDim();
 	void setDim(int);
 	int** getMatriz();

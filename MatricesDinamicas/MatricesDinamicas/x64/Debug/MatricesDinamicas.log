@@ -1,3 +1,6 @@
 ﻿  MatricesDinamicas.cpp
-C:\Users\ASUS\Desktop\MatricesDinamicas\MatricesDinamicas\MatricesDinamicas.cpp(13,6): warning C4101: 'pot': variable local sin referencia
-  MatricesDinamicas.vcxproj -> C:\Users\ASUS\Desktop\MatricesDinamicas\x64\Debug\MatricesDinamicas.exe
+  Matriz.cpp
+  Operaciones.cpp
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\MatricesDinamicas\MatricesDinamicas\Operaciones.cpp(40,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  Generando código...
+  MatricesDinamicas.vcxproj -> C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\MatricesDinamicas\x64\Debug\MatricesDinamicas.exe

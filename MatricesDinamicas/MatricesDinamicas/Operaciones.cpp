@@ -15,16 +15,6 @@ Operaciones::Operaciones(Matriz m) {
 	this->_matriz = m;
 }
 
-void Operaciones::segmentar() {
-	int j, ** matriz;
-	matriz = _matriz.getMatriz();
-	matriz = (int**)malloc(_matriz.getDim() * sizeof(int*));
-	for (j = 0; j < _matriz.getDim(); j++) {
-		*(matriz + j) = (int*)malloc(_matriz.getDim() * sizeof(int*));
-	}
-	_matriz.setMatriz(matriz);
-}
-
 void Operaciones::encerar() {
 	int  **matriz;
 	matriz = _matriz.getMatriz();
@@ -46,7 +36,6 @@ void Operaciones::imprimir() {
 	}
 }
 
-
 int **Operaciones::generar(){
 	srand(time(NULL));
 	int **matriz = _matriz.getMatriz();
@@ -56,25 +45,4 @@ int **Operaciones::generar(){
 		}
 	}
 	return matriz;
-}
-
-void Operaciones::procesarPot(int exp, int **matriz){
-	for(int e=1;e<=exp;e++){
-		for(int i=0;i<_matriz.getDim();i++){
-			for(int j=0;j<_matriz.getDim();j++){
-				for(int k=0;k<_matriz.getDim();k++){
-					*(*(_matriz.getMatriz()+i)+j)=*(*(_matriz.getMatriz()+i)+j)+
-					(*(*(_matriz.getMatriz()+i)+k) * (*(*(_matriz.getMatriz()+k)+j)));                				}
-			}
-		}
-	}
-}
-void Operaciones::procesarMulti(){
-	for(int i=0;i<_matriz.getDim();i++){
-		for(int j=0;j<_matriz.getDim();j++){
-			for(int k=0;k<_matriz.getDim();k++){
-				*(*(_matriz.getMatriz()+i)+j)=	*(*(_matriz.getMatriz()+i)+j)+ (*(*(_matriz.getMatriz()+i)+k)*(*(*(_matriz.getMatriz()+k)+j)));
-			}
-		}
-	}
 }
