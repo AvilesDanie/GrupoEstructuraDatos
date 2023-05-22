@@ -1,19 +1,20 @@
 #pragma once
 #include <iostream>
+template <typename T>
 class Matriz {
 private:
-	int** matriz;
+	T** matriz;
 	int dim;
 public:
 	Matriz();
-	Matriz(int**, int);
+	Matriz(T**, int);
 	Matriz(int);
 	int getDim();
 	void setDim(int);
-	int** getMatriz();
-	void setMatriz(int**);
+	T** getMatriz();
+	void setMatriz(T**);
 
 	void imprimir();
-	void generar(int);
+	void generar(T);
 };
 

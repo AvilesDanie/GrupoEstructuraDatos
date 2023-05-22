@@ -1,3 +1,9 @@
+/***************************************************
+Universidad de las Fuerzas Armadas ESPE
+Autores: Daniel Aviles, Ariel Reyes
+Fechas de Creacion: 21/05/2023
+Fecha de modificacion: 21/05/2023
+****************************************************/
 #include <iostream>
 #include "Matriz.cpp"
 #include "Operaciones.cpp"

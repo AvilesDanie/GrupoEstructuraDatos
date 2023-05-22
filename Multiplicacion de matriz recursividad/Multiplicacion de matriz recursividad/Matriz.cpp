@@ -1,49 +1,57 @@
 #include <iostream>
 #include "Matriz.h"
-Matriz::Matriz() {
+template <typename T>
+Matriz<T>::Matriz() {
 }
 
-Matriz::Matriz(int** matriz, int dim) {
+template <typename T>
+Matriz<T>::Matriz(T** matriz, int dim) {
 	this->matriz = matriz;
 	this->dim = dim;
 }
 
-Matriz::Matriz(int dim) {
+template <typename T>
+Matriz<T>::Matriz(int dim) {
 	this->dim = dim;
-	matriz = (int**)malloc(dim * sizeof(int*));
+	matriz = (T**)malloc(dim * sizeof(int*));
 	for (int i = 0; i < dim; i++) {
-		*(matriz + i) = (int*)malloc(dim * sizeof(int*));
+		*(matriz + i) = (T*)malloc(dim * sizeof(int*));
 	}
 }
 
-int Matriz::getDim() {
+template <typename T>
+int Matriz<T>::getDim() {
 	return dim;
 }
 
-void Matriz::setDim(int dim) {
+template <typename T>
+void Matriz<T>::setDim(int dim) {
 	this->dim = dim;
 }
 
-int** Matriz::getMatriz() {
+template <typename T>
+T** Matriz<T>::getMatriz() {
 	return matriz;
 }
 
-void Matriz::setMatriz(int** matriz1) {
+template <typename T>
+void Matriz<T>::setMatriz(T** matriz1) {
 	this->matriz = matriz;
 }
 
-void Matriz::imprimir() {
+template <typename T>
+void Matriz<T>::imprimir() {
 	printf("La matriz es:\n");
 	for (int i = 0; i < dim; i++) {
 		for (int j = 0; j < dim; j++) {
-			printf("%d", *(*(matriz + i) + j));
-			printf("%*s", j + 5, "");
+			std::cout << *(*(matriz + i) + j) << " ";
 		}
 		printf("\n");
 	}
 }
 
-void Matriz::generar(int num) {
+template <typename T>
+void Matriz<T>::generar(T num) {
 	for (int i = 0; i < dim; i++) {
 		for (int j = 0; j < dim; j++) {
 			*(*(matriz + i) + j) = num;

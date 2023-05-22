@@ -1,10 +1,11 @@
 #pragma once
 #include "Matriz.h"
+template <typename T>
 class Operaciones
 {
 public:
 	Operaciones();
-	void sumaRecursivaMatrices(Matriz, Matriz,Matriz, int, int);
-	void multiplicarRecursivaMatrices(Matriz, Matriz,Matriz, int, int);
+	void sumaRecursivaMatrices(Matriz<T>, Matriz<T>, Matriz<T>, int, int);
+	void multiplicarRecursivaMatrices(Matriz<T>, Matriz<T>, Matriz<T>, int, int);
 };
 
