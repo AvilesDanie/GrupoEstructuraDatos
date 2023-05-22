@@ -1,4 +1,3 @@
-﻿  Operaciones.cpp
-C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\Multiplicacion de matriz recursividad\Multiplicacion de matriz recursividad\Operaciones.cpp(16): warning C4715: 'Operaciones::sumaRecursivaMatrices': no todas las rutas de acceso de control devuelven un valor
-C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\Multiplicacion de matriz recursividad\Multiplicacion de matriz recursividad\Operaciones.cpp(30): warning C4715: 'Operaciones::multiplicarRecursivaMatrices': no todas las rutas de acceso de control devuelven un valor
+﻿  Multiplicacion de matriz recursividad.cpp
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\Multiplicacion de matriz recursividad\Multiplicacion de matriz recursividad\Multiplicacion de matriz recursividad.cpp(26,10): warning C4129: 'M': secuencia de escape de carácter no reconocida
   Multiplicacion de matriz recursividad.vcxproj -> C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\Multiplicacion de matriz recursividad\x64\Debug\Multiplicacion de matriz recursividad.exe

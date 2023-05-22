@@ -20,11 +20,11 @@ int main(int argc, char** argv) {
 	mat2.imprimir();
 
 	cout << "\nSuma de Matrices es: ";
-	mat3 = operaciones.sumaRecursivaMatrices(mat1,mat2,0,0);
+	operaciones.sumaRecursivaMatrices(mat1,mat2,mat3,0,0);
 	mat3.imprimir();
 
 	cout << "\Multiplicacion de Matrices es: ";
-	mat3 = operaciones.multiplicarRecursivaMatrices(mat1, mat2, 2, 2);
+	operaciones.multiplicarRecursivaMatrices(mat1,mat2, mat3,2,2);
 	mat3.imprimir();
 
 	
