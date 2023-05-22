@@ -1,17 +1,19 @@
 ﻿  MatricesDinamicas.cpp
-C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\MatricesDinamicas\MatricesDinamicas\Operaciones.cpp(46,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\MatricesDinamicas\MatricesDinamicas\Operaciones.cpp(45,30): message : al compilar la función del miembro clase plantilla "T **Operaciones<T>::generar(void)"
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\MatricesDinamicas\MatricesDinamicas\Operaciones.cpp(45,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\MatricesDinamicas\MatricesDinamicas\Operaciones.cpp(44,30): message : al compilar la función del miembro clase plantilla "T **Operaciones<T>::generar(void)"
           with
           [
-              T=float
+              T=int
           ]
-C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\MatricesDinamicas\MatricesDinamicas\MatricesDinamicas.cpp(18,22): message : Vea la referencia a la creación de una instancia de la función plantilla "T **Operaciones<T>::generar(void)" que se está compilando
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\MatricesDinamicas\MatricesDinamicas\MatricesDinamicas.cpp(17,22): message : Vea la referencia a la creación de una instancia de la función plantilla "T **Operaciones<T>::generar(void)" que se está compilando
           with
           [
-              T=float
+              T=int
           ]
-C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\MatricesDinamicas\MatricesDinamicas\MatricesDinamicas.cpp(15,40): message : Vea la referencia a la creación de una instancia de clase plantilla "Operaciones<float>" que se está compilando
-C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\MatricesDinamicas\MatricesDinamicas\Operaciones.cpp(37,11): warning C4477: 'printf' : la cadena de formato '%d' requiere un argumento de tipo 'int', pero el argumento variádico 1 tiene el tipo 'double'
-C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\MatricesDinamicas\MatricesDinamicas\Operaciones.cpp(33,33): message : al compilar la función del miembro clase plantilla "void Operaciones<float>::imprimir(void)"
-C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\MatricesDinamicas\MatricesDinamicas\MatricesDinamicas.cpp(17,23): message : Vea la referencia a la creación de una instancia de la función plantilla "void Operaciones<float>::imprimir(void)" que se está compilando
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\MatricesDinamicas\MatricesDinamicas\MatricesDinamicas.cpp(15,39): message : Vea la referencia a la creación de una instancia de clase plantilla "Operaciones<int>" que se está compilando
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\MatricesDinamicas\MatricesDinamicas\Operaciones.cpp(49,31): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=int
+          ]
   MatricesDinamicas.vcxproj -> C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\MatricesDinamicas\x64\Debug\MatricesDinamicas.exe

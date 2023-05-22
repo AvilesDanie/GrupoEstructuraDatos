@@ -34,8 +34,7 @@ void Operaciones<T>::imprimir() {
 	printf("La matriz es:\n");
 	for (int i = 0; i < _matriz.getDim(); i++) {
 		for (int j = 0; j < _matriz.getDim(); j++) {
-			printf("%d", *(*(_matriz.getMatriz() + i) + j));
-			printf("%*s", j + 5, "");
+			std::cout << *(*(_matriz.getMatriz() + i) + j) << " ";
 		}
 		printf("\n");
 	}
@@ -47,8 +46,20 @@ T **Operaciones<T>::generar(){
 	T **matriz = _matriz.getMatriz();
 	for(int i=0;i<_matriz.getDim();i++){
 		for(int j=0;j<_matriz.getDim();j++)	{
-			*(*(matriz+i)+j)=rand()+(T)1.1;
+			*(*(matriz+i)+j)=(rand()%3)*1.3;
 		}
 	}
 	return matriz;
+}
+
+template <typename T>
+void Operaciones<T>::multiplicacion(Matriz<T> matriz1, Matriz<T> matriz2, Matriz<T> matrizR, int dim) {
+	for (int i = 0; i < dim; i++) {
+		for (int j = 0; j < dim; j++) {
+			*(*(matrizR.getMatriz() + i) + j) = 0;
+			for (int k = 0; k < dim; k++) {
+				*(*(matrizR.getMatriz() + i) + j) += (*(*(matriz1.getMatriz() + i) + k)) * (*(*(matriz2.getMatriz() + k) + j));
+			}
+		}
+	}
 }

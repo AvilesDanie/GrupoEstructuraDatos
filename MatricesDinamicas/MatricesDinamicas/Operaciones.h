@@ -9,7 +9,7 @@ public:
 	T** generar();
 	void imprimir();
 	Matriz<T> getMatriz();
-
+	void multiplicacion(Matriz<T>,Matriz<T>,Matriz<T>,int);
 private:
 	Matriz<T> _matriz;
 };
