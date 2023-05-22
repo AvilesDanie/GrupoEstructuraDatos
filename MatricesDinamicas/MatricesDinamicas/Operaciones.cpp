@@ -4,19 +4,23 @@
 #include <stdio.h>
 #include <conio.h>
 #include "Operaciones.h"
-Matriz Operaciones::getMatriz() {
+template <typename T>
+Matriz<T> Operaciones<T>::getMatriz() {
 	return _matriz;
 }
 
-Operaciones::Operaciones() {
+template <typename T>
+Operaciones<T>::Operaciones() {
 }
 
-Operaciones::Operaciones(Matriz m) {
+template <typename T>
+Operaciones<T>::Operaciones(Matriz<T> m) {
 	this->_matriz = m;
 }
 
-void Operaciones::encerar() {
-	int  **matriz;
+template <typename T>
+void Operaciones<T>::encerar() {
+	T  **matriz;
 	matriz = _matriz.getMatriz();
 	for (int i = 0; i < _matriz.getDim(); i++) {
 		for (int j = 0; j < _matriz.getDim(); j++) {
@@ -25,7 +29,8 @@ void Operaciones::encerar() {
 	}
 }
 
-void Operaciones::imprimir() {
+template <typename T>
+void Operaciones<T>::imprimir() {
 	printf("La matriz es:\n");
 	for (int i = 0; i < _matriz.getDim(); i++) {
 		for (int j = 0; j < _matriz.getDim(); j++) {
@@ -36,12 +41,13 @@ void Operaciones::imprimir() {
 	}
 }
 
-int **Operaciones::generar(){
+template <typename T>
+T **Operaciones<T>::generar(){
 	srand(time(NULL));
-	int **matriz = _matriz.getMatriz();
+	T **matriz = _matriz.getMatriz();
 	for(int i=0;i<_matriz.getDim();i++){
 		for(int j=0;j<_matriz.getDim();j++)	{
-			*(*(matriz+i)+j)=rand()%3;
+			*(*(matriz+i)+j)=rand()+(T)1.1;
 		}
 	}
 	return matriz;

@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Matriz.h"
-#include "Operaciones.h"
+#include "Matriz.cpp"
+#include "Operaciones.cpp"
 int ingresar(const char*);
 int ingresar(const char* msj) {
 	int dim;
@@ -11,8 +11,8 @@ int ingresar(const char* msj) {
 
 void iniciar(int);
 void iniciar(int  dim) {
-	Matriz matriz(dim);
-	Operaciones operaciones1(matriz);
+	Matriz<float> matriz(dim);
+	Operaciones<float> operaciones1(matriz);
 	operaciones1.encerar();
 	operaciones1.imprimir();
 	operaciones1.generar();

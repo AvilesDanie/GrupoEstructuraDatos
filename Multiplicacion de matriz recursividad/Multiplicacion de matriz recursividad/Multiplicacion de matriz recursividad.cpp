@@ -23,9 +23,10 @@ int main(int argc, char** argv) {
 	operaciones.sumaRecursivaMatrices(mat1,mat2,mat3,0,0);
 	mat3.imprimir();
 
+	Matriz mat4(MAX);
 	cout << "\Multiplicacion de Matrices es: ";
-	operaciones.multiplicarRecursivaMatrices(mat1,mat2, mat3,2,2);
-	mat3.imprimir();
+	operaciones.multiplicarRecursivaMatrices(mat1,mat2, mat4,2,2);
+	mat4.imprimir();
 
 	
 	return 0;

@@ -1,14 +1,15 @@
 #pragma once
 #include "Matriz.h"
+template <typename T>
 class Operaciones {
 public:
 	Operaciones();
-	Operaciones(Matriz);
+	Operaciones(Matriz<T>);
 	void encerar();
-	int** generar();
+	T** generar();
 	void imprimir();
-	Matriz getMatriz();
+	Matriz<T> getMatriz();
 
 private:
-	Matriz _matriz;
+	Matriz<T> _matriz;
 };

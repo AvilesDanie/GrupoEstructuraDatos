@@ -1,33 +1,42 @@
 #include <iostream>
 #include "Matriz.h"
-Matriz::Matriz() {
+template <typename T>
+Matriz<T>::Matriz() {
 }
 
-Matriz::Matriz(int** matriz, int dim) {
+template <typename T>
+Matriz<T>::Matriz(T** matriz, int dim) {
 	this->matriz = matriz;
 	this->dim = dim;
 }
 
-Matriz::Matriz(int dim) {
+template <typename T>
+Matriz<T>::Matriz(int dim) {
 	this->dim = dim;
-	matriz = (int**)malloc(dim*sizeof(int*));
+	matriz = (T**)malloc(dim*sizeof(T*));
 	for (int i = 0; i < dim;i++) {
-		*(matriz + i) = (int*)malloc(dim * sizeof(int*));
+		*(matriz + i) = (T*)malloc(dim * sizeof(T*));
 	}
 }
 
-int Matriz::getDim() {
+template <typename T>
+int Matriz<T>::getDim() {
 	return dim;
 }
 
-void Matriz::setDim(int dim) {
+template <typename T>
+void Matriz<T>::setDim(int dim) {
 	this->dim = dim;
 }
 
-int** Matriz::getMatriz() {
+template <typename T>
+T** Matriz<T>::getMatriz() {
 	return matriz;
 }
 
-void Matriz::setMatriz(int** matriz1) {
-	this->matriz = matriz;
+template <typename T>
+void Matriz<T>::setMatriz(T** matriz1) {
+	this->matriz = matriz1;
 }
+
+
