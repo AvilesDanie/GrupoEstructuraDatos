@@ -1,0 +1,5 @@
+﻿  Listas.cpp
+C:\Users\ASUS\Desktop\Listas\Listas\Listas.cpp(121,32): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+  ListasSimples.cpp
+  Generando código...
+  Listas.vcxproj -> C:\Users\ASUS\Desktop\Listas\x64\Debug\Listas.exe
