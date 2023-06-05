@@ -34,12 +34,14 @@ void ListaDoble::Buscar(int _dato) {
     while (aux != NULL) {
         if (aux->getDato().getId() == _dato) {
             cout << "El dato " << _dato << " se encuentra en la lista" << endl;
+            cout << ":::::::::::::::::::::::::::::::::::::::::::::" << endl;
+            aux->getDato().imprimir();
+            cout << ":::::::::::::::::::::::::::::::::::::::::::::" << endl;
             return;
         }
         aux = aux->getSiguiente();
     }
     cout << "El dato " << _dato << " no se encuentra en la lista" << endl;
-    aux->getDato().imprimir();
 }
 
 void ListaDoble::Eliminar(int _dato) {

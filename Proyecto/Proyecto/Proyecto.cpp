@@ -117,7 +117,9 @@ int main() {
             break;
         }
         case 4: {
-            
+            cout << "Ingrese el ID que quiere eliminar: ";
+            int id = val.ingresarDatosEnteros();
+            lista->Eliminar(id);
             break;
         }
         case 5: {
