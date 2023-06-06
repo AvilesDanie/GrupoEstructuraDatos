@@ -15,6 +15,7 @@ public:
     void Eliminar(int);
     void Mostrar();
     int dimencion();
+    void ordenar();
 };
 
 

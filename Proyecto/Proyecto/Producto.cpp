@@ -64,6 +64,7 @@ void Producto::setId(int nuevoId) {
 }
 
 void Producto::imprimir() {
+    cout << "ID: " << id << endl;
     cout << "Nombre: " << nombre << endl;
     cout << "Precio: " << precio << endl;
     cout << "Fabricacion: ";
@@ -73,5 +74,4 @@ void Producto::imprimir() {
     caducidad.imprimir();
     cout << endl;
     cout << "Stock: " << stock << endl;
-    cout << "ID: " << id << endl;
 }

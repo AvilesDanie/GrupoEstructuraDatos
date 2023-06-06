@@ -45,6 +45,7 @@ void ListaDoble::Buscar(int _dato) {
 }
 
 void ListaDoble::Eliminar(int _dato) {
+    this->Mostrar();
     Nodo* aux = primero;
     while (aux != NULL) {
         if (aux->getDato().getId() == _dato) {
@@ -88,4 +89,13 @@ int ListaDoble::dimencion() {
         dim += 1;
     }
     return dim;
+}
+
+void ListaDoble::ordenar() {
+    Nodo* aux = primero;
+    int id = 1;
+    while (aux != NULL) {
+        aux->getDato().setId(id);
+        aux = aux->getSiguiente();
+    }
 }

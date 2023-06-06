@@ -84,3 +84,75 @@ int Validacion::ingresarDatosEnteros() {
 	std::cout << "\n";
 	return n;
 }
+
+
+Fecha Validacion::ingresarFecha() {
+	int dia, mes, a;
+	bool pasar=false;
+	do {
+		do {
+			do {
+				pasar = false;
+				std::cout << "Ingrese el dia: ";
+				dia = ingresarDatosEnteros();
+				if (dia < 1 || dia>31) {
+					std::cout << "Dia invalido" << std::endl;
+					pasar = true;
+				}
+			} while (pasar);
+
+			std::cout << "Ingrese el mes: ";
+			mes = ingresarDatosEnteros();
+
+			if ((mes == 4 || mes == 6 || mes == 8 || mes == 10 || mes == 12)&&dia>30) {
+				std::cout << "Dia invalido para el mes" << std::endl;
+				pasar = true;
+			}
+			else if ((mes == 2) && (dia > 29)) {
+				std::cout << "Dia invalido para el mes" << std::endl;
+				pasar = true;
+			}
+		} while (pasar);
+
+		std::cout << "Ingrese el año: ";
+		a = ingresarDatosEnteros();
+		if (a < 2020) {
+			std::cout << "Año invalido" << std::endl;
+			pasar = true;
+		}
+
+		if (a % 4 == 0 and a % 100 != 0 or a % 400 == 0) {
+		}
+		else {
+			if (dia == 29) {
+				std::cout << "Dia invalido para el año" << std::endl;
+				pasar = true;
+			}
+		}
+	} while (pasar);
+	
+	Fecha fecha(dia, mes, a);
+	return fecha;
+
+}
+
+bool Validacion::validarFechas(Fecha fabricacion, Fecha caducidad) {
+	bool pasar=false;
+	if (fabricacion.getA() > caducidad.getA()) {
+		pasar = true;
+	}
+	else if(fabricacion.getA() == caducidad.getA()){
+		if (fabricacion.getMes() > caducidad.getMes()) {
+			pasar = true;
+		}
+		else if (fabricacion.getMes() == caducidad.getMes()) {
+			if (fabricacion.getDia() > caducidad.getDia()) {
+				pasar = true;
+			}
+			else if (fabricacion.getDia() == caducidad.getDia()) {
+				pasar = true;
+			}
+		}
+	}
+	return pasar;
+}

@@ -31,39 +31,32 @@ int main() {
             std::cout << "Ingrese el nombre: ";
             cin >> nombre;
             std::cout << "Ingrese el precio: ";
-            precio=val.ingresarDatosfloat();
+            precio = val.ingresarDatosfloat();
 
-            std::cout << "Ingrese la fecha de caducidad" << endl;
-            std::cout << "Ingrese el dia: ";
-            dia = val.ingresarDatosEnteros();
+            Fecha fabricacion;
+            Fecha caducidad;
+            do {
+                std::cout << "Ingrese la fecha de fabricacion" << endl;
+                fabricacion = val.ingresarFecha();
 
-            std::cout << "Ingrese el mes: ";
-            mes = val.ingresarDatosEnteros();
-                
-            std::cout << "Ingrese el año: ";
-            a = val.ingresarDatosEnteros();
-               
-            Fecha caducidad(dia, mes, a);
+                std::cout << "Ingrese la fecha de caducidad" << endl;
+                caducidad = val.ingresarFecha();
+            } while (val.validarFechas(fabricacion, caducidad));
+
+            
 
 
-            std::cout << "Ingrese la fecha de fabricacion" << endl;
-            std::cout << "Ingrese el dia: ";
-            dia = val.ingresarDatosEnteros();
 
-            std::cout << "Ingrese el mes: ";
-            mes = val.ingresarDatosEnteros();
 
-            std::cout << "Ingrese el año: ";
-            a = val.ingresarDatosEnteros();
-
-            std::cout << "Ingrese el stock: ";
-            stock = val.ingresarDatosEnteros();
-            Fecha fabricacion(dia, mes, a);
             int dim = lista->dimencion();
+
+            std::cout << "Ingrese el stock del producto: ";
+            stock = val.ingresarDatosEnteros();
 
 
             Producto producto(nombre, precio, fabricacion, caducidad,dim,stock);
             lista->InsertarCabeza(producto);
+            lista->ordenar();
             break;
         }
         case 2: {
@@ -77,37 +70,27 @@ int main() {
             std::cout << "Ingrese el precio: ";
             precio = val.ingresarDatosfloat();
 
-            std::cout << "Ingrese la fecha de caducidad" << endl;
-            std::cout << "Ingrese el dia: ";
-            dia = val.ingresarDatosEnteros();
+            Fecha fabricacion;
+            Fecha caducidad;
+            do {
+                std::cout << "Ingrese la fecha de fabricacion" << endl;
+                fabricacion = val.ingresarFecha();
 
-            std::cout << "Ingrese el mes: ";
-            mes = val.ingresarDatosEnteros();
-
-            std::cout << "Ingrese el año: ";
-            a = val.ingresarDatosEnteros();
-
-            Fecha caducidad(dia, mes, a);
+                std::cout << "Ingrese la fecha de caducidad" << endl;
+                caducidad = val.ingresarFecha();
+            } while (val.validarFechas(fabricacion, caducidad));
 
 
-            std::cout << "Ingrese la fecha de fabricacion" << endl;
-            std::cout << "Ingrese el dia: ";
-            dia = val.ingresarDatosEnteros();
-
-            std::cout << "Ingrese el mes: ";
-            mes = val.ingresarDatosEnteros();
-
-            std::cout << "Ingrese el año: ";
-            a = val.ingresarDatosEnteros();
-
-            std::cout << "Ingrese el stock: ";
-            stock = val.ingresarDatosEnteros();
-            Fecha fabricacion(dia, mes, a);
             int dim = lista->dimencion();
+
+            std::cout << "Ingrese el stock del producto: ";
+            stock = val.ingresarDatosEnteros();
 
 
             Producto producto(nombre, precio, fabricacion, caducidad, dim, stock);
             lista->InsertarCola(producto);
+            lista->ordenar();
+
             break;
         }
         case 3: {            
@@ -132,3 +115,4 @@ int main() {
     return 0;
 
 }
+
