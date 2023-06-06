@@ -2,13 +2,15 @@
 #include <stdlib.h>
 #include <iostream>
 #include "Validacion.h"
+#include "Archivos.h"
 using namespace std;
 
 int main() {
     ListaDoble* lista = new ListaDoble();
     int opcion;
     Validacion val;
-
+    Archivos arc;
+    lista = arc.leerListaTDAProductos("productos.txt");
     do {
         std::system("cls");
         cout << "***********Listas Dobles***********" << endl;
@@ -57,6 +59,7 @@ int main() {
             Producto producto(nombre, precio, fabricacion, caducidad,dim,stock);
             lista->InsertarCabeza(producto);
             lista->ordenar();
+            arc.guardarListaProdctos(lista, "productos.txt");
             break;
         }
         case 2: {
@@ -90,7 +93,7 @@ int main() {
             Producto producto(nombre, precio, fabricacion, caducidad, dim, stock);
             lista->InsertarCola(producto);
             lista->ordenar();
-
+            arc.guardarListaProdctos(lista, "productos.txt");
             break;
         }
         case 3: {            

@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Archivos.cpp" />
     <ClCompile Include="Fecha.cpp" />
     <ClCompile Include="ListasDoble.cpp" />
     <ClCompile Include="Nodo.cpp" />
@@ -135,6 +136,7 @@
     <ClCompile Include="Validacion.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Archivos.h" />
     <ClInclude Include="Fecha.h" />
     <ClInclude Include="ListasDoble.h" />
     <ClInclude Include="Nodo.h" />

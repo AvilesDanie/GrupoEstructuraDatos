@@ -83,7 +83,7 @@ void ListaDoble::Mostrar() {
 
 int ListaDoble::dimencion() {
     Nodo* aux = primero;
-    int dim=1;
+    int dim=0;
     while (aux != NULL) {
         aux = aux->getSiguiente();
         dim += 1;
@@ -99,4 +99,12 @@ void ListaDoble::ordenar() {
         id += 1;
         aux = aux->getSiguiente();
     }
+}
+
+Producto ListaDoble::getPosicion(int indice) {
+    Nodo* aux = primero;
+    for (int i = 0; i < indice; i++) {
+        aux = aux->getSiguiente();
+    }
+    return aux->getDato();
 }

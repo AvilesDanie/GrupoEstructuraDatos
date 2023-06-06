@@ -16,6 +16,7 @@ public:
     void Mostrar();
     int dimencion();
     void ordenar();
+    Producto getPosicion(int);
 };
 
 
