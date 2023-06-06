@@ -1,0 +1,5 @@
+﻿  ListaDoble.cpp
+C:\Users\ASUS\Desktop\ListaDoble\ListaDoble\ListaDoble.cpp(121,32): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+  ListasDoble.cpp
+  Generando código...
+  ListaDoble.vcxproj -> C:\Users\ASUS\Desktop\ListaDoble\x64\Debug\ListaDoble.exe
