@@ -11,6 +11,8 @@ int main() {
     Validacion val;
     Archivos arc;
     lista = arc.leerListaTDAProductos("productos.txt");
+    lista = lista->ordenar();
+
     do {
         std::system("cls");
         cout << "***********Listas Dobles***********" << endl;
@@ -19,7 +21,8 @@ int main() {
         std::cout << "3. Buscar" << endl;
         std::cout << "4. Eliminar" << endl;
         std::cout << "5. Mostrar" << endl;
-        std::cout << "6. Salir" << endl;
+        std::cout << "6. Modificar" << endl;
+        std::cout << "7. Salir" << endl;
 
         std::cout << "Opcion: ";
         opcion = val.ingresarDatosEnteros();
@@ -43,6 +46,9 @@ int main() {
 
                 std::cout << "Ingrese la fecha de caducidad" << endl;
                 caducidad = val.ingresarFecha();
+                if (val.validarFechas(fabricacion, caducidad)) {
+                    std::cout << "La fecha de caducidad debe ser posterior a la fecha de fabricacion" << std::endl;
+                }
             } while (val.validarFechas(fabricacion, caducidad));
 
             
@@ -58,7 +64,7 @@ int main() {
 
             Producto producto(nombre, precio, fabricacion, caducidad,dim,stock);
             lista->InsertarCabeza(producto);
-            lista->ordenar();
+            lista = lista->ordenar();
             arc.guardarListaProdctos(lista, "productos.txt");
             break;
         }
@@ -81,6 +87,9 @@ int main() {
 
                 std::cout << "Ingrese la fecha de caducidad" << endl;
                 caducidad = val.ingresarFecha();
+                if (val.validarFechas(fabricacion, caducidad)) {
+                    std::cout << "La fecha de caducidad debe ser posterior a la fecha de fabricacion" << std::endl;
+                }
             } while (val.validarFechas(fabricacion, caducidad));
 
 
@@ -92,7 +101,7 @@ int main() {
 
             Producto producto(nombre, precio, fabricacion, caducidad, dim, stock);
             lista->InsertarCola(producto);
-            lista->ordenar();
+            lista = lista->ordenar();
             arc.guardarListaProdctos(lista, "productos.txt");
             break;
         }
@@ -103,18 +112,41 @@ int main() {
             break;
         }
         case 4: {
+            lista->Mostrar();
             cout << "Ingrese el ID que quiere eliminar: ";
             int id = val.ingresarDatosEnteros();
             lista->Eliminar(id);
+            lista = lista->ordenar();
+            arc.guardarListaProdctos(lista, "productos.txt");
+
             break;
         }
         case 5: {
             lista->Mostrar();
             break;
         }
+        case 6: {
+            int id;
+            std::cout << "Ingrese el ide del producto que desea modificar: ";
+            id = val.ingresarDatosEnteros();
+            lista = lista->Modificar(id);
+            lista->Mostrar();
+            arc.guardarListaProdctos(lista, "productos.txt");
+
+            break;
+        }
+        case 7: {
+            break;
+        }
+        default: {
+            std::cout << "Opcion invalida" << std::endl;
+            break;
+        }
         }
         std::system("pause");
-    } while (opcion != 6);
+    } while (opcion != 7);
+    arc.guardarListaProdctos(lista, "productos.txt");
+
     return 0;
 
 }

@@ -15,7 +15,8 @@ public:
     void Eliminar(int);
     void Mostrar();
     int dimencion();
-    void ordenar();
+    ListaDoble* ordenar();
+    ListaDoble* Modificar(int);
     Producto getPosicion(int);
 };
 

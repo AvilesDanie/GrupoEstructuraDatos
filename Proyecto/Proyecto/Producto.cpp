@@ -63,6 +63,10 @@ void Producto::setId(int nuevoId) {
     id = nuevoId;
 }
 
+void Producto::setStock(int nevoStock) {
+    stock = nevoStock;
+}
+
 void Producto::imprimir() {
     cout << "ID: " << id << endl;
     cout << "Nombre: " << nombre << endl;

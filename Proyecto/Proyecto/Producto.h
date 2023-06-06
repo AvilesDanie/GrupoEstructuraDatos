@@ -24,6 +24,7 @@ public:
 	void setFabricacion(Fecha);
 	void setCaducidad(Fecha);
 	void setId(int);
+	void setStock(int);
 
 	void imprimir();
 };

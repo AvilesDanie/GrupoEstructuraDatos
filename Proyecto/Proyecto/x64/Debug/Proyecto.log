@@ -1,1 +1,10 @@
-﻿  Proyecto.vcxproj -> C:\Users\ariel\Desktop\Ariel\U\3\GrupoEstructuraDatos\Proyecto\x64\Debug\Proyecto.exe
+﻿  ListasDoble.cpp
+  Proyecto.cpp
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\Proyecto\Proyecto\Proyecto.cpp(34,27): warning C4101: 'a': variable local sin referencia
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\Proyecto\Proyecto\Proyecto.cpp(34,17): warning C4101: 'dia': variable local sin referencia
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\Proyecto\Proyecto\Proyecto.cpp(34,22): warning C4101: 'mes': variable local sin referencia
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\Proyecto\Proyecto\Proyecto.cpp(75,27): warning C4101: 'a': variable local sin referencia
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\Proyecto\Proyecto\Proyecto.cpp(75,17): warning C4101: 'dia': variable local sin referencia
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\Proyecto\Proyecto\Proyecto.cpp(75,22): warning C4101: 'mes': variable local sin referencia
+  Generando código...
+  Proyecto.vcxproj -> C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\Proyecto\x64\Debug\Proyecto.exe

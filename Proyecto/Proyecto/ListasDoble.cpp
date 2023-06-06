@@ -1,4 +1,5 @@
 #include "ListasDoble.h"
+#include "Validacion.h"
 ListaDoble::ListaDoble() {
     primero = NULL;
     ultimo = NULL;
@@ -45,7 +46,6 @@ void ListaDoble::Buscar(int _dato) {
 }
 
 void ListaDoble::Eliminar(int _dato) {
-    this->Mostrar();
     Nodo* aux = primero;
     while (aux != NULL) {
         if (aux->getDato().getId() == _dato) {
@@ -91,14 +91,136 @@ int ListaDoble::dimencion() {
     return dim;
 }
 
-void ListaDoble::ordenar() {
+ListaDoble* ListaDoble::ordenar() {
     Nodo* aux = primero;
-    int id = 1;
+    Producto nuevo;
+
+    int nuevoId = 1;
+    ListaDoble* lista = new ListaDoble();
+
     while (aux != NULL) {
-        aux->getDato().setId(id);
-        id += 1;
+        nuevo = aux->getDato();
+        nuevo.setId(nuevoId);
+        nuevoId += 1;
+        lista->InsertarCola(nuevo);
         aux = aux->getSiguiente();
     }
+    return(lista);
+}
+
+
+
+ListaDoble* ListaDoble::Modificar(int id) {
+    Nodo* aux = primero;
+    ListaDoble* lista = new ListaDoble();
+    Validacion val;
+    Producto nuevo, modificar;
+    int opcion;
+    while (aux != NULL) {
+        if (aux->getDato().getId() == id) {
+
+            cout << "El dato " << id << " se encuentra en la lista" << endl;
+            cout << ":::::::::::::::::::::::::::::::::::::::::::::" << endl;
+            aux->getDato().imprimir();
+            modificar = aux->getDato();
+            do {
+                cout << ":::::::::::::::::::::::::::::::::::::::::::::" << endl;
+                cout << "***********Modificar***********" << endl;
+                std::cout << "1. Nombre" << endl;
+                std::cout << "2. Precio" << endl;
+                std::cout << "3. Fecha de fabricacion" << endl;
+                std::cout << "4. Fecha de caducidad" << endl;
+                std::cout << "5. Stock" << endl;
+                std::cout << "6. Salir" << endl;
+                cout << ":::::::::::::::::::::::::::::::::::::::::::::" << endl;
+                opcion = val.ingresarDatosEnteros();
+                switch (opcion) {
+                case 1: {
+                    string nombre;
+                    std::cout << "Ingrese el nombre: ";
+                    cin >> nombre;
+                    modificar.setNombre(nombre);
+                    break;
+                }
+                case 2: {
+                    float precio;
+                    std::cout << "Ingrese el precio: ";
+                    precio = val.ingresarDatosfloat();
+                    modificar.setPrecio(precio);
+                    break;
+                }
+                case 3: {
+                    Fecha fabricacion;
+                    do {
+                        std::cout << "Ingrese la fecha de fabricacion" << endl;
+                        fabricacion = val.ingresarFecha();
+                        if (val.validarFechas(fabricacion, modificar.getCaducidad())) {
+                            std::cout << "La fecha de caducidad debe ser posterior a la fecha de fabricacion" << std::endl;
+                            cout << "Caducidad: ";
+                            modificar.getCaducidad().imprimir();
+                        }
+                    } while (val.validarFechas(fabricacion, modificar.getCaducidad()));
+                    modificar.setFabricacion(fabricacion);
+                    break;
+                }
+                case 4: {
+                    Fecha caducidad;
+                    do {
+                        std::cout << "Ingrese la fecha de caducidad" << endl;
+                        caducidad = val.ingresarFecha();
+                        if (val.validarFechas(modificar.getFabricacion(), caducidad)) {
+                            std::cout << "La fecha de caducidad debe ser posterior a la fecha de fabricacion" << std::endl;
+                            cout << "Fabricacion: ";
+                            modificar.getFabricacion().imprimir();
+                        }
+                    } while (val.validarFechas(modificar.getFabricacion(), caducidad));
+                    modificar.setCaducidad(caducidad);
+                    break;
+                }
+                case 5: {
+                    int stock;
+                    std::cout << "Ingrese el stock del producto: ";
+                    stock = val.ingresarDatosEnteros();
+                    modificar.setStock(stock);
+                    break;
+                }
+                case 6: {
+                    break;
+                }
+                default: {
+                    std::cout << "Opcion invalida" << std::endl;
+                    break;
+                }
+                }
+            } while (opcion != 6);
+
+            aux = primero;
+
+            while (aux != NULL) {
+                nuevo = aux->getDato();
+                if (id == nuevo.getId()) {
+                    lista->InsertarCola(modificar);
+                }
+                else {
+                    lista->InsertarCola(nuevo);
+                }
+                aux = aux->getSiguiente();
+            }
+
+            return lista;
+        }
+        aux = aux->getSiguiente();
+    }
+    cout << "El dato " << id << " no se encuentra en la lista" << endl;
+
+    aux = primero;
+
+    while (aux != NULL) {
+        nuevo = aux->getDato();
+        lista->InsertarCola(nuevo);
+        aux = aux->getSiguiente();
+    }
+    return lista;
 }
 
 Producto ListaDoble::getPosicion(int indice) {
