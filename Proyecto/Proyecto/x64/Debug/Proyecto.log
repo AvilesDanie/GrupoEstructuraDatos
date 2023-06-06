@@ -1,8 +1,15 @@
-﻿  Proyecto.cpp
-C:\Users\ASUS\Desktop\Proyecto\Proyecto\Proyecto.cpp(29,27): warning C4101: 'a': variable local sin referencia
-C:\Users\ASUS\Desktop\Proyecto\Proyecto\Proyecto.cpp(29,17): warning C4101: 'dia': variable local sin referencia
-C:\Users\ASUS\Desktop\Proyecto\Proyecto\Proyecto.cpp(29,22): warning C4101: 'mes': variable local sin referencia
-C:\Users\ASUS\Desktop\Proyecto\Proyecto\Proyecto.cpp(66,27): warning C4101: 'a': variable local sin referencia
-C:\Users\ASUS\Desktop\Proyecto\Proyecto\Proyecto.cpp(66,17): warning C4101: 'dia': variable local sin referencia
-C:\Users\ASUS\Desktop\Proyecto\Proyecto\Proyecto.cpp(66,22): warning C4101: 'mes': variable local sin referencia
-  Proyecto.vcxproj -> C:\Users\ASUS\Desktop\Proyecto\x64\Debug\Proyecto.exe
+﻿  Fecha.cpp
+  ListasDoble.cpp
+  Nodo.cpp
+  Producto.cpp
+  Proyecto.cpp
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\Proyecto\Proyecto\Proyecto.cpp(29,27): warning C4101: 'a': variable local sin referencia
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\Proyecto\Proyecto\Proyecto.cpp(29,17): warning C4101: 'dia': variable local sin referencia
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\Proyecto\Proyecto\Proyecto.cpp(29,22): warning C4101: 'mes': variable local sin referencia
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\Proyecto\Proyecto\Proyecto.cpp(66,27): warning C4101: 'a': variable local sin referencia
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\Proyecto\Proyecto\Proyecto.cpp(66,17): warning C4101: 'dia': variable local sin referencia
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\Proyecto\Proyecto\Proyecto.cpp(66,22): warning C4101: 'mes': variable local sin referencia
+  Validacion.cpp
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\Proyecto\Proyecto\Validacion.cpp(40,11): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+  Generando código...
+  Proyecto.vcxproj -> C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\Proyecto\x64\Debug\Proyecto.exe

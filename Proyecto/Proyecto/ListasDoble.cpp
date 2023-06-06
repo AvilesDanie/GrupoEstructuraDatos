@@ -96,6 +96,7 @@ void ListaDoble::ordenar() {
     int id = 1;
     while (aux != NULL) {
         aux->getDato().setId(id);
+        id += 1;
         aux = aux->getSiguiente();
     }
 }
