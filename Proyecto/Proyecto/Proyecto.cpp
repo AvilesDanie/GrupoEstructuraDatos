@@ -121,10 +121,10 @@ int main() {
         }
         case 6: {
             int id;
+            lista->Mostrar();
             std::cout << "Ingrese el ide del producto que desea modificar: ";
             id = val.ingresarDatosEnteros();
             lista = lista->Modificar(id);
-            lista->Mostrar();
             arc.guardarListaProdctos(lista, "productos.txt");
 
             break;

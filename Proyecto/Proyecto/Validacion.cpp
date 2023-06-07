@@ -50,10 +50,7 @@ float Validacion:: ingresarDatosfloat() {
 	std::cout << "\n";
 	return n;
 }
-/**
-* @brief ingresarDatosEntero Valida la entrada de datos int
-* @return Validacion de un tipo de dato entero
-*/
+
 int Validacion::ingresarDatosEnteros() {
 	char* dato = new char[100];
 	char c;
@@ -104,7 +101,7 @@ Fecha Validacion::ingresarFecha() {
 			std::cout << "Ingrese el mes: ";
 			mes = ingresarDatosEnteros();
 
-			if ((mes == 4 || mes == 6 || mes == 8 || mes == 10 || mes == 12)&&dia>30) {
+			if ((mes == 4 || mes == 6 || mes == 9 || mes == 11)&&dia>30) {
 				std::cout << "Dia invalido para el mes" << std::endl;
 				pasar = true;
 			}
@@ -121,10 +118,10 @@ Fecha Validacion::ingresarFecha() {
 			pasar = true;
 		}
 
-		if (a % 4 == 0 and a % 100 != 0 or a % 400 == 0) {
+		if (a % 4 == 0 && a % 100 != 0 || a % 400 == 0) {
 		}
 		else {
-			if (dia == 29) {
+			if (dia == 29 && mes == 2) {
 				std::cout << "Dia invalido para el año" << std::endl;
 				pasar = true;
 			}
