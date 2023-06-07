@@ -49,10 +49,6 @@ int main() {
                 }
             } while (val.validarFechas(fabricacion, caducidad));
 
-            
-
-
-
 
             int dim = lista->dimencion();
 

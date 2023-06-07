@@ -146,10 +146,7 @@ bool Validacion::validarFechas(Fecha fabricacion, Fecha caducidad) {
 			pasar = true;
 		}
 		else if (fabricacion.getMes() == caducidad.getMes()) {
-			if (fabricacion.getDia() > caducidad.getDia()) {
-				pasar = true;
-			}
-			else if (fabricacion.getDia() == caducidad.getDia()) {
+			if (fabricacion.getDia() >= caducidad.getDia()) {
 				pasar = true;
 			}
 		}
