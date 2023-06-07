@@ -231,3 +231,16 @@ Producto ListaDoble::getPosicion(int indice) {
     }
     return aux->getDato();
 }
+
+bool ListaDoble::nombreRep(std::string nombre) {
+    Nodo* aux = primero;
+    bool pasar = false;
+    while (aux != NULL) {
+        if (aux->getDato().getNombre() == nombre) {
+            std::cout << "Nombre repetido, ingrese nuevamente" << std::endl;
+            pasar = true;
+        }
+        aux = aux->getSiguiente();
+    }
+    return pasar;
+}

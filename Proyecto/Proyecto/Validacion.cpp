@@ -100,8 +100,11 @@ Fecha Validacion::ingresarFecha() {
 
 			std::cout << "Ingrese el mes: ";
 			mes = ingresarDatosEnteros();
-
-			if ((mes == 4 || mes == 6 || mes == 9 || mes == 11)&&dia>30) {
+			if (mes > 12 || mes < 1) {
+				std::cout << "Mes invalido" << std::endl;
+				pasar = true;
+			}
+			else if ((mes == 4 || mes == 6 || mes == 9 || mes == 11)&&dia>30) {
 				std::cout << "Dia invalido para el mes" << std::endl;
 				pasar = true;
 			}

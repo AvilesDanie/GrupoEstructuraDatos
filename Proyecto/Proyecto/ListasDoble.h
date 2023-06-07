@@ -18,6 +18,7 @@ public:
     ListaDoble* ordenar();
     ListaDoble* Modificar(int);
     Producto getPosicion(int);
+    bool nombreRep(std::string);
 };
 
 

@@ -31,8 +31,12 @@ int main() {
             float precio;
             int dia, mes, a, stock;
 
-            std::cout << "Ingrese el nombre: ";
-            cin >> nombre;
+            do {
+                std::cout << "Ingrese el nombre: ";
+                cin >> nombre;
+            } while (lista->nombreRep(nombre));
+
+            
             std::cout << "Ingrese el precio: ";
             precio = val.ingresarDatosfloat();
 
