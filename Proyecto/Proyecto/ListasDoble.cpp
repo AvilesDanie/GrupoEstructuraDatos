@@ -25,6 +25,7 @@ void ListaDoble::InsertarCabeza(Producto _dato) {
         ultimo = nuevo;
     }
     else {
+        primero->setAnterior(nuevo);
         nuevo->setSiguiente(primero);
         primero = nuevo;
     }
@@ -92,7 +93,7 @@ int ListaDoble::dimencion() {
 }
 
 ListaDoble* ListaDoble::ordenar() {
-    Nodo* aux = primero;
+    Nodo* aux = ultimo;
     Producto nuevo;
 
     int nuevoId = 1;
@@ -103,7 +104,7 @@ ListaDoble* ListaDoble::ordenar() {
         nuevo.setId(nuevoId);
         nuevoId += 1;
         lista->InsertarCola(nuevo);
-        aux = aux->getSiguiente();
+        aux = aux->getAnterior();
     }
     return(lista);
 }
