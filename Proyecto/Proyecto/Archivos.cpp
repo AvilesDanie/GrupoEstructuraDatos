@@ -21,7 +21,7 @@ void Archivos::guardarListaProdctos(ListaDoble* lista, const std::string& nombre
             archivo << lista->getPosicion(i).getId() << std::endl;
         }
         archivo.close();
-        std::cout << "Lista de TDA guardada exitosamente en " << nombreArchivo << std::endl;
+        std::cout << "Lista de productos guardada exitosamente en " << nombreArchivo << std::endl;
     }
     else {
         std::cerr << "No se pudo abrir el archivo " << nombreArchivo << " para escribir" << std::endl;
@@ -46,7 +46,7 @@ ListaDoble* Archivos::leerListaTDAProductos(const std::string& nombreArchivo) {
             size_t coma_pos6 = linea.find(",", coma_pos5 + 1);
             size_t coma_pos7 = linea.find(",", coma_pos6 + 1);
             size_t coma_pos8 = linea.find(",", coma_pos7 + 1);
-            size_t coma_pos9 = linea.find(",", coma_pos7 + 1);
+            size_t coma_pos9 = linea.find(",", coma_pos8 + 1);
             if (coma_pos != std::string::npos) {
                 nombre = linea.substr(0, coma_pos);
                 precio = std::stof(linea.substr(coma_pos + 1, coma_pos2 - coma_pos - 1));
@@ -65,7 +65,7 @@ ListaDoble* Archivos::leerListaTDAProductos(const std::string& nombreArchivo) {
             }
         }
         archivo.close();
-        std::cout << "Lista de TDA leída exitosamente desde " << nombreArchivo << std::endl;
+        std::cout << "Lista de productos leída exitosamente desde " << nombreArchivo << std::endl;
     }
     else {
         std::cerr << "No se pudo abrir el archivo " << nombreArchivo << " para leer" << std::endl;

@@ -11,11 +11,9 @@ int main() {
     Validacion val;
     Archivos arc;
     lista = arc.leerListaTDAProductos("productos.txt");
-    lista = lista->ordenar();
-
     do {
         std::system("cls");
-        cout << "***********Listas Dobles***********" << endl;
+        cout << "*********** Inventario ***********" << endl;
         std::cout << "1. Insertar al inicio" << endl;
         std::cout << "2. Insertar al final" << endl;
         std::cout << "3. Buscar" << endl;
