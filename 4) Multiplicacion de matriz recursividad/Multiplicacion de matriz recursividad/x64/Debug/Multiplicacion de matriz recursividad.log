@@ -1,0 +1,16 @@
+﻿  Matriz.cpp
+  Multiplicacion de matriz recursividad.cpp
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\Multiplicacion de matriz recursividad\Multiplicacion de matriz recursividad\Multiplicacion de matriz recursividad.cpp(17,19): warning C4305: 'argumento': truncamiento de 'double' a 'T'
+          with
+          [
+              T=float
+          ]
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\Multiplicacion de matriz recursividad\Multiplicacion de matriz recursividad\Multiplicacion de matriz recursividad.cpp(18,18): warning C4305: 'argumento': truncamiento de 'double' a 'T'
+          with
+          [
+              T=float
+          ]
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\Multiplicacion de matriz recursividad\Multiplicacion de matriz recursividad\Multiplicacion de matriz recursividad.cpp(27,10): warning C4129: 'M': secuencia de escape de carácter no reconocida
+  Operaciones.cpp
+  Generando código...
+  Multiplicacion de matriz recursividad.vcxproj -> C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\Multiplicacion de matriz recursividad\x64\Debug\Multiplicacion de matriz recursividad.exe
