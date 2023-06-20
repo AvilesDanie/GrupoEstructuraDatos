@@ -1,0 +1,10 @@
+﻿  Fraccion.cpp
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\1) Quebrado\Quebrado\Fraccion.cpp(33,39): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\1) Quebrado\Quebrado\Fraccion.cpp(33,28): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\1) Quebrado\Quebrado\Fraccion.cpp(52,25): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\1) Quebrado\Quebrado\Fraccion.cpp(53,27): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\1) Quebrado\Quebrado\Fraccion.cpp(54,38): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\1) Quebrado\Quebrado\Fraccion.cpp(54,21): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Quebrado.cpp
+  Generando código...
+  Quebrado.vcxproj -> C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\1) Quebrado\x64\Debug\Quebrado.exe

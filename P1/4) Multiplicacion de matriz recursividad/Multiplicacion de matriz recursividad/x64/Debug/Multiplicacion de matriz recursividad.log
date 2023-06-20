@@ -1,0 +1,17 @@
+﻿  Matriz.cpp
+  Multiplicacion de matriz recursividad.cpp
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\4) Multiplicacion de matriz recursividad\Multiplicacion de matriz recursividad\Multiplicacion de matriz recursividad.cpp(23,19): warning C4305: 'argumento': truncamiento de 'double' a 'T'
+          with
+          [
+              T=float
+          ]
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\4) Multiplicacion de matriz recursividad\Multiplicacion de matriz recursividad\Multiplicacion de matriz recursividad.cpp(24,18): warning C4305: 'argumento': truncamiento de 'double' a 'T'
+          with
+          [
+              T=float
+          ]
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\4) Multiplicacion de matriz recursividad\Multiplicacion de matriz recursividad\Multiplicacion de matriz recursividad.cpp(33,10): warning C4129: 'M': secuencia de escape de carácter no reconocida
+  Operaciones.cpp
+  Generando código...
+  LINK : no se encontró C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\4) Multiplicacion de matriz recursividad\x64\Debug\Multiplicacion de matriz recursividad.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+  Multiplicacion de matriz recursividad.vcxproj -> C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\4) Multiplicacion de matriz recursividad\x64\Debug\Multiplicacion de matriz recursividad.exe
