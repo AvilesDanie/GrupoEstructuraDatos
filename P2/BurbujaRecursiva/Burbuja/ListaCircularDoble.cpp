@@ -133,12 +133,11 @@ void ListaCircularDoble::intercambiarRecursivo(NodoDoble* actual, NodoDoble* sig
 			intercambiarRecursivo(actual, siguiente, intercambio);
 		}
 
-		actual = actual->getSiguiente();
 	////} while (intercambio);
 
 
 	if (intercambio) {
-		intercambiarRecursivo(actual, siguiente, intercambio);
+		intercambiarRecursivo(cabeza,cabeza->getSiguiente(), intercambio);
 	}
 	else {
 		return;
