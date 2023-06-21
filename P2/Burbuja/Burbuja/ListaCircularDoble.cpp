@@ -124,3 +124,39 @@ void ListaCircularDoble::ordenarBurbuja()
 		}
 	} while (intercambio);
 }
+
+void ListaCircularDoble::ordenarBurbuja(NodoDoble* actual, NodoDoble* siguiente)
+{
+	if (siguiente == this->cabeza)
+	{
+		if (actual->getSiguiente() != this->cabeza)
+		{
+			ordenarBurbuja(this->cabeza, this->cabeza->getSiguiente());
+		}
+		return;
+	}
+
+	if (actual->getDato() > siguiente->getDato())
+	{
+		// Intercambiar los datos de los nodos
+		int temp = actual->getDato();
+		actual->setDato(siguiente->getDato());
+		siguiente->setDato(temp);
+	}
+
+	ordenarBurbuja(siguiente, siguiente->getSiguiente());
+}
+
+/*void ListaCircularDoble::ordenarBurbuja()
+{
+	if (this->cabeza == nullptr)
+		return;
+
+	NodoDoble* actual = this->cabeza;
+	NodoDoble* siguiente = actual->getSiguiente();
+	ordenarBurbuja(actual, siguiente);
+}*/
+
+NodoDoble* ListaCircularDoble::getCabeza() {
+	return cabeza;
+}

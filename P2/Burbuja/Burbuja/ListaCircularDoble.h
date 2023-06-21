@@ -12,9 +12,11 @@ public:
 	void eliminar(int);
 	void mostrar();
 	bool buscar(int);
+	NodoDoble* getCabeza();
 
 
 	void ordenarBurbuja();
+	void ordenarBurbuja(NodoDoble* actual, NodoDoble* siguiente);
 };
 
 

@@ -118,7 +118,7 @@ void ListaCircularDoble::intercambiarRecursivo(NodoDoble* actual, NodoDoble* sig
 		intercambio = false;
 		siguiente = actual->getSiguiente();
 
-		while (siguiente != this->cabeza)
+		if (siguiente != this->cabeza)
 		{
 			if (actual->getDato() > siguiente->getDato())
 			{
@@ -128,7 +128,9 @@ void ListaCircularDoble::intercambiarRecursivo(NodoDoble* actual, NodoDoble* sig
 				intercambio = true;
 
 			}
+			actual = siguiente;
 			siguiente = siguiente->getSiguiente();
+			intercambiarRecursivo(actual, siguiente, intercambio);
 		}
 
 		actual = actual->getSiguiente();
