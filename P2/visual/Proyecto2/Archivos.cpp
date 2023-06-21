@@ -33,8 +33,8 @@ ListaCircularDoble Archivos::leerListaTDA(const std::string& nombreArchivo) {
             size_t coma_pos2 = linea.find(",", coma_pos + 1);
             if (coma_pos != std::string::npos) {
                 cedula = linea.substr(0, coma_pos);
-                nombre = std::stof(linea.substr(coma_pos + 1, coma_pos2 - coma_pos - 1));
-                apellido = std::stoi(linea.substr(coma_pos2 + 1));
+                nombre = linea.substr(coma_pos + 1, coma_pos2 - coma_pos - 1);
+                apellido = linea.substr(coma_pos2 + 1);
                 Persona persona;
                 persona.setCedula(cedula);
                 persona.setNombre(nombre);

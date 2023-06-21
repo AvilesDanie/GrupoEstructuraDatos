@@ -62,6 +62,7 @@ int Menus::operarMenu() {
     int opcionActual = 1;
     Persona persona1;
     Archivos arc;
+    lista = arc.leerListaTDA("personas.txt");
     while (true) {
         system("cls");
         
