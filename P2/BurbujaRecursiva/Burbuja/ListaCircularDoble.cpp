@@ -113,27 +113,24 @@ void ListaCircularDoble::intercambiarRecursivo(NodoDoble* actual, NodoDoble* sig
 {
 
 
-	//do
-	//{
-		intercambio = false;
-		siguiente = actual->getSiguiente();
+	intercambio = false;
+	siguiente = actual->getSiguiente();
 
-		if (siguiente != this->cabeza)
+	if (siguiente != this->cabeza)
+	{
+		if (actual->getDato() > siguiente->getDato())
 		{
-			if (actual->getDato() > siguiente->getDato())
-			{
-				int temp = actual->getDato();
-				actual->setDato(siguiente->getDato());
-				siguiente->setDato(temp);
-				intercambio = true;
+			int temp = actual->getDato();
+			actual->setDato(siguiente->getDato());
+			siguiente->setDato(temp);
+			intercambio = true;
 
-			}
-			actual = siguiente;
-			siguiente = siguiente->getSiguiente();
-			intercambiarRecursivo(actual, siguiente, intercambio);
 		}
+		actual = siguiente;
+		siguiente = siguiente->getSiguiente();
+		intercambiarRecursivo(actual, siguiente, intercambio);
+	}
 
-	////} while (intercambio);
 
 
 	if (intercambio) {
