@@ -100,7 +100,7 @@ int main() {
             break;
         case 5:
             if (lista.getCabeza() != nullptr) {
-                lista.intercambiarRecursivo(lista.getCabeza(), lista.getCabeza()->getSiguiente(), false);
+                lista.intercambiarRecursivo(lista.getCabeza());
             }
             else {
                 std::cout << "La lista esta vacia" << std::endl;

@@ -109,12 +109,10 @@ NodoDoble* ListaCircularDoble::getCola() {
 
 
 
-void ListaCircularDoble::intercambiarRecursivo(NodoDoble* actual, NodoDoble* siguiente, bool intercambio)
+void ListaCircularDoble::intercambiarRecursivo(NodoDoble* actual)
 {
-
-
-	intercambio = false;
-	siguiente = actual->getSiguiente();
+	bool intercambio = false;
+	NodoDoble* siguiente = actual->getSiguiente();
 
 	if (siguiente != this->cabeza)
 	{
@@ -127,17 +125,13 @@ void ListaCircularDoble::intercambiarRecursivo(NodoDoble* actual, NodoDoble* sig
 
 		}
 		actual = siguiente;
-		siguiente = siguiente->getSiguiente();
-		intercambiarRecursivo(actual, siguiente, intercambio);
+		intercambiarRecursivo(actual);
 	}
 
-
-
 	if (intercambio) {
-		intercambiarRecursivo(cabeza,cabeza->getSiguiente(), intercambio);
+		intercambiarRecursivo(cabeza);
 	}
 	else {
 		return;
 	}
-
 }

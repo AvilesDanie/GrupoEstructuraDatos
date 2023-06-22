@@ -17,7 +17,7 @@ public:
 	NodoDoble* getCola();
 
 
-	void intercambiarRecursivo(NodoDoble*, NodoDoble*, bool);
+	void intercambiarRecursivo(NodoDoble*);
 
 };
 
