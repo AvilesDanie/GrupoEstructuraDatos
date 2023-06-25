@@ -185,7 +185,7 @@ int ListaCircularDoble::calcularValorMaximo() {
 	return maximo;
 }
 
-int ListaCircularDoble::calacarValorMinimo() {
+int ListaCircularDoble::calcularValorMinimo() {
 	int minimo = getPosicion(1);
 	for (int i = 1; i < dimencion(); i++) {
 		if (getPosicion(i + 1) < minimo) {
@@ -198,7 +198,7 @@ int ListaCircularDoble::calacarValorMinimo() {
 void ListaCircularDoble::distribucion() {
 	if (cabeza != nullptr) {
 		int maximo = calcularValorMaximo();
-		int minimo = calacarValorMinimo();
+		int minimo = calcularValorMinimo();
 		ListaCircularDoble conteo;
 		ListaCircularDoble lista;
 
@@ -215,14 +215,14 @@ void ListaCircularDoble::distribucion() {
 			dato++;
 			conteo.setPosicion(dato, getPosicion(i)-minimo);
 		}
-
+		
 		for (int i = 1; i <= maximo-minimo; i++) {
 			conteo.setPosicion(conteo.getPosicion(i) + conteo.getPosicion(i - 1), i);
 		}
-
+		
 		for (int i = 0; i < dimencion(); i++) {
 			lista.setPosicion(getPosicion(i), conteo.getPosicion(getPosicion(i)-minimo) - 1);
-			conteo.setPosicion(conteo.getPosicion(getPosicion(i)) - 1, getPosicion(i)-minimo);
+			conteo.setPosicion(conteo.getPosicion(getPosicion(i) - minimo) - 1, getPosicion(i)-minimo);
 		}
 
 		for (int i = 0; i < dimencion(); i++) {

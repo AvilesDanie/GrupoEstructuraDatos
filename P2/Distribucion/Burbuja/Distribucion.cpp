@@ -99,6 +99,7 @@ int main() {
             lista.mostrar();
             break;
         case 5:
+            lista.mostrar();
             lista.distribucion();
             lista.mostrar();
             break;
