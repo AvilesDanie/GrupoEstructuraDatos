@@ -185,9 +185,20 @@ int ListaCircularDoble::calcularValorMaximo() {
 	return maximo;
 }
 
+int ListaCircularDoble::calacarValorMinimo() {
+	int minimo = getPosicion(1);
+	for (int i = 1; i < dimencion(); i++) {
+		if (getPosicion(i + 1) < minimo) {
+			minimo = getPosicion(i + 1);
+		}
+	}
+	return minimo;
+}
+
 void ListaCircularDoble::distribucion() {
 	if (cabeza != nullptr) {
 		int maximo = calcularValorMaximo();
+		int minimo = calacarValorMinimo();
 		ListaCircularDoble conteo;
 		ListaCircularDoble lista;
 
@@ -195,23 +206,23 @@ void ListaCircularDoble::distribucion() {
 			lista.insertar(0);
 		}
 
-		for (int i = 0; i < maximo + 1; i++) {
+		for (int i = 0; i < maximo-minimo + 1; i++) {
 			conteo.insertar(0);
 		}
 
 		for (int i = 0; i < dimencion(); i++) {
-			int dato = conteo.getPosicion(getPosicion(i));
+			int dato = conteo.getPosicion(getPosicion(i)-minimo);
 			dato++;
-			conteo.setPosicion(dato, getPosicion(i));
+			conteo.setPosicion(dato, getPosicion(i)-minimo);
 		}
 
-		for (int i = 1; i <= maximo; i++) {
+		for (int i = 1; i <= maximo-minimo; i++) {
 			conteo.setPosicion(conteo.getPosicion(i) + conteo.getPosicion(i - 1), i);
 		}
 
 		for (int i = 0; i < dimencion(); i++) {
-			lista.setPosicion(getPosicion(i), conteo.getPosicion(getPosicion(i)) - 1);
-			conteo.setPosicion(conteo.getPosicion(getPosicion(i)) - 1, getPosicion(i));
+			lista.setPosicion(getPosicion(i), conteo.getPosicion(getPosicion(i)-minimo) - 1);
+			conteo.setPosicion(conteo.getPosicion(getPosicion(i)) - 1, getPosicion(i)-minimo);
 		}
 
 		for (int i = 0; i < dimencion(); i++) {

@@ -26,6 +26,7 @@ public:
 	int getPosicion(int);
 	void setPosicion(int,int);
 	int calcularValorMaximo();
+	int calacarValorMinimo();
 	void distribucion();
 };
 
