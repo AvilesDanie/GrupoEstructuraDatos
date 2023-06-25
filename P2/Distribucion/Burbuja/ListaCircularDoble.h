@@ -24,10 +24,9 @@ public:
 
 	int dimencion();
 	int getPosicion(int);
-	void setPosicion(int,int,int);
-	int calcularValorMaximo(int);
-	int calcularValorMinimo(int);
-	ListaCircularDoble distribucion();
+	void setPosicion(int,int);
+	int calcularValorMaximo();
+	void distribucion();
 };
 
 

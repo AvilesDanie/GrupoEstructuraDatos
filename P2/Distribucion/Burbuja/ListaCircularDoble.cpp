@@ -167,18 +167,17 @@ int ListaCircularDoble::getPosicion(int indice) {
 	return aux->getDato();
 }
 
-void ListaCircularDoble::setPosicion(int min,int dato,int max) {
+void ListaCircularDoble::setPosicion(int dato,int indice) {
 	NodoDoble* aux = cabeza;
-	int diferencia = 1 - min;
-	for (int i = 2; i <= dato+diferencia; i++) {
+	for (int i = 0; i < indice; i++) {
 		aux = aux->getSiguiente();
 	}
 	aux->setDato(dato);
 }
 
-int ListaCircularDoble::calcularValorMaximo(int tamanio) {
+int ListaCircularDoble::calcularValorMaximo() {
 	int maximo = getPosicion(1);
-	for (int i = 1; i < tamanio; i++) {
+	for (int i = 1; i < dimencion(); i++) {
 		if (getPosicion(i+1) > maximo) {
 			maximo = getPosicion(i+1);
 		}
@@ -186,42 +185,39 @@ int ListaCircularDoble::calcularValorMaximo(int tamanio) {
 	return maximo;
 }
 
-int ListaCircularDoble::calcularValorMinimo(int tamanio) {
-	int minimo = getPosicion(1);
-	for (int i = 1; i < tamanio; i++) {
-		if (getPosicion(i + 1) < minimo) {
-			minimo = getPosicion(i + 1);
+void ListaCircularDoble::distribucion() {
+	if (cabeza != nullptr) {
+		int maximo = calcularValorMaximo();
+		ListaCircularDoble conteo;
+		ListaCircularDoble lista;
+
+		for (int i = 0; i < dimencion(); i++) {
+			lista.insertar(0);
+		}
+
+		for (int i = 0; i < maximo + 1; i++) {
+			conteo.insertar(0);
+		}
+
+		for (int i = 0; i < dimencion(); i++) {
+			int dato = conteo.getPosicion(getPosicion(i));
+			dato++;
+			conteo.setPosicion(dato, getPosicion(i));
+		}
+
+		for (int i = 1; i <= maximo; i++) {
+			conteo.setPosicion(conteo.getPosicion(i) + conteo.getPosicion(i - 1), i);
+		}
+
+		for (int i = 0; i < dimencion(); i++) {
+			lista.setPosicion(getPosicion(i), conteo.getPosicion(getPosicion(i)) - 1);
+			conteo.setPosicion(conteo.getPosicion(getPosicion(i)) - 1, getPosicion(i));
+		}
+
+		for (int i = 0; i < dimencion(); i++) {
+			setPosicion(lista.getPosicion(i), i);
 		}
 	}
-	return minimo;
-}
-
-
-ListaCircularDoble ListaCircularDoble::distribucion() {
-	int max = calcularValorMaximo(dimencion());
-	int min = calcularValorMinimo(dimencion());
-	int nulo = min - 1;
-	ListaCircularDoble lista;
-	NodoDoble* aux = cabeza;
-	std::cout << min << "------" << max << std::endl;
-	for (int i = min; i <= max; i++) {
-		lista.insertar(nulo);
-		lista.mostrar();
-	}
-	std::cout << lista.dimencion() << std::endl;
-
-	for (int i = 1; i <= dimencion(); i++) {
-		std::cout <<i<< "=====" << lista.dimencion() << std::endl;
-		std::cout << aux->getDato() << std::endl;
-
-		lista.setPosicion(min, aux->getDato(),max);
-		aux = aux->getSiguiente();
-	}
-
-	int rep = lista.dimencion();
-	for (int i = 0; i < rep; i++) {
-		lista.eliminar(nulo);
-	}
-
-	return lista;
+	else
+		std::cout << "La lista esta vacia" << std::endl;
 }

@@ -99,32 +99,7 @@ int main() {
             lista.mostrar();
             break;
         case 5:
-            lista.insertar(5);
-            lista.insertar(2);
-            lista.insertar(4);
-            lista.insertar(7);
-            lista.insertar(3);
-            lista.insertar(9);
-            lista.insertar(6);
-            lista.insertar(8);
-            lista.insertar(0);
-            lista.insertar(7);
-            lista.insertar(12);
-            lista.insertar(-4);
-
-            lista.mostrar();
-
-
-
-
-            if (lista.getCabeza() != nullptr) {
-                //lista.intercambiarRecursivo(lista.getCabeza(), lista.getCabeza()->getSiguiente(), false, 0);
-                ListaCircularDoble lista2 = lista.distribucion();
-                lista2.mostrar();
-            }
-            else {
-                std::cout << "La lista esta vacia" << std::endl;
-            }
+            lista.distribucion();
             lista.mostrar();
             break;
         }
