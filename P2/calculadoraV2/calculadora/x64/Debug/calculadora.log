@@ -1,0 +1,12 @@
+﻿  Prefija.cpp
+C:\Users\ASUS\Desktop\calculadora\calculadora\Prefija.cpp(560,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadora\calculadora\Prefija.cpp(564,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadora\calculadora\Prefija.cpp(568,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadora\calculadora\Prefija.cpp(572,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadora\calculadora\Prefija.cpp(576,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadora\calculadora\Prefija.cpp(580,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadora\calculadora\Prefija.cpp(584,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadora\calculadora\Prefija.cpp(588,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadora\calculadora\Prefija.cpp(592,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadora\calculadora\Prefija.cpp(596,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+  calculadora.vcxproj -> C:\Users\ASUS\Desktop\calculadora\x64\Debug\calculadora.exe
