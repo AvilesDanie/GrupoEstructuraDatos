@@ -1,0 +1,18 @@
+﻿  Menu.cpp
+C:\Users\ASUS\Desktop\calculadoraV3\calculadora\Menu.cpp(20,14): warning C4101: 'ecuacionC': variable local sin referencia
+C:\Users\ASUS\Desktop\calculadoraV3\calculadora\Menu.cpp(16,7): warning C4101: 'enteroC': variable local sin referencia
+C:\Users\ASUS\Desktop\calculadoraV3\calculadora\Menu.cpp(22,6): warning C4101: 'entero': variable local sin referencia
+  Prefija.cpp
+C:\Users\ASUS\Desktop\calculadoraV3\calculadora\Prefija.cpp(431,24): warning C4267: '=': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadoraV3\calculadora\Prefija.cpp(1184,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadoraV3\calculadora\Prefija.cpp(1188,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadoraV3\calculadora\Prefija.cpp(1192,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadoraV3\calculadora\Prefija.cpp(1196,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadoraV3\calculadora\Prefija.cpp(1200,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadoraV3\calculadora\Prefija.cpp(1204,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadoraV3\calculadora\Prefija.cpp(1208,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadoraV3\calculadora\Prefija.cpp(1212,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadoraV3\calculadora\Prefija.cpp(1216,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadoraV3\calculadora\Prefija.cpp(1220,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+  Generando código...
+  calculadora.vcxproj -> C:\Users\ASUS\Desktop\calculadoraV3\x64\Debug\calculadora.exe
