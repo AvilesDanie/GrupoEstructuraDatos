@@ -1,0 +1,6 @@
+﻿  Postfija.cpp
+C:\Users\ASUS\Desktop\calculadoraV4\calculadora\Postfija.cpp(122,2): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadoraV4\calculadora\Postfija.cpp(178,4): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadoraV4\calculadora\Postfija.cpp(232,6): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\ASUS\Desktop\calculadoraV4\calculadora\Postfija.cpp(258,24): warning C4267: '=': conversión de 'size_t' a 'int'; posible pérdida de datos
+  calculadora.vcxproj -> C:\Users\ASUS\Desktop\calculadoraV4\x64\Debug\calculadora.exe
