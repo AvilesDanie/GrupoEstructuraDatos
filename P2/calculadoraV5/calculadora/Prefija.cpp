@@ -1,5 +1,6 @@
 #include "Prefija.h"
 #include "PilaChar.h"
+#include <iostream>
 
 using namespace std;
 
@@ -73,7 +74,6 @@ vector<string> Prefija::obtenerContenidoEntreParentesis(const string& cadena) {
 			}
 		}
 	}
-
 	return contenido;
 }
 
@@ -81,18 +81,17 @@ vector<string> Prefija::obtenerContenidoEntreParentesis(const string& cadena) {
 string Prefija::inAPre(string infija)
 {
 	string prefija = "";
-
-	vector<string> ExprecionesParentesis = obtenerContenidoEntreParentesis(infija);
-	
-
+	//vector<string> ExprecionesParentesis = obtenerContenidoEntreParentesis(infija);
 	std::reverse(infija.begin(), infija.end());
 	bool parentesis = false;
 	int contParentesis = 0;
+
 	for (size_t i = 0; i < infija.length(); i++) {
 		char e = infija[i];
 		string d;
 		d = e;
 		if ((d == "+" || d == "-") && !parentesis) {
+			pila.push(d);
 			prefija = d + prefija;
 		}
 		else if (d == ")") {
@@ -121,16 +120,13 @@ string Prefija::inAPre(string infija)
 		resultados.insert(resultados.end(), subcadenas2.begin(), subcadenas2.end());
 	}
 
-
-
 	contParentesis = 0;
 	for (string resultado : resultados) {
-
 		if (resultado.length() == 1) {
+			pila.push(resultado);
 			prefija = resultado + prefija;
 
 		}
-		
 		else {
 			std::reverse(resultado.begin(), resultado.end());
 
@@ -142,6 +138,7 @@ string Prefija::inAPre(string infija)
 				d = e;
 
 				if ((d == "/" || d == "*") && !parentesis) {
+					pila.push(d);
 					prefija = d + prefija;
 				}
 				else if (d == ")") {
@@ -159,8 +156,6 @@ string Prefija::inAPre(string infija)
 					}
 				}
 			}
-
-
 			std::reverse(resultado.begin(), resultado.end());
 
 
@@ -174,10 +169,10 @@ string Prefija::inAPre(string infija)
 			contParentesis = 0;
 			for (string resultadoMulDiv : resultadosMulDiv) {
 				if (resultadoMulDiv.length() == 1) {
+					pila.push(resultadoMulDiv);
 					prefija = resultadoMulDiv + prefija;
 
 				}
-				
 				else {
 					std::reverse(resultadoMulDiv.begin(), resultadoMulDiv.end());
 
@@ -189,6 +184,7 @@ string Prefija::inAPre(string infija)
 						d = e;
 
 						if ((d == "^") && !parentesis) {
+							pila.push(d);
 							prefija = d + prefija;
 						}
 						else if (d == ")") {
@@ -205,8 +201,6 @@ string Prefija::inAPre(string infija)
 								contParentesis -= 1;
 							}
 						}
-
-
 					}
 
 
@@ -217,9 +211,8 @@ string Prefija::inAPre(string infija)
 					contParentesis = 0;
 
 					for (string resultadoPot : subcadenasPot) {
-
-
 						if (resultadoPot.length() == 1) {
+							pila.push(resultadoPot);
 							prefija = resultadoPot + prefija;
 
 						}
@@ -228,7 +221,7 @@ string Prefija::inAPre(string infija)
 							char e = 'a';
 							string d;
 							int iteraciones = 0;
-							for (size_t i = 0; e != '('; i++) {
+							for (int i = 0; e != '('; i++) {
 								e = resultadoPot[i];
 								d = e;
 								raiz = raiz + d;
@@ -236,7 +229,7 @@ string Prefija::inAPre(string infija)
 							}
 							raiz.pop_back();
 							if (raiz == "sqrt") {
-
+								pila.push(raiz);
 								std::reverse(raiz.begin(), raiz.end());
 								prefija = raiz + prefija;
 								string dentroRaiz;
@@ -254,23 +247,19 @@ string Prefija::inAPre(string infija)
 									else if (d == ")") {
 										cont -= 1;
 									}
-
 								}
-
 
 								dentroRaiz.pop_back();
 
-
-
 								string resultadoRaiz = inAPre(dentroRaiz);
 								std::reverse(resultadoRaiz.begin(), resultadoRaiz.end());
-
+								
 								prefija = resultadoRaiz + prefija;
 
 							}
 
 							else if (raiz == "cbrt") {
-
+								pila.push(raiz);
 								std::reverse(raiz.begin(), raiz.end());
 								prefija = raiz + prefija;
 								string dentroRaiz;
@@ -290,20 +279,16 @@ string Prefija::inAPre(string infija)
 									}
 
 								}
-
-
 								dentroRaiz.pop_back();
-
-
 
 								string resultadoRaiz = inAPre(dentroRaiz);
 								std::reverse(resultadoRaiz.begin(), resultadoRaiz.end());
-
+								
 								prefija = resultadoRaiz + prefija;
 
 							}
-							else if (raiz == "sin") {
-
+							else if (raiz == "sen") {
+								pila.push(raiz);
 								std::reverse(raiz.begin(), raiz.end());
 								prefija = raiz + prefija;
 								string dentroRaiz;
@@ -331,12 +316,12 @@ string Prefija::inAPre(string infija)
 
 								string resultadoRaiz = inAPre(dentroRaiz);
 								std::reverse(resultadoRaiz.begin(), resultadoRaiz.end());
-
+								
 								prefija = resultadoRaiz + prefija;
 
 							}
 							else if (raiz == "cbrt") {
-
+								pila.push(raiz);
 								std::reverse(raiz.begin(), raiz.end());
 								prefija = raiz + prefija;
 								string dentroRaiz;
@@ -364,12 +349,12 @@ string Prefija::inAPre(string infija)
 
 								string resultadoRaiz = inAPre(dentroRaiz);
 								std::reverse(resultadoRaiz.begin(), resultadoRaiz.end());
-
+								
 								prefija = resultadoRaiz + prefija;
 
 							}
 							else if (raiz == "cos") {
-
+								pila.push(raiz);
 								std::reverse(raiz.begin(), raiz.end());
 								prefija = raiz + prefija;
 								string dentroRaiz;
@@ -397,12 +382,12 @@ string Prefija::inAPre(string infija)
 
 								string resultadoRaiz = inAPre(dentroRaiz);
 								std::reverse(resultadoRaiz.begin(), resultadoRaiz.end());
-
+								
 								prefija = resultadoRaiz + prefija;
 
 							}
 							else if (raiz == "tg") {
-
+								pila.push(raiz);
 								std::reverse(raiz.begin(), raiz.end());
 								prefija = raiz + prefija;
 								string dentroRaiz;
@@ -430,12 +415,12 @@ string Prefija::inAPre(string infija)
 
 								string resultadoRaiz = inAPre(dentroRaiz);
 								std::reverse(resultadoRaiz.begin(), resultadoRaiz.end());
-
+								
 								prefija = resultadoRaiz + prefija;
 
 							}
 							else if (raiz == "ctg") {
-
+								pila.push(raiz);
 								std::reverse(raiz.begin(), raiz.end());
 								prefija = raiz + prefija;
 								string dentroRaiz;
@@ -463,12 +448,12 @@ string Prefija::inAPre(string infija)
 
 								string resultadoRaiz = inAPre(dentroRaiz);
 								std::reverse(resultadoRaiz.begin(), resultadoRaiz.end());
-
+								
 								prefija = resultadoRaiz + prefija;
 
 							}
 							else if (raiz == "sec") {
-
+								pila.push(raiz);
 								std::reverse(raiz.begin(), raiz.end());
 								prefija = raiz + prefija;
 								string dentroRaiz;
@@ -495,12 +480,12 @@ string Prefija::inAPre(string infija)
 
 								string resultadoRaiz = inAPre(dentroRaiz);
 								std::reverse(resultadoRaiz.begin(), resultadoRaiz.end());
-
+								
 								prefija = resultadoRaiz + prefija;
 
 							}
 							else if (raiz == "csc") {
-
+								pila.push(raiz);
 								std::reverse(raiz.begin(), raiz.end());
 								prefija = raiz + prefija;
 								string dentroRaiz;
@@ -524,11 +509,9 @@ string Prefija::inAPre(string infija)
 
 								dentroRaiz.pop_back();
 
-
-
 								string resultadoRaiz = inAPre(dentroRaiz);
 								std::reverse(resultadoRaiz.begin(), resultadoRaiz.end());
-
+								
 								prefija = resultadoRaiz + prefija;
 
 							}
@@ -540,7 +523,7 @@ string Prefija::inAPre(string infija)
 							string dentroParentesis;
 							int cont = 1;
 
-							for (int i =1; e != ')' || cont != 0; i++) {
+							for (int i = 1; e != ')' || cont != 0; i++) {
 
 								e = resultadoPot[i];
 								string d;
@@ -559,41 +542,137 @@ string Prefija::inAPre(string infija)
 							string resultadoParentesis = inAPre(dentroParentesis);
 							std::reverse(resultadoParentesis.begin(), resultadoParentesis.end());
 
-
+							
 							prefija = resultadoParentesis + prefija;
-
-
 						}
 					}
 				}
 			}
-
-
-
-
-
-
-
-
 		}
-
 	}
-
-	std::reverse(prefija.begin(), prefija.end());
-	Pila aux;
-	for (size_t i = 0; i < prefija.length(); i++) {
-		char e = prefija[i];
-		string d;
-		d = e;
-		aux.push(d);
-	}
-	pila = aux;
-
-
+	reverse(prefija.begin(), prefija.end());
 	return prefija;
 }
 
+Pila Prefija::getPila(){
+	return pila;
+}
 
+void Prefija::calcularPila() {
+	int iteraciones = 0;
+	do {
+		Pila aux;
+		Operaciones operaciones;
+		iteraciones = pila.contar();
+		for (int i = 0; i <= iteraciones; i++) {
+			aux.push(pila.getPrimero()->getValor());
+			pila.pop();
+		}
+		for (int i = 0; i <= iteraciones; i += 3) {
+			string e1, e2, e3;
+			if (aux.getPrimero() != NULL) {
+				e1 = aux.getPrimero()->getValor();
+				aux.pop();
+			}
+			if (aux.getPrimero() != NULL) {
+				e2 = aux.getPrimero()->getValor();
+				aux.pop();
+			}
+			if (aux.getPrimero() != NULL) {
+				e3 = aux.getPrimero()->getValor();
+				aux.pop();
+			}
+			cout << e1 << e2 << e3 << endl;
+			if (!(contieneSoloNumeros(e1)) && contieneSoloNumeros(e2) && contieneSoloNumeros(e3)) {
+				if (e1 == "+")
+				{
+					pila.push(to_string(operaciones.suma(stof(e2), stof(e3))));
+				}
+				if (e1 == "-")
+				{
+					pila.push(to_string(operaciones.resta(stof(e2), stof(e3))));
+				}
+				if (e1 == "*")
+				{
+					pila.push(to_string(operaciones.multiplicacion(stof(e2), stof(e3))));
+				}
+				if (e1 == "/")
+				{
+					pila.push(to_string(operaciones.division(stof(e2), stof(e3))));
+				}
+				if (e1 == "^")
+				{
+					pila.push(to_string(operaciones.potencia(stof(e2), stoi(e3))));
+				}
+			}
+			else if (!(contieneSoloNumeros(e1)) && contieneSoloNumeros(e2)) {
+				if (e1 == "sqrt") {
+					pila.push(to_string(operaciones.raizCuadrada(stof(e2))));
+					aux.push(e3);
+					i--;
+				}
+				else if (e1 == "cbrt"){
+					pila.push(to_string(operaciones.raizCubica(stof(e2))));
+					aux.push(e3);
+					i--;
+				}
+				else if (e1 == "sen"){
+					pila.push(to_string(operaciones.seno(stof(e2))));
+					aux.push(e3);
+					i--;
+				}
+				else if (e1 == "cos"){
+					pila.push(to_string(operaciones.coseno(stof(e2))));
+					aux.push(e3);
+					i--;
+				}
+				else if (e1 == "tg"){
+					pila.push(to_string(operaciones.tangente(stof(e2))));
+					aux.push(e3);
+					i--;
+				}
+				else if (e1 == "ctg"){
+					pila.push(to_string(operaciones.cotangente(stof(e2))));
+					aux.push(e3);
+					i--;
+				}
+				else if (e1 == "sec"){
+					pila.push(to_string(operaciones.secante(stof(e2))));
+					aux.push(e3);
+					i--;
+				}
+				else if (e1 == "csc"){
+					pila.push(to_string(operaciones.cosecante(stof(e2))));
+					aux.push(e3);
+					i--;
+				}
+				else {
+					aux.push(e3);
+					aux.push(e2);
+					pila.push(e1);
+					i -= 2;
+				}
+			}
+			else {
+				aux.push(e3);
+				aux.push(e2);
+				pila.push(e1);
+				i -= 2;
+			}
+		}
+		while (pila.getPrimero()->getValor() == "") {
+			pila.pop();
+		}
+	}while(iteraciones != 0);
+}
 
-
-
+bool Prefija::contieneSoloNumeros(string str) {
+	if(str=="")
+		return false;
+	for (char c : str) {
+		if (!(c>=48&&c<=57||c==46)) {
+			return false;
+		}
+	}
+	return true;
+}

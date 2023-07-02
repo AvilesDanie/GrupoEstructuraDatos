@@ -35,7 +35,6 @@ void Pila::push(string valor)
 		Nodo* nuevo = new Nodo(valor, NULL);
 		nuevo->setSiguiente(this->primero);
 		setPrimero(nuevo);
-		setActual(nuevo);
 	}
 	else
 	{
@@ -117,6 +116,5 @@ int Pila::contar()
 		nodoAuxiliar = nodoAuxiliar->getSiguiente();
 		i++;
 	}
-	setActual(nodoAuxiliar);
 	return i;
 }

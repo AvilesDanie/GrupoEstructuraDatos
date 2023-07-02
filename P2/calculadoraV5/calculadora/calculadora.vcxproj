@@ -131,6 +131,7 @@
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Nodo.cpp" />
     <ClCompile Include="NodoChar.cpp" />
+    <ClCompile Include="Operaciones.cpp" />
     <ClCompile Include="Pila.cpp" />
     <ClCompile Include="PilaChar.cpp" />
     <ClCompile Include="Postfija.cpp" />
@@ -142,6 +143,7 @@
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Nodo.h" />
     <ClInclude Include="NodoChar.h" />
+    <ClInclude Include="Operaciones.h" />
     <ClInclude Include="Pila.h" />
     <ClInclude Include="PilaChar.h" />
     <ClInclude Include="Postfija.h" />

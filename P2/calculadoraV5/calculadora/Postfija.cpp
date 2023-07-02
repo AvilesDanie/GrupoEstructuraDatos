@@ -179,8 +179,6 @@ string Postfija::inAPost(string infija)
 				resultadosMulDivInveso.push_back(resultadosMulDiv[i]);
 			}
 
-
-
 			contParentesis = 0;
 			for (string resultadoMulDiv : resultadosMulDivInveso) {
 
@@ -494,26 +492,17 @@ string Postfija::inAPost(string infija)
 									else if (d == ")") {
 										cont -= 1;
 									}
-
 								}
-
-
 								dentroRaiz.pop_back();
-
-
 								string resultadoRaiz = inAPost(dentroRaiz);
-
 								posfija = resultadoRaiz + posfija;
-
 							}
 							else if (raiz == "csc") {
-
 								posfija = raiz + posfija;
 								string dentroRaiz;
 								int cont = 1;
 								iteraciones += 1;
 								for (iteraciones; e != ')' || cont != 0; iteraciones++) {
-
 									e = resultadoPot[iteraciones];
 									string d;
 									d = e;
@@ -524,24 +513,12 @@ string Postfija::inAPost(string infija)
 									else if (d == ")") {
 										cont -= 1;
 									}
-
 								}
-
-
 								dentroRaiz.pop_back();
-
-
-
 								string resultadoRaiz = inAPost(dentroRaiz);
-
 								posfija = resultadoRaiz + posfija;
 
 							}
-
-
-
-
-
 						}
 						else if (resultadoPot[0] == '(') {
 							char e = '0';
@@ -569,34 +546,10 @@ string Postfija::inAPost(string infija)
 
 							posfija = resultadoParentesis + posfija;
 						}
-
-
 					}
-
-
-
-
 				}
-
-
-
 			}
-
-
-
-
-
 		}
-
 	}
-
-
-
-
-
-	return posfija;
-
-
-
-	
+	return posfija;	
 }

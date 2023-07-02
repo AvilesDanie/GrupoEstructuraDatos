@@ -51,23 +51,17 @@ void Menu::menuPrincipal() {
 					case 1: {
 						system("cls");
 						Pila pila;
-						ecuacion = "1+2/3^4/(5/6/7)*8/9^(1+(2*(3/4))-5)^6/7^sqrt(9+(1*2)+((3*4)/5))/6+sqrt(7*8-(9/1/2)/3)^cbrt(9+(1*2)+((3*4)/5))/6+cbrt(7*8-(9/1/2)/3)^sen(9+(1*2)+((3*4)/5))/6+sen(7*8-(9/1/2)/3)^cos(9+(1*2)+((3*4)/5))/6+cos(7*8-(9/1/2)/3)^tg(9+(1*2)+((3*4)/5))/6+tg(7*8-(9/1/2)/3)^ctg(9+(1*2)+((3*4)/5))/6+ctg(7*8-(9/1/2)/3)^sec(9+(1*2)+((3*4)/5))/6+sec(7*8-(9/1/2)/3)^csc(9+(1*2)+((3*4)/5))/6+csc(7*8-(9/1/2)/3)";
-
+						ecuacion = "1+2/3^4/(5/6/2/(9/8+7+(5-1)))*8/9^5";
 						cout << "\nInfija: " << ecuacion << endl;
 						string ecuacionPreFija = objPreFija.inAPre(ecuacion);
 
 
-
-
 						cout << "\nEcuacion en notacion prefija" << endl;
 						cout << ecuacionPreFija << endl;
+						objPreFija.getPila().mostrar();
+						objPreFija.calcularPila();
+						objPreFija.getPila().mostrar();
 
-						/*for (int i = 0; i < objPreFija.getPosi(); i++)
-						{
-							cout << ecuacionPreFija[i];
-						}
-						cout << "\nEl resultado es: " << objPreFija.resuelve(ecuacion) << endl;
-						repetir1 = false;*/
 						system("pause");
 
 						break;

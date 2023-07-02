@@ -7,6 +7,7 @@
 #include <string>
 #include <algorithm>
 #include <vector>
+#include "Operaciones.h"
 
 using namespace std;
 
@@ -20,6 +21,9 @@ private:
 	string* opera = new string[posi];
 public:
 	string inAPre(string);
+	Pila getPila();
+	void calcularPila();
+	bool contieneSoloNumeros(string str);
 
 	vector<string> separarCadenas(const std::string&, char );
 	vector<string> obtenerContenidoEntreParentesis(const std::string&);

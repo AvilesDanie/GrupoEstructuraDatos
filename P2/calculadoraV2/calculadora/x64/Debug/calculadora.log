@@ -1,12 +1,35 @@
-﻿  Prefija.cpp
-C:\Users\ASUS\Desktop\calculadora\calculadora\Prefija.cpp(560,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ASUS\Desktop\calculadora\calculadora\Prefija.cpp(564,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ASUS\Desktop\calculadora\calculadora\Prefija.cpp(568,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ASUS\Desktop\calculadora\calculadora\Prefija.cpp(572,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ASUS\Desktop\calculadora\calculadora\Prefija.cpp(576,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ASUS\Desktop\calculadora\calculadora\Prefija.cpp(580,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ASUS\Desktop\calculadora\calculadora\Prefija.cpp(584,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ASUS\Desktop\calculadora\calculadora\Prefija.cpp(588,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ASUS\Desktop\calculadora\calculadora\Prefija.cpp(592,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ASUS\Desktop\calculadora\calculadora\Prefija.cpp(596,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
-  calculadora.vcxproj -> C:\Users\ASUS\Desktop\calculadora\x64\Debug\calculadora.exe
+﻿  calculadora.cpp
+  Menu.cpp
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Menu.cpp(20,14): warning C4101: 'ecuacionC': variable local sin referencia
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Menu.cpp(16,7): warning C4101: 'enteroC': variable local sin referencia
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Menu.cpp(22,6): warning C4101: 'entero': variable local sin referencia
+  Nodo.cpp
+  NodoChar.cpp
+  Pila.cpp
+  PilaChar.cpp
+  Postfija.cpp
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Postfija.cpp(314,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Postfija.cpp(318,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Postfija.cpp(322,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Postfija.cpp(326,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Postfija.cpp(330,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Postfija.cpp(334,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Postfija.cpp(338,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Postfija.cpp(342,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Postfija.cpp(346,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Postfija.cpp(350,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+  Prefija.cpp
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Prefija.cpp(560,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Prefija.cpp(564,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Prefija.cpp(568,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Prefija.cpp(572,12): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Prefija.cpp(576,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Prefija.cpp(580,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Prefija.cpp(584,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Prefija.cpp(588,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Prefija.cpp(592,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\calculadora\Prefija.cpp(596,13): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+  ValidacionDatos.cpp
+  Generando código...
+  LINK : no se encontró C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\x64\Debug\calculadora.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+  calculadora.vcxproj -> C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV2\x64\Debug\calculadora.exe
