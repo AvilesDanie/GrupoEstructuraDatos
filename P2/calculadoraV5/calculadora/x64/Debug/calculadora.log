@@ -1,5 +1,33 @@
-﻿  Menu.cpp
-C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Menu.cpp(20,14): warning C4101: 'ecuacionC': variable local sin referencia
-C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Menu.cpp(16,7): warning C4101: 'enteroC': variable local sin referencia
-C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Menu.cpp(22,6): warning C4101: 'entero': variable local sin referencia
-  calculadora.vcxproj -> C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV5\x64\Debug\calculadora.exe
+﻿  calculadora.cpp
+  Menu.cpp
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Menu.cpp(20,14): warning C4101: 'ecuacionC': variable local sin referencia
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Menu.cpp(16,7): warning C4101: 'enteroC': variable local sin referencia
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Menu.cpp(22,6): warning C4101: 'entero': variable local sin referencia
+  Nodo.cpp
+  NodoChar.cpp
+  Operaciones.cpp
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Operaciones.cpp(33,27): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Operaciones.cpp(41,25): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Operaciones.cpp(48,27): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Operaciones.cpp(62,17): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Operaciones.cpp(67,21): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Operaciones.cpp(76,17): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Operaciones.cpp(81,21): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Operaciones.cpp(90,17): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Operaciones.cpp(95,21): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Operaciones.cpp(106,14): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Operaciones.cpp(116,14): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Operaciones.cpp(126,14): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Operaciones.cpp(139,9): warning C4244: 'return': conversión de 'double' a 'int'; posible pérdida de datos
+  Pila.cpp
+  PilaChar.cpp
+  Postfija.cpp
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Postfija.cpp(122,2): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Postfija.cpp(178,4): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Postfija.cpp(230,6): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Postfija.cpp(256,24): warning C4267: '=': conversión de 'size_t' a 'int'; posible pérdida de datos
+  Prefija.cpp
+  ValidacionDatos.cpp
+  Generando código...
+  LINK : no se encontró C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\x64\Debug\calculadora.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+  calculadora.vcxproj -> C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\x64\Debug\calculadora.exe

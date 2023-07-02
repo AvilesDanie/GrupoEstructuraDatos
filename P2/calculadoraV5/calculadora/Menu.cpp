@@ -51,7 +51,7 @@ void Menu::menuPrincipal() {
 					case 1: {
 						system("cls");
 						Pila pila;
-						ecuacion = "1+2/3^4/(5/6/2/(9/8+7+(5-1)))*8/9^5";
+						ecuacion = "1+2/3^4/(5/6/2/(9/8+7+(5-1)))*8/9^5-sqrt(5^3)-1";
 						cout << "\nInfija: " << ecuacion << endl;
 						string ecuacionPreFija = objPreFija.inAPre(ecuacion);
 

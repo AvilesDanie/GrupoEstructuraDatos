@@ -127,6 +127,18 @@ string Prefija::inAPre(string infija)
 			prefija = resultado + prefija;
 
 		}
+		/*else if ((resultado[0] == '0' || resultado[0] == '1' || resultado[0] == '2' || resultado[0] == '3' || resultado[0] == '4' || resultado[0] == '5' || resultado[0] == '6' || resultado[0] == '7' || resultado[0] == '8' || resultado[0] == '9') && (resultado[1] == '0' || resultado[1] == '1' || resultado[1] == '2' || resultado[1] == '3' || resultado[1] == '4' || resultado[1] == '5' || resultado[1] == '6' || resultado[1] == '7' || resultado[1] == '8' || resultado[1] == '9')) {
+			string numero, charNumero;
+			char n = 'a';
+			for (size_t i = 0; (resultado[i] == '0' || resultado[i] == '1' || resultado[i] == '2' || resultado[i] == '3' || resultado[i] == '4' || resultado[i] == '5' || resultado[i] == '6' || resultado[i] == '7' || resultado[i] == '8' || resultado[i] == '9') && i < resultado.length(); i++) {
+				n = resultado[i];
+				charNumero = n;
+				numero = numero + charNumero;
+			}
+
+			pila.push(numero);
+
+		}*/
 		else {
 			std::reverse(resultado.begin(), resultado.end());
 
