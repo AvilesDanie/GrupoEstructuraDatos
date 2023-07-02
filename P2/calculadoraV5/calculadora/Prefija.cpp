@@ -594,75 +594,76 @@ void Prefija::calcularPila() {
 				e3 = aux.getPrimero()->getValor();
 				aux.pop();
 			}
-			cout << e1 << e2 << e3 << endl;
-			if (!(contieneSoloNumeros(e1)) && contieneSoloNumeros(e2) && contieneSoloNumeros(e3)) {
+			cout << e1 << " " << e2 << " " << e3 << endl;
+			if ((e1 == "+" || e1 == "-" || e1 == "*" || e1 == "/" || e1 == "^")
+				&& contieneSoloNumeros(e2) && contieneSoloNumeros(e3)) {
 				if (e1 == "+")
 				{
 					pila.push(to_string(operaciones.suma(stof(e2), stof(e3))));
+					continue;
 				}
-				if (e1 == "-")
+				else if (e1 == "-")
 				{
 					pila.push(to_string(operaciones.resta(stof(e2), stof(e3))));
+					continue;
 				}
-				if (e1 == "*")
+				else if (e1 == "*")
 				{
 					pila.push(to_string(operaciones.multiplicacion(stof(e2), stof(e3))));
+					continue;
 				}
-				if (e1 == "/")
+				else if (e1 == "/")
 				{
 					pila.push(to_string(operaciones.division(stof(e2), stof(e3))));
+					continue;
 				}
-				if (e1 == "^")
+				else if (e1 == "^")
 				{
 					pila.push(to_string(operaciones.potencia(stof(e2), stoi(e3))));
+					continue;
 				}
 			}
-			else if (!(contieneSoloNumeros(e1)) && contieneSoloNumeros(e2)) {
+			else if ((e1 == "sqrt" || e1 == "cbrt" || e1 == "sen" || e1 == "cos" || e1 == "tg" || e1 == "ctg" ||
+				e1 == "sec" || e1 == "csc") && contieneSoloNumeros(e2)) {
 				if (e1 == "sqrt") {
 					pila.push(to_string(operaciones.raizCuadrada(stof(e2))));
 					aux.push(e3);
-					i--;
+					i -= 1;
 				}
-				else if (e1 == "cbrt"){
+				else if (e1 == "cbrt") {
 					pila.push(to_string(operaciones.raizCubica(stof(e2))));
 					aux.push(e3);
-					i--;
+					i -= 1;
 				}
-				else if (e1 == "sen"){
+				else if (e1 == "sen") {
 					pila.push(to_string(operaciones.seno(stof(e2))));
 					aux.push(e3);
-					i--;
+					i -= 1;
 				}
-				else if (e1 == "cos"){
+				else if (e1 == "cos") {
 					pila.push(to_string(operaciones.coseno(stof(e2))));
 					aux.push(e3);
-					i--;
+					i -= 1;
 				}
-				else if (e1 == "tg"){
+				else if (e1 == "tg") {
 					pila.push(to_string(operaciones.tangente(stof(e2))));
 					aux.push(e3);
-					i--;
+					i -= 1;
 				}
-				else if (e1 == "ctg"){
+				else if (e1 == "ctg") {
 					pila.push(to_string(operaciones.cotangente(stof(e2))));
 					aux.push(e3);
-					i--;
+					i -= 1;
 				}
-				else if (e1 == "sec"){
+				else if (e1 == "sec") {
 					pila.push(to_string(operaciones.secante(stof(e2))));
 					aux.push(e3);
-					i--;
+					i -= 1;
 				}
-				else if (e1 == "csc"){
+				else if (e1 == "csc") {
 					pila.push(to_string(operaciones.cosecante(stof(e2))));
 					aux.push(e3);
-					i--;
-				}
-				else {
-					aux.push(e3);
-					aux.push(e2);
-					pila.push(e1);
-					i -= 2;
+					i -= 1;
 				}
 			}
 			else {
@@ -675,16 +676,37 @@ void Prefija::calcularPila() {
 		while (pila.getPrimero()->getValor() == "") {
 			pila.pop();
 		}
-	}while(iteraciones != 0);
+	} while (iteraciones != 0);
 }
 
 bool Prefija::contieneSoloNumeros(string str) {
-	if(str=="")
+	if (str.empty()) {
 		return false;
-	for (char c : str) {
-		if (!(c>=48&&c<=57||c==46)) {
+	}
+	size_t i = 0;
+	if (str[0] == '-' || str[0] == '+') {
+		i = 1;
+		if (str.length() == 1) {
 			return false;
 		}
 	}
+
+	bool puntoDecimalEncontrado = false;
+	for (; i < str.length(); i++) {
+		char c = str[i];
+		if (isdigit(c)) {
+			continue;
+		}
+		else if (c == '.') {
+			if (puntoDecimalEncontrado) {
+				return false;
+			}
+			puntoDecimalEncontrado = true;
+		}
+		else {
+			return false;
+		}
+	}
+
 	return true;
 }
