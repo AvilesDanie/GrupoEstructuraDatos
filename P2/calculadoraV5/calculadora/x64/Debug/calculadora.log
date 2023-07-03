@@ -1,5 +1,5 @@
 ﻿  Menu.cpp
-C:\Users\ariel\Desktop\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Menu.cpp(20,14): warning C4101: 'ecuacionC': variable local sin referencia
-C:\Users\ariel\Desktop\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Menu.cpp(16,7): warning C4101: 'enteroC': variable local sin referencia
-C:\Users\ariel\Desktop\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Menu.cpp(22,6): warning C4101: 'entero': variable local sin referencia
-  calculadora.vcxproj -> C:\Users\ariel\Desktop\GrupoEstructuraDatos\P2\calculadoraV5\x64\Debug\calculadora.exe
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Menu.cpp(20,14): warning C4101: 'ecuacionC': variable local sin referencia
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Menu.cpp(16,7): warning C4101: 'enteroC': variable local sin referencia
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\calculadora\Menu.cpp(22,6): warning C4101: 'entero': variable local sin referencia
+  calculadora.vcxproj -> C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV5\x64\Debug\calculadora.exe

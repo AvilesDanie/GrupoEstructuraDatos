@@ -243,7 +243,20 @@ string Postfija::inAPost(string infija)
 							posfija = resultadoPot + posfija;
 
 						}
+						else if ((resultadoPot[0] == '0' || resultadoPot[0] == '1' || resultadoPot[0] == '2' || resultadoPot[0] == '3' || resultadoPot[0] == '4' || resultadoPot[0] == '5' || resultadoPot[0] == '6' || resultadoPot[0] == '7' || resultadoPot[0] == '8' || resultadoPot[0] == '9') && (resultadoPot[1] == '0' || resultadoPot[1] == '1' || resultadoPot[1] == '2' || resultadoPot[1] == '3' || resultadoPot[1] == '4' || resultadoPot[1] == '5' || resultadoPot[1] == '6' || resultadoPot[1] == '7' || resultadoPot[1] == '8' || resultadoPot[1] == '9' || resultadoPot[1] == '.')) {
+							string numero, charNumero;
+							char n = 'a';
+							for (size_t i = 0; (resultadoPot[i] == '0' || resultadoPot[i] == '1' || resultadoPot[i] == '2' || resultadoPot[i] == '3' || resultadoPot[i] == '4' || resultadoPot[i] == '5' || resultadoPot[i] == '6' || resultadoPot[i] == '7' || resultadoPot[i] == '8' || resultadoPot[i] == '9' || resultadoPot[i] == '.') && i < resultadoPot.length(); i++) {
+								n = resultadoPot[i];
+								charNumero = n;
+								numero = numero + charNumero;
+							}
 
+							pila.push(numero);
+							//std::reverse(numero.begin(), numero.end());
+							posfija = numero + posfija;
+
+						}
 						else if(resultadoPot[0] == 's' || resultadoPot[0] == 'c' || resultadoPot[0] == 't'){
 							string raiz;
 							char e = 'a';
@@ -320,37 +333,6 @@ string Postfija::inAPost(string infija)
 
 							}
 							else if (raiz == "sin") {
-
-								posfija = raiz + posfija;
-								string dentroRaiz;
-								int cont = 1;
-								iteraciones += 1;
-								for (iteraciones; e != ')' || cont != 0; iteraciones++) {
-
-									e = resultadoPot[iteraciones];
-									string d;
-									d = e;
-									dentroRaiz = dentroRaiz + d;
-									if (d == "(") {
-										cont += 1;
-									}
-									else if (d == ")") {
-										cont -= 1;
-									}
-
-								}
-
-
-								dentroRaiz.pop_back();
-
-
-
-								string resultadoRaiz = inAPost(dentroRaiz);
-
-								posfija = resultadoRaiz + posfija;
-
-							}
-							else if (raiz == "cbrt") {
 
 								posfija = raiz + posfija;
 								string dentroRaiz;
