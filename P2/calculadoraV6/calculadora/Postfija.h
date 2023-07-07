@@ -21,6 +21,8 @@ private:
 public:
 	string inAPost(string);
 	Pila getPila();
+	void calcularPila();
+	bool contieneSoloNumeros(string str);
 
 	vector<string> separarCadenas(const std::string&, char);
 	vector<string> obtenerContenidoEntreParentesis(const std::string&);

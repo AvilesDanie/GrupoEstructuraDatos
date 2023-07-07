@@ -1,5 +1,6 @@
 #include "Postfija.h"
 #include "PilaChar.h"
+#include "Operaciones.h"
 
 using namespace std;
 
@@ -85,14 +86,15 @@ string Postfija::inAPost(string infija)
 	if (infija[0] == '-') {
 		//std::cout << infija << std::endl;
 		std::string numero;
+		pila.push("-");
 		std::string cero = "0";
-
 		std::reverse(infija.begin(), infija.end());
 		infija.pop_back();
 		std::reverse(infija.begin(), infija.end());
 
 		numero = infija;
-
+		pila.push(numero);
+		pila.push(cero);
 		posfija = numero + "0-";
 
 
@@ -145,11 +147,13 @@ string Postfija::inAPost(string infija)
 	for (string resultado : resultadosInveso) {
 		if (!sumaResta.getPilaVacia()) {
 			posfija = sumaResta.getPrimero()->getValor() + posfija;
+			pila.push(sumaResta.getPrimero()->getValor());
 			sumaResta.pop();
 		}
 
 
 		if (resultado.length() == 1) {
+			pila.push(resultado);
 			posfija = resultado + posfija;
 
 		}
@@ -202,13 +206,14 @@ string Postfija::inAPost(string infija)
 			for (string resultadoMulDiv : resultadosMulDivInveso) {
 
 				if (!mulDiv.getPilaVacia()) {
-
+					pila.push(mulDiv.getPrimero()->getValor());
 					posfija = mulDiv.getPrimero()->getValor() + posfija;
 					mulDiv.pop();
 				}
 				//std::cout << posfija << std::endl;
 
 				if (resultadoMulDiv.length() == 1) {
+					pila.push(resultadoMulDiv);
 					posfija = resultadoMulDiv + posfija;
 
 				}
@@ -254,11 +259,12 @@ string Postfija::inAPost(string infija)
 					for (string resultadoPot : subcadenasPotInveso) {
 						
 						if (!PilaPot.getPilaVacia()) {
-
+							pila.push(PilaPot.getPrimero()->getValor());
 							posfija = PilaPot.getPrimero()->getValor() + posfija;
 							PilaPot.pop();
 						}
 						if (resultadoPot.length() == 1) {
+							pila.push(resultadoPot);
 							posfija = resultadoPot + posfija;
 
 						}
@@ -289,7 +295,7 @@ string Postfija::inAPost(string infija)
 							}
 							raiz.pop_back();
 							if (raiz == "sqrt") {
-
+								pila.push(raiz);
 								posfija = raiz + posfija;
 								string dentroRaiz;
 								int cont = 1;
@@ -321,7 +327,7 @@ string Postfija::inAPost(string infija)
 							}
 
 							else if (raiz == "cbrt") {
-
+								pila.push(raiz);
 								posfija = raiz + posfija;
 								string dentroRaiz;
 								int cont = 1;
@@ -351,8 +357,8 @@ string Postfija::inAPost(string infija)
 								posfija = resultadoRaiz + posfija;
 
 							}
-							else if (raiz == "sin") {
-
+							else if (raiz == "sen") {
+								pila.push(raiz);
 								posfija = raiz + posfija;
 								string dentroRaiz;
 								int cont = 1;
@@ -383,7 +389,7 @@ string Postfija::inAPost(string infija)
 
 							}
 							else if (raiz == "cos") {
-
+								pila.push(raiz);
 								posfija = raiz + posfija;
 								string dentroRaiz;
 								int cont = 1;
@@ -414,7 +420,7 @@ string Postfija::inAPost(string infija)
 
 							}
 							else if (raiz == "tg") {
-
+								pila.push(raiz);
 								posfija = raiz + posfija;
 								string dentroRaiz;
 								int cont = 1;
@@ -445,7 +451,7 @@ string Postfija::inAPost(string infija)
 
 							}
 							else if (raiz == "ctg") {
-
+								pila.push(raiz);
 								posfija = raiz + posfija;
 								string dentroRaiz;
 								int cont = 1;
@@ -476,7 +482,7 @@ string Postfija::inAPost(string infija)
 
 							}
 							else if (raiz == "sec") {
-
+								pila.push(raiz);
 								posfija = raiz + posfija;
 								string dentroRaiz;
 								int cont = 1;
@@ -499,6 +505,7 @@ string Postfija::inAPost(string infija)
 								posfija = resultadoRaiz + posfija;
 							}
 							else if (raiz == "csc") {
+								pila.push(raiz);
 								posfija = raiz + posfija;
 								string dentroRaiz;
 								int cont = 1;
@@ -561,4 +568,155 @@ string Postfija::inAPost(string infija)
 
 Pila Postfija::getPila() {
 	return pila;
+}
+
+void Postfija::calcularPila() {
+	int iteraciones = 0;
+	do {
+		Pila aux;
+		Operaciones operaciones;
+		iteraciones = pila.contar();
+		for (int i = 0; i <= iteraciones; i++) {
+			aux.push(pila.getPrimero()->getValor());
+			pila.pop();
+		}
+		for (int i = 0; i <= iteraciones; i += 3) {
+			string e1, e2, e3;
+			if (aux.getPrimero() != NULL) {
+				e1 = aux.getPrimero()->getValor();
+				aux.pop();
+			}
+			if (aux.getPrimero() != NULL) {
+				e2 = aux.getPrimero()->getValor();
+				aux.pop();
+			}
+			if (aux.getPrimero() != NULL) {
+				e3 = aux.getPrimero()->getValor();
+				aux.pop();
+			}
+			cout << e1 << " " << e2 << " " << e3 << endl;
+			if ((e1 == "+" || e1 == "-" || e1 == "*" || e1 == "/" || e1 == "^")
+				&& contieneSoloNumeros(e3) && contieneSoloNumeros(e2)) {
+				if (e1 == "+"){
+					pila.push(to_string(operaciones.suma(stod(e3), stod(e2))));
+				}
+				else if (e1 == "-"){
+					pila.push(to_string(operaciones.resta(stod(e3), stod(e2))));
+				}
+				else if (e1 == "*"){
+					pila.push(to_string(operaciones.multiplicacion(stod(e3), stod(e2))));
+				}
+				else if (e1 == "/"){
+					if (operaciones.division(stod(e3), stod(e2)) == std::numeric_limits<double>::infinity()) {
+						cout << "Math ERROR" << endl;
+						iteraciones = 0;
+					}
+					pila.push(to_string(operaciones.division(stod(e3), stod(e2))));
+				}
+				else if (e1 == "^"){
+					pila.push(to_string(operaciones.potencia(stod(e3), stod(e2))));
+				}
+			}
+			else if ((e1 == "sqrt" || e1 == "cbrt" || e1 == "sen" || e1 == "cos" || e1 == "tg" || e1 == "ctg" ||
+				e1 == "sec" || e1 == "csc") && contieneSoloNumeros(e2)) {
+				if (e1 == "sqrt") {
+					if (operaciones.raizCuadrada(stod(e2)) == std::numeric_limits<double>::infinity()) {
+						cout << "Math ERROR" << endl;
+						iteraciones = 0;
+					}
+					pila.push(to_string(operaciones.raizCuadrada(stod(e2))));
+					aux.push(e3);
+					i -= 1;
+				}
+				else if (e1 == "cbrt") {
+					pila.push(to_string(operaciones.raizCubica(stod(e2))));
+					aux.push(e3);
+					i -= 1;
+				}
+				else if (e1 == "sen") {
+					pila.push(to_string(operaciones.seno(stod(e2))));
+					aux.push(e3);
+					i -= 1;
+				}
+				else if (e1 == "cos") {
+					pila.push(to_string(operaciones.coseno(stod(e2))));
+					aux.push(e3);
+					i -= 1;
+				}
+				else if (e1 == "tg") {
+					pila.push(to_string(operaciones.tangente(stod(e2))));
+					aux.push(e3);
+					i -= 1;
+				}
+				else if (e1 == "ctg") {
+					if (operaciones.cotangente(stod(e2)) == std::numeric_limits<double>::infinity()) {
+						cout << "Math ERROR" << endl;
+						iteraciones = 0;
+					}
+					pila.push(to_string(operaciones.cotangente(stod(e2))));
+					aux.push(e3);
+					i -= 1;
+				}
+				else if (e1 == "sec") {
+					if (operaciones.secante(stod(e2)) == std::numeric_limits<double>::infinity()) {
+						cout << "Math ERROR" << endl;
+						iteraciones = 0;
+					}
+					pila.push(to_string(operaciones.secante(stod(e2))));
+					aux.push(e3);
+					i -= 1;
+				}
+				else if (e1 == "csc") {
+					if (operaciones.cosecante(stod(e2)) == std::numeric_limits<double>::infinity()) {
+						cout << "Math ERROR" << endl;
+						iteraciones = 0;
+					}
+					pila.push(to_string(operaciones.cosecante(stod(e2))));
+					aux.push(e3);
+					i -= 1;
+				}
+			}
+			else {
+				aux.push(e3);
+				aux.push(e2);
+				pila.push(e1);
+				i -= 2;
+			}
+		}
+		while (pila.getPrimero()->getValor() == "") {
+			pila.pop();
+		}
+	} while (iteraciones != 0);
+}
+
+bool Postfija::contieneSoloNumeros(string str) {
+	if (str.empty()) {
+		return false;
+	}
+	size_t i = 0;
+	if (str[0] == '-' || str[0] == '+') {
+		i = 1;
+		if (str.length() == 1) {
+			return false;
+		}
+	}
+
+	bool puntoDecimalEncontrado = false;
+	for (; i < str.length(); i++) {
+		char c = str[i];
+		if (isdigit(c)) {
+			continue;
+		}
+		else if (c == '.') {
+			if (puntoDecimalEncontrado) {
+				return false;
+			}
+			puntoDecimalEncontrado = true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	return true;
 }

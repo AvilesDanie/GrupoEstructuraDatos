@@ -592,35 +592,33 @@ void Prefija::calcularPila() {
 			cout << e1 << " " << e2 << " " << e3 << endl;
 			if ((e1 == "+" || e1 == "-" || e1 == "*" || e1 == "/" || e1 == "^")
 				&& contieneSoloNumeros(e2) && contieneSoloNumeros(e3)) {
-				if (e1 == "+")
-				{
+				if (e1 == "+"){
 					pila.push(to_string(operaciones.suma(stof(e2), stof(e3))));
-					continue;
 				}
-				else if (e1 == "-")
-				{
+				else if (e1 == "-"){
 					pila.push(to_string(operaciones.resta(stof(e2), stof(e3))));
-					continue;
 				}
-				else if (e1 == "*")
-				{
+				else if (e1 == "*"){
 					pila.push(to_string(operaciones.multiplicacion(stof(e2), stof(e3))));
-					continue;
 				}
-				else if (e1 == "/")
-				{
+				else if (e1 == "/"){
+					if (operaciones.division(stof(e2), stof(e3))== std::numeric_limits<double>::infinity()) {
+						cout << "Math ERROR" << endl;
+						iteraciones = 0;
+					}
 					pila.push(to_string(operaciones.division(stof(e2), stof(e3))));
-					continue;
 				}
-				else if (e1 == "^")
-				{
+				else if (e1 == "^"){
 					pila.push(to_string(operaciones.potencia(stof(e2), stof(e3))));
-					continue;
 				}
 			}
 			else if ((e1 == "sqrt" || e1 == "cbrt" || e1 == "sen" || e1 == "cos" || e1 == "tg" || e1 == "ctg" ||
 				e1 == "sec" || e1 == "csc") && contieneSoloNumeros(e2)) {
 				if (e1 == "sqrt") {
+					if (operaciones.raizCuadrada(stof(e2)) == std::numeric_limits<double>::infinity()) {
+						cout << "Math ERROR" << endl;
+						iteraciones = 0;
+					}
 					pila.push(to_string(operaciones.raizCuadrada(stof(e2))));
 					aux.push(e3);
 					i -= 1;
@@ -646,16 +644,28 @@ void Prefija::calcularPila() {
 					i -= 1;
 				}
 				else if (e1 == "ctg") {
+					if (operaciones.cotangente(stof(e2)) == std::numeric_limits<double>::infinity()) {
+						cout << "Math ERROR" << endl;
+						iteraciones = 0;
+					}
 					pila.push(to_string(operaciones.cotangente(stof(e2))));
 					aux.push(e3);
 					i -= 1;
 				}
 				else if (e1 == "sec") {
+					if (operaciones.secante(stof(e2)) == std::numeric_limits<double>::infinity()) {
+						cout << "Math ERROR" << endl;
+						iteraciones = 0;
+					}
 					pila.push(to_string(operaciones.secante(stof(e2))));
 					aux.push(e3);
 					i -= 1;
 				}
 				else if (e1 == "csc") {
+					if (operaciones.cosecante(stof(e2)) == std::numeric_limits<double>::infinity()) {
+						cout << "Math ERROR" << endl;
+						iteraciones = 0;
+					}
 					pila.push(to_string(operaciones.cosecante(stof(e2))));
 					aux.push(e3);
 					i -= 1;

@@ -1,6 +1,12 @@
-﻿  Postfija.cpp
-C:\Users\ASUS\Desktop\calculadoraV5\calculadora\Postfija.cpp(141,2): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\ASUS\Desktop\calculadoraV5\calculadora\Postfija.cpp(197,4): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\ASUS\Desktop\calculadoraV5\calculadora\Postfija.cpp(249,6): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\ASUS\Desktop\calculadoraV5\calculadora\Postfija.cpp(288,24): warning C4267: '=': conversión de 'size_t' a 'int'; posible pérdida de datos
-  calculadora.vcxproj -> C:\Users\ASUS\Desktop\calculadoraV5\x64\Debug\calculadora.exe
+﻿  Menu.cpp
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV6\calculadora\Menu.cpp(20,14): warning C4101: 'ecuacionC': variable local sin referencia
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV6\calculadora\Menu.cpp(16,7): warning C4101: 'enteroC': variable local sin referencia
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV6\calculadora\Menu.cpp(22,6): warning C4101: 'entero': variable local sin referencia
+  Postfija.cpp
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV6\calculadora\Postfija.cpp(143,2): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV6\calculadora\Postfija.cpp(201,4): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV6\calculadora\Postfija.cpp(254,6): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV6\calculadora\Postfija.cpp(294,24): warning C4267: '=': conversión de 'size_t' a 'int'; posible pérdida de datos
+  Generando código...
+  LINK : no se encontró C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV6\x64\Debug\calculadora.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+  calculadora.vcxproj -> C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV6\x64\Debug\calculadora.exe

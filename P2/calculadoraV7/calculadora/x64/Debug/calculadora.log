@@ -1,0 +1,6 @@
+﻿  Menu.cpp
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV7\calculadora\Menu.cpp(143,13): warning C4129: 'P': secuencia de escape de carácter no reconocida
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV7\calculadora\Menu.cpp(20,14): warning C4101: 'ecuacionC': variable local sin referencia
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV7\calculadora\Menu.cpp(16,7): warning C4101: 'enteroC': variable local sin referencia
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV7\calculadora\Menu.cpp(22,6): warning C4101: 'entero': variable local sin referencia
+  calculadora.vcxproj -> C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV7\x64\Debug\calculadora.exe

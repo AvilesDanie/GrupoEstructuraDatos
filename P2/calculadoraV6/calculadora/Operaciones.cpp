@@ -2,131 +2,181 @@
 #include <iostream>
 using namespace std;
 
-float Operaciones::suma(float a, float b){
+double Operaciones::suma(double a, double b){
 	return a + b;
 }
-float Operaciones::resta(float a, float b) {
+double Operaciones::resta(double a, double b) {
 	return a - b;
 }
-float Operaciones::multiplicacion(float a, float b){
+double Operaciones::multiplicacion(double a, double b){
 	return a * b;
 }
-float Operaciones::division(float a, float b) {
-	return a / b;
+double Operaciones::division(double a, double b) {
+	if(b!=0)
+		return a / b;
+	else
+		std::numeric_limits<double>::infinity();
 }
-float Operaciones::potencia(float a, int b) {
-	float resultado = 1;
-	if (b >= 0) {
-		for (int i = 0; i < b; i++) {
-			resultado *= a;
+double Operaciones::potencia(double a, double b) {
+	if (b - int(b) == 0) {
+		double resultado = 1;
+		if (b >= 0) {
+			for (int i = 0; i < b; i++) {
+				resultado *= a;
+			}
+			return resultado;
 		}
-		return resultado;
+		else {
+			for (int i = 0; i < b * (-1); i++) {
+				resultado *= a;
+			}
+			return 1 / resultado;
+		}
 	}
 	else {
-		for (int i = 0; i < b*(-1); i++) {
-			resultado *= a;
+		double precision = 0.00001;
+		int numerador = b * 10000;
+		int denominador = 10000;
+		int mcd = calcularMCD(numerador, denominador);
+		numerador /= mcd;
+		denominador /= mcd;
+		if (denominador < 0) {
+			numerador *= -1;
+			denominador *= -1;
 		}
-		return 1/resultado;
+		cout << numerador << endl;
+		cout << denominador << endl;
+		a = potencia(a, numerador);
+		cout << a << endl;
+		double izquierda, derecha;
+		if (a < 1.0) {
+			izquierda = a;
+			derecha = 1.0;
+		}
+		else {
+			izquierda = 1.0;
+			derecha = a;
+		}
+
+		while (derecha - izquierda > precision) {
+			double mitad = (izquierda + derecha) / 2.0;
+			double resultado = 1.0;
+
+			for (int i = 0; i < denominador; i++) {
+				resultado *= mitad;
+			}
+
+			if (resultado > a) {
+				derecha = mitad;
+			}
+			else if (resultado < a) {
+				izquierda = mitad;
+			}
+			else {
+				return mitad;
+			}
+		}
+		return (izquierda + derecha) / 2.0;
 	}
 }
-float Operaciones::raizCuadrada(float numero) {
-	float tolerancia = 0.0001;
+double Operaciones::raizCuadrada(double numero) {
+	double tolerancia = 0.0001;
 	if (numero < 0)
-		return -1;  // Error: no se puede calcular la raíz cuadrada de un número negativo
+		return std::numeric_limits<double>::infinity();
 
-	float estimacion = numero;
-	float diferencia = 1.0;
+	double estimacion = numero;
+	double diferencia = 1.0;
 
 	while (diferencia > tolerancia) {
-		float nuevaEstimacion = 0.5 * (estimacion + numero / estimacion);
+		double nuevaEstimacion = 0.5 * (estimacion + numero / estimacion);
 		diferencia = std::abs(estimacion - nuevaEstimacion);
 		estimacion = nuevaEstimacion;
 	}
 	return estimacion; 
 }
-float Operaciones::raizCubica(float numero) {
-	float tolerancia = 0.0001;
-	float estimacion = numero;
-	float diferencia = 1.0;
+double Operaciones::raizCubica(double numero) {
+	double tolerancia = 0.0001;
+	double estimacion = numero;
+	double diferencia = 1.0;
 
 	while (diferencia > tolerancia) {
-		float nuevaEstimacion = (2 * estimacion + numero / (estimacion * estimacion)) / 3;
+		double nuevaEstimacion = (2 * estimacion + numero / (estimacion * estimacion)) / 3;
 		diferencia = std::abs(estimacion - nuevaEstimacion);
 		estimacion = nuevaEstimacion;
 	}
 
 	return estimacion;
 }
-float Operaciones::seno(float angulo) {
+double Operaciones::seno(double angulo) {
 	int iteraciones = 10;
-	float radianes = angulo * 3.14159265358979323846 / 180.0;
-	float resultado = radianes;
+	double radianes = angulo * 3.14159265358979323846 / 180.0;
+	double resultado = radianes;
 
 	for (int i = 1; i <= iteraciones; i++) {
-		float numerador = potencia(-1, i);
-		float denominador = factorial(2 * i + 1);
-		float termino = (numerador * potencia(radianes, 2 * i + 1)) / denominador;
+		double numerador = potencia(-1, i);
+		double denominador = factorial(2 * i + 1);
+		double termino = (numerador * potencia(radianes, 2 * i + 1)) / denominador;
 		resultado += termino;
 	}
 
 	return resultado;
 }
-float Operaciones::coseno(float angulo) {
+double Operaciones::coseno(double angulo) {
 	int iteraciones = 10;
-	float radianes = angulo * 3.14159265358979323846 / 180.0;
-	float resultado = 1.0;  // Primer término de la serie
+	double radianes = angulo * 3.14159265358979323846 / 180.0;
+	double resultado = 1.0;  // Primer término de la serie
 
 	for (int i = 1; i <= iteraciones; i++) {
-		float numerador = potencia(-1, i);
-		float denominador = factorial(2 * i);
-		float termino = (numerador * potencia(radianes, 2 * i)) / denominador;
+		double numerador = potencia(-1, i);
+		double denominador = factorial(2 * i);
+		double termino = (numerador * potencia(radianes, 2 * i)) / denominador;
 		resultado += termino;
 	}
 
 	return resultado;
 }
-float Operaciones::tangente(float angulo) {
+double Operaciones::tangente(double angulo) {
 	int iteraciones = 10;
-	float radianes = angulo * 3.14159265358979323846 / 180.0;
-	float resultado = radianes;  // Primer término de la serie
+	double radianes = angulo * 3.14159265358979323846 / 180.0;
+	double resultado = radianes;  // Primer término de la serie
 
 	for (int i = 1; i <= iteraciones; i++) {
-		float numerador = potencia(-1, i) * 2 * potencia(radianes, 2 * i - 1);
-		float denominador = factorial(2 * i);
-		float termino = numerador / denominador;
+		double numerador = potencia(-1, i) * 2 * potencia(radianes, 2 * i - 1);
+		double denominador = factorial(2 * i);
+		double termino = numerador / denominador;
 		resultado += termino;
 	}
 
 	return resultado;
 }
-float Operaciones::cosecante(float angulo) {
-	float seno1 = seno(angulo);
+double Operaciones::cosecante(double angulo) {
+	double seno1 = seno(angulo);
 
 	if (seno1 != 0.0) {
 		return 1.0 / seno1;
 	}
 	else {
-		return std::numeric_limits<float>::infinity();
+		return std::numeric_limits<double>::infinity();
 	}
 }
-float Operaciones::secante(float angulo) {
-	float coseno1 = coseno(angulo);
+double Operaciones::secante(double angulo) {
+	double coseno1 = coseno(angulo);
 
 	if (coseno1 != 0.0) {
 		return 1.0 / coseno1;
 	}
 	else {
-		return std::numeric_limits<float>::infinity();
+		return std::numeric_limits<double>::infinity();
 	}
 }
-float Operaciones::cotangente(float angulo) {
-	float tangente1 = tangente(angulo);
+double Operaciones::cotangente(double angulo) {
+	double tangente1 = tangente(angulo);
 
 	if (tangente1 != 0.0) {
 		return 1.0 / tangente1;
 	}
 	else {
-		return std::numeric_limits<float>::infinity();
+		return std::numeric_limits<double>::infinity();
 	}
 }
 int Operaciones::factorial(int n) {
@@ -137,4 +187,13 @@ int Operaciones::factorial(int n) {
 	}
 
 	return factorial;
+}
+
+int Operaciones::calcularMCD(int a, int b) {
+	if (b == 0) {
+		return a;
+	}
+	else {
+		return calcularMCD(b, a % b);
+	}
 }

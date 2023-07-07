@@ -2,19 +2,20 @@
 class Operaciones
 {
 public:
-	float suma(float, float);
-	float resta(float, float);
-	float multiplicacion(float, float);
-	float division(float, float);
-	float potencia(float, int);
-	float raizCuadrada(float);
-	float raizCubica(float);
-	float seno(float);
-	float coseno(float);
-	float tangente(float);
-	float cosecante(float);
-	float secante(float);
-	float cotangente(float);
+	double suma(double, double);
+	double resta(double, double);
+	double multiplicacion(double, double);
+	double division(double, double);
+	double potencia(double, double);
+	double raizCuadrada(double);
+	double raizCubica(double);
+	double seno(double);
+	double coseno(double);
+	double tangente(double);
+	double cosecante(double);
+	double secante(double);
+	double cotangente(double);
 	int factorial(int);
+	int calcularMCD(int, int);
 };
 
