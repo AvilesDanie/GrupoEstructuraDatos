@@ -94,7 +94,7 @@ string Postfija::inAPost(string infija)
 		numero = infija;
 		pila.push(numero);
 		pila.push(cero);
-		posfija = numero + "0-";
+		posfija = "0" + numero + "-";
 
 
 
