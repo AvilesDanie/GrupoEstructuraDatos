@@ -1,3 +1,9 @@
+/***********************************************************************
+ * Module:  Menu.cpp
+ * Authors:  Aviles, Reyes
+ * Modified: miércoles, 4 de julio de 2023
+ * Purpose: Declaration of the class Menu
+ ***********************************************************************/
 #include "Menu.h"
 
 #include "ValidacionDatos.h"
@@ -8,6 +14,13 @@
 #define Enter 13
 using namespace std;
 
+/**
+* Muestra y controla el menu de opciones 
+*
+* @param null
+*
+* @return void
+**/
 void Menu::menuPrincipal() {
 	int opcMP = 0, opcMN = 0;
 	bool repetir = true, repetir1 = false;
@@ -159,6 +172,17 @@ void Menu::menuPrincipal() {
 	} while (repetir);
 }
 
+
+/**
+* 
+* Controla los punteros de movimiento en el menu de opciones
+*
+* @param const char* titulo. El titulo de la pestaña del menu 
+* @param const char* opciones[]. Un arreglo con las opciones del menu
+* @param int n. lA opciones que quiere que se inprima en la pantalla
+* 
+* @return int. La opcion seleccionada
+**/
 int Menu::menu(const char* titulo, const char* opciones[], int n) {
 	int opcSeleccionada = 1;
 	int tecla;
@@ -205,6 +229,14 @@ int Menu::menu(const char* titulo, const char* opciones[], int n) {
 
 }
 
+/**
+*
+* Gestiona la posicion donde se imprime lineas de texto dentro de la consola
+*
+* @param int x. Posicicion en x.
+* @param int y. Posicicion en y.
+* 
+**/
 void Menu::gotoxy(int x, int y) {
 	HANDLE hcon;
 	hcon = GetStdHandle(STD_OUTPUT_HANDLE);

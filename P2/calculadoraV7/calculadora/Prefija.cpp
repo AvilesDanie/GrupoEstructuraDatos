@@ -1,3 +1,9 @@
+/***********************************************************************
+* Module:  Prefija.cpp
+* Authors:  Aviles, Reyes
+* Modified: miércoles, 6 de julio de 2023
+* Purpose: Declaration of the class Prefija
+***********************************************************************/
 #include "Prefija.h"
 #include "PilaChar.h"
 #include <iostream>
@@ -5,7 +11,14 @@
 using namespace std;
 
 
-
+/**
+* Separa en subcadenas de caracteres con respecto a un caracter propuesto
+*
+* @param const string& cadena. Dirrecion de la cadena de caracteres original
+* @param char separador. Caracter para separar en las sub cadenas
+*
+* @return Devuelve un vector con todos los subcadenas.
+**/
 vector<string> Prefija::separarCadenas(const string& cadena, char separador) {
 	vector<string> subcadenas;
 	string subcadena;
@@ -40,7 +53,13 @@ vector<string> Prefija::separarCadenas(const string& cadena, char separador) {
 	return subcadenas;
 }
 
-
+/**
+* Obtiene las expresiones que estan dentro de un parentesis en una cadena de caracteres
+*
+* @param const string& cadena. Direccion de la cadena de caracteres original
+*
+* @return Devuelve un vector con todos los subcadenas.
+**/
 vector<string> Prefija::obtenerContenidoEntreParentesis(const string& cadena) {
 	std::vector<std::string> contenido;
 	PilaChar pila;
@@ -77,7 +96,14 @@ vector<string> Prefija::obtenerContenidoEntreParentesis(const string& cadena) {
 	return contenido;
 }
 
-
+/**
+* Trasforma de notacion infija a notacion prefija de una seria de operaciones matematicas
+* y guarda en la pila
+*
+* @param string infija. La cadena que representa la notacion infija
+*
+* @return Devuelve un string en la notacion prefija
+**/
 string Prefija::inAPre(string infija)
 {
 	string prefija = "";
@@ -554,10 +580,20 @@ string Prefija::inAPre(string infija)
 	return prefija;
 }
 
+/**
+* Devuelve el capitulo de la pila
+*
+* @return Atributo pila.
+**/
 Pila Prefija::getPila(){
 	return pila;
 }
 
+/**
+* Calcula las respectivas operaciones presente en la pila
+* la cual se presenta en notacion prefija
+*
+**/
 void Prefija::calcularPila() {
 	int iteraciones = 0;
 	do {
@@ -678,6 +714,11 @@ void Prefija::calcularPila() {
 	pila.pop();
 }
 
+/**
+* Comprueba que un string tiene o no numeros
+*
+* @return boeleano si solamente son numeros "TRUE" caso contrario devuelve "FALSE"
+**/
 bool Prefija::contieneSoloNumeros(string str) {
 	if (str.empty()) {
 		return false;

@@ -1,3 +1,9 @@
+/***********************************************************************
+ * Module:  NodoDoble.h
+ * Authors:  Aviles, Reyes
+ * Modified: miércoles, 22 de junio de 2023
+ * Purpose: Declaration of the class NodoDoble
+ ***********************************************************************/
 #pragma once
 class NodoDoble
 {
@@ -15,5 +21,3 @@ public:
 	void setAnterior(NodoDoble*);
 	NodoDoble* getAnterior();
 };
-
-

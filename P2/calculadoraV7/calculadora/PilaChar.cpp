@@ -1,32 +1,76 @@
+/***********************************************************************
+* Module:  PilaChar.cpp
+* Authors:  Aviles, Reyes
+* Modified: miércoles, 5 de julio de 2023
+* Purpose: Declaration of the class PilaChar
+***********************************************************************/
 #include "PilaChar.h"
 #pragma once
+
+/**
+* Costructor
+**/
 PilaChar::PilaChar()
 {
 	this->primero = NULL;
 	this->actual = NULL;
 }
+
+/**
+* Comprueba se la pila esta vacia
+*
+* @return booleano
+**/
 bool PilaChar::getPilaVacia()
 {
 	return (this->primero == NULL);
 }
 
+/**
+* Cambia el atributo primero
+*
+* @param NodoChar* first. Valor a cambiar
+**/
 void PilaChar::setPrimero(NodoChar* first)
 {
 	primero = first;
 }
+
+/**
+* Cambia el atributo actual
+*
+* @param NodoChar* now. Valor a cambiar
+**/
 void PilaChar::setActual(NodoChar* now)
 {
 	actual = now;
 }
+
+/**
+* Devuelve el atributo primero
+*
+* @return NodoChar* primero. El atributo primero
+**/
 NodoChar* PilaChar::getPrimero()
 {
 	return primero;
 }
+
+/**
+* Devuelve el atributo actual
+*
+* @return NodoChar* actual. El atributo actual
+**/
 NodoChar* PilaChar::getActual()
 {
 	return actual;
 }
 
+/**
+* Inserta un elemento a la pila
+*
+* @param char valor. Valor que se quiere insertar en la pila
+**/
 void PilaChar::push(char valor)
 {
 	if (getPilaVacia())
@@ -46,6 +90,9 @@ void PilaChar::push(char valor)
 
 }
 
+/**
+* Quita un elemento de la pila
+**/
 void PilaChar::pop()
 {
 	if (getPilaVacia())
@@ -60,6 +107,9 @@ void PilaChar::pop()
 	}
 }
 
+/**
+* Impirme el elemento de la lista
+**/
 void PilaChar::mostrar()
 {
 	NodoChar* aux = this->primero;
@@ -70,6 +120,11 @@ void PilaChar::mostrar()
 	}
 }
 
+/**
+* Busca un elemento de que se encuentre en la pila
+*
+* @param char n. Elemento a buscar
+**/
 void PilaChar::buscar(char n)
 {
 	NodoChar* nodoAuxiliar = primero;
@@ -94,6 +149,11 @@ void PilaChar::buscar(char n)
 	}
 }
 
+/**
+* Cuenta los elementos de la pila
+*
+* @return El numero de elementos que hay en la pila
+**/
 int PilaChar::contar()
 {
 	int i = 0;

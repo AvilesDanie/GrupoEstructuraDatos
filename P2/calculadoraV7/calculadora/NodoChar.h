@@ -1,3 +1,9 @@
+/***********************************************************************
+ * Module:  NodoChar.h
+ * Authors:  Aviles, Reyes
+ * Modified: miércoles, 3 de julio de 2023
+ * Purpose: Declaration of the class NodoChar
+ ***********************************************************************/
 #pragma once
 
 #include <string>

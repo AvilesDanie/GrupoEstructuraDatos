@@ -1,32 +1,76 @@
+/***********************************************************************
+* Module:  Pila.cpp
+* Authors:  Aviles, Reyes
+* Modified: miércoles, 5 de julio de 2023
+* Purpose: Declaration of the class Pila
+***********************************************************************/
 #include "Pila.h"
 #pragma once
+
+/**
+* Costructor
+**/
 Pila::Pila()
 {
 	this->primero = NULL;
 	this->actual = NULL;
 }
+
+/**
+* Comprueba se la pila esta vacia
+*
+* @return booleano
+**/
 bool Pila::getPilaVacia()
 {
 	return (this->primero == NULL);
 }
 
+/**
+* Cambia el atributo primero
+*
+* @param Nodo* first. Valor a cambiar
+**/
 void Pila::setPrimero(Nodo* first)
 {
 	primero = first;
 }
+
+/**
+* Cambia el atributo actual
+*
+* @param Nodo* now. Valor a cambiar
+**/
 void Pila::setActual(Nodo* now)
 {
 	actual = now;
 }
+
+/**
+* Devuelve el atributo primero
+* 
+* @return Nodo* primero. El atributo primero
+**/
 Nodo* Pila::getPrimero()
 {
 	return primero;
 }
+
+/**
+* Devuelve el atributo actual
+*
+* @return Nodo* actual. El atributo actual
+**/
 Nodo* Pila::getActual()
 {
 	return actual;
 }
 
+/**
+* Inserta un elemento a la pila
+*
+* @param string valor. Valor que se quiere insertar en la pila
+**/
 void Pila::push(string valor)
 {
 	if (getPilaVacia())
@@ -45,6 +89,9 @@ void Pila::push(string valor)
 
 }
 
+/**
+* Quita un elemento de la pila
+**/
 void Pila::pop()
 {
 	if (getPilaVacia())
@@ -59,6 +106,9 @@ void Pila::pop()
 	}
 }
 
+/**
+* Impirme el elemento de la pila
+**/
 void Pila::mostrar()
 {
 	Nodo* aux = this->primero;
@@ -69,6 +119,11 @@ void Pila::mostrar()
 	}
 }
 
+/**
+* Busca un elemento de que se encuentre en la pila
+* 
+* @param string n. Elemento a buscar
+**/
 void Pila::buscar(string n)
 {
 	Nodo* nodoAuxiliar = primero;
@@ -93,6 +148,11 @@ void Pila::buscar(string n)
 	}
 }
 
+/**
+* Cuenta los elementos de la pila
+*
+* @return El numero de elementos que hay en la pila
+**/
 int Pila::contar()
 {
 	int i = 0;

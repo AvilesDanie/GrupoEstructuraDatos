@@ -1,3 +1,9 @@
+/***********************************************************************
+ * Module:  Menu.h
+ * Authors:  Aviles, Reyes
+ * Modified: miércoles, 3 de julio de 2023
+ * Purpose: Declaration of the class Menu
+ ***********************************************************************/
 #include <iostream>
 #include <cstdlib>
 #include <conio.h>

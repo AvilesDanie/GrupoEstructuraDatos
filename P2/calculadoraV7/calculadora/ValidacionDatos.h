@@ -1,3 +1,9 @@
+/***********************************************************************
+ * Module:  ValidacionDatos.h
+ * Authors:  Aviles, Reyes
+ * Modified: miércoles, 3 de julio de 2023
+ * Purpose: Declaration of the class ValidacionDatos
+ ***********************************************************************/
 #include"LecturaDatos.h"
 #pragma once
 class ValidacionDatos :public LecturaDatos

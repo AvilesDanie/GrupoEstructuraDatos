@@ -1,22 +1,72 @@
+/***********************************************************************
+* Module:  Operaciones.cpp
+* Authors:  Aviles, Reyes
+* Modified: miércoles, 5 de julio de 2023
+* Purpose: Declaration of the class Operaciones
+***********************************************************************/
 #include "Operaciones.h"
 #include <iostream>
 using namespace std;
 
+/**
+* Suma dos numeros
+*
+* @param double a. Primer sumando
+* @param double b. Segundo sumando
+* 
+* @return Suma a +b
+**/
 double Operaciones::suma(double a, double b){
 	return a + b;
 }
+
+/**
+* Resta dos numeros
+*
+* @param double a. Minuendo
+* @param double b. Sustraendo
+*
+* @return resta a-b
+**/
 double Operaciones::resta(double a, double b) {
 	return a - b;
 }
+
+/**
+* Multiplica dos numeros
+*
+* @param double a. Primer Factor
+* @param double b. Sugundo Factor
+*
+* @return Multiplicacion  a*b
+**/
 double Operaciones::multiplicacion(double a, double b){
 	return a * b;
 }
+
+/**
+* Division de dos numeros
+*
+* @param double a. Dividendo
+* @param double b. Divisior
+*
+* @return Divide a/b
+**/
 double Operaciones::division(double a, double b) {
 	if(b!=0)
 		return a / b;
 	else
 		return std::numeric_limits<double>::infinity();
 }
+
+/**
+* Resaliza una potencia
+*
+* @param double a. Base
+* @param double b. Exponente
+*
+* @return Opera a^b
+**/
 double Operaciones::potencia(double a, double b) {
 	if (b - int(b) == 0) {
 		double resultado = 1;
@@ -44,10 +94,7 @@ double Operaciones::potencia(double a, double b) {
 			numerador *= -1;
 			denominador *= -1;
 		}
-		cout << numerador << endl;
-		cout << denominador << endl;
 		a = potencia(a, numerador);
-		cout << a << endl;
 		double izquierda, derecha;
 		if (a < 1.0) {
 			izquierda = a;
@@ -79,6 +126,14 @@ double Operaciones::potencia(double a, double b) {
 		return (izquierda + derecha) / 2.0;
 	}
 }
+
+/**
+* Calcula la raiz cuadrada de un numero
+*
+* @param double a. Base
+*
+* @return sqrt a
+**/
 double Operaciones::raizCuadrada(double numero) {
 	double tolerancia = 0.0001;
 	if (numero < 0)
@@ -94,6 +149,14 @@ double Operaciones::raizCuadrada(double numero) {
 	}
 	return estimacion; 
 }
+
+/**
+* Calcula la raiz cuabica de un numero
+*
+* @param double a. Base
+*
+* @return cbrt a
+**/
 double Operaciones::raizCubica(double numero) {
 	double tolerancia = 0.0001;
 	double estimacion = numero;
@@ -107,6 +170,14 @@ double Operaciones::raizCubica(double numero) {
 
 	return estimacion;
 }
+
+/**
+* Calcula el seno de un numero
+*
+* @param double a. Angulo
+*
+* @return sen a
+**/
 double Operaciones::seno(double angulo) {
 	int iteraciones = 10;
 	double radianes = angulo * 3.14159265358979323846 / 180.0;
@@ -121,6 +192,14 @@ double Operaciones::seno(double angulo) {
 
 	return resultado;
 }
+
+/**
+* Calcula el coseno de un numero
+*
+* @param double a. Angulo
+*
+* @return cos a
+**/
 double Operaciones::coseno(double angulo) {
 	int iteraciones = 10;
 	double radianes = angulo * 3.14159265358979323846 / 180.0;
@@ -135,6 +214,14 @@ double Operaciones::coseno(double angulo) {
 
 	return resultado;
 }
+
+/**
+* Calcula la tangente de un numero
+*
+* @param double a. Angulo
+*
+* @return tg a
+**/
 double Operaciones::tangente(double angulo) {
 	int iteraciones = 10;
 	double radianes = angulo * 3.14159265358979323846 / 180.0;
@@ -149,6 +236,14 @@ double Operaciones::tangente(double angulo) {
 
 	return resultado;
 }
+
+/**
+* Calcula la cosecante de un numero
+*
+* @param double a. Numero
+*
+* @return csc a
+**/
 double Operaciones::cosecante(double angulo) {
 	double seno1 = seno(angulo);
 
@@ -159,6 +254,14 @@ double Operaciones::cosecante(double angulo) {
 		return std::numeric_limits<double>::infinity();
 	}
 }
+
+/**
+* Calcula la secante de un numero
+*
+* @param double a. Numero
+*
+* @return sec a
+**/
 double Operaciones::secante(double angulo) {
 	double coseno1 = coseno(angulo);
 
@@ -169,6 +272,14 @@ double Operaciones::secante(double angulo) {
 		return std::numeric_limits<double>::infinity();
 	}
 }
+
+/**
+* Calcula la cotangente de un numero
+*
+* @param double a. Numero
+*
+* @return ctg a
+**/
 double Operaciones::cotangente(double angulo) {
 	double tangente1 = tangente(angulo);
 
@@ -179,6 +290,14 @@ double Operaciones::cotangente(double angulo) {
 		return std::numeric_limits<double>::infinity();
 	}
 }
+
+/**
+* Calcula el factorial de un numero
+*
+* @param int a. Numero
+*
+* @return  Factorial a!
+**/
 int Operaciones::factorial(int n) {
 	double factorial = 1.0;
 
@@ -189,6 +308,14 @@ int Operaciones::factorial(int n) {
 	return factorial;
 }
 
+/**
+* Calcula el minimo comun division de dos numeros
+*
+* @param int a. Numero1
+* @param int b. Numero2
+*
+* @return  MCD  de a y b
+**/
 int Operaciones::calcularMCD(int a, int b) {
 	if (b == 0) {
 		return a;

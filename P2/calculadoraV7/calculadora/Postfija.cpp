@@ -1,10 +1,23 @@
+/***********************************************************************
+* Module:  Postfija.cpp
+* Authors:  Aviles, Reyes
+* Modified: miércoles, 6 de julio de 2023
+* Purpose: Declaration of the class Postfija
+***********************************************************************/
 #include "Postfija.h"
 #include "PilaChar.h"
 #include "Operaciones.h"
 
 using namespace std;
 
-
+/**
+* Separa en subcadenas de caracteres con respecto a un caracter propuesto
+*
+* @param const string& cadena. Dirrecion de la cadena de caracteres original
+* @param char separador. Caracter para separar en las sub cadenas
+* 
+* @return Devuelve un vector con todos los subcadenas.
+**/
 vector<string> Postfija::separarCadenas(const string& cadena, char separador) {
 	vector<string> subcadenas;
 	string subcadena;
@@ -39,7 +52,13 @@ vector<string> Postfija::separarCadenas(const string& cadena, char separador) {
 	return subcadenas;
 }
 
-
+/**
+* Obtiene las expresiones que estan dentro de un parentesis en una cadena de caracteres
+*
+* @param const string& cadena. Direccion de la cadena de caracteres original
+*
+* @return Devuelve un vector con todos los subcadenas.
+**/
 vector<string> Postfija::obtenerContenidoEntreParentesis(const string& cadena) {
 	std::vector<std::string> contenido;
 	PilaChar pila;
@@ -77,7 +96,14 @@ vector<string> Postfija::obtenerContenidoEntreParentesis(const string& cadena) {
 	return contenido;
 }
 
-
+/**
+* Trasforma de notacion infija a notacion postfija de una seria de operaciones matematicas
+* y guarda en la pila
+*
+* @param string infija. La cadena que representa la notacion infija
+* 
+* @return Devuelve un string en la notacion Posfija
+**/
 string Postfija::inAPost(string infija)
 {
 	string posfija = "";
@@ -559,11 +585,20 @@ string Postfija::inAPost(string infija)
 	return posfija;	
 }
 
-
+/**
+* Devuelve el capitulo de la pila
+*
+* @return Atributo pila.
+**/
 Pila Postfija::getPila() {
 	return pila;
 }
 
+/**
+* Calcula las respectivas operaciones presente en la pila 
+* la cual se presenta en notacion postfija
+*
+**/
 void Postfija::calcularPila() {
 	int iteraciones = 0;
 	do {
@@ -684,6 +719,11 @@ void Postfija::calcularPila() {
 	pila.pop();
 }
 
+/**
+* Comprueba que un string tiene o no numeros
+*
+* @return boeleano si solamente son numeros "TRUE" caso contrario devuelve "FALSE"
+**/
 bool Postfija::contieneSoloNumeros(string str) {
 	if (str.empty()) {
 		return false;

@@ -1,3 +1,9 @@
+/***********************************************************************
+* Module:  ValidacionDatos.cpp
+* Authors:  Aviles, Reyes
+* Modified: miércoles, 6 de julio de 2023
+* Purpose: Declaration of the class ValidacionDatos
+***********************************************************************/
 #include"ValidacionDatos.h"
 #define LONGITUD 10
 #pragma once
@@ -108,7 +114,7 @@ double ValidacionDatos::casteoReales(char* dato, char const* msj) {
 }
 
 /**
- * Lee una cadena del teclado y la devuelve.
+ * Lee una cadena de caracteres especificos .
  *
  * @param msj El mensaje que se mostrará al usuario.
  *
@@ -137,6 +143,13 @@ char* ValidacionDatos::lecturaTexto(char const* msj) {
 	return dato;
 }
 
+/**
+ * Lee una cadena de caracteres especificos numericos.
+ *
+ * @param msj El mensaje que se mostrará al usuario.
+ *
+ * @return Un puntero a una matriz de caracteres.
+ */
 char* ValidacionDatos::lecturaTextoNumerico(char const* msj) {
 	////
 	char* dato = new char[10];
@@ -162,7 +175,13 @@ char* ValidacionDatos::lecturaTextoNumerico(char const* msj) {
 
 
 
-
+/**
+ * Valida la cantidad de parentesis abiertos y cerrados sen iguales.
+ *
+ * @param string infija. Notacion infija de las operaciones numericas.
+ *
+ * @return Boleano que muestra la  validadcion.
+ */
 
 bool ValidacionDatos::parentesis(std::string infija) {
 	char c = 'a';
@@ -185,7 +204,13 @@ bool ValidacionDatos::parentesis(std::string infija) {
 	}
 }
 
-
+/**
+ * Valida la posicion y la cantidad de signos matematicos utilizados.
+ *
+ * @param string infija. Notacion infija de las operaciones numericas.
+ *
+ * @return Boleano que muestra la  validadcion.
+ */
 bool ValidacionDatos::signos(std::string infija) {
 	char primer = infija[0], ultimo = infija[infija.length()-1],c='0',d='1';
 
@@ -223,10 +248,13 @@ bool ValidacionDatos::signos(std::string infija) {
 	return false;
 }
 
-
-
-
-
+/**
+ * Valida que los puntos decimales estan bien utilizados.
+ *
+ * @param string infija. Notacion infija de las operaciones numericas.
+ *
+ * @return Boleano que muestra la  validadcion.
+ */
 bool ValidacionDatos::decimales(std::string infija) {
 	char c = '0', c2 = '3';
 	int cont = 0;
@@ -253,11 +281,13 @@ bool ValidacionDatos::decimales(std::string infija) {
 	return false;
 }
 
-
-
-
-
-
+/**
+ * Valida que los numeros negativos esten bien colocados.
+ *
+ * @param string infija. Notacion infija de las operaciones numericas.
+ *
+ * @return Boleano que muestra la  validadcion.
+ */
 bool ValidacionDatos::negativos(std::string infija) {
 	char c = '0', c2 = '0';
 	int cont = 0;
@@ -301,7 +331,13 @@ bool ValidacionDatos::negativos(std::string infija) {
 	return false;
 }
 
-
+/**
+ * Valida cadenas de caracteres especificas que representa diversas operaciones matematicas.
+ *
+ * @param string infija. Notacion infija de las operaciones numericas.
+ *
+ * @return Boleano que muestra la  validadcion.
+ */
 bool ValidacionDatos::letras(std::string infija) {
 	char c = '0';
 
@@ -330,12 +366,13 @@ bool ValidacionDatos::letras(std::string infija) {
 
 }
 
-
-
-
-
-
-
+/**
+ * Validad la presencia solamente de caracteres especificaos dentro de la notacion infija.
+ *
+ * @param string infija. Notacion infija de las operaciones numericas.
+ *
+ * @return Boleano que muestra la  validadcion.
+ */
 bool ValidacionDatos::general(std::string infija) {
 	char c = '0';
 

@@ -1,3 +1,9 @@
+/***********************************************************************
+ * Module:  Pila.h
+ * Authors:  Aviles, Reyes
+ * Modified: miércoles, 3 de julio de 2023
+ * Purpose: Declaration of the class Pila
+ ***********************************************************************/
 #pragma once
 #include "Nodo.h"
 #include <iostream>

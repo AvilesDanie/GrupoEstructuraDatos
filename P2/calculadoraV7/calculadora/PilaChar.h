@@ -1,3 +1,9 @@
+/***********************************************************************
+ * Module:  PilaChar.h
+ * Authors:  Aviles, Reyes
+ * Modified: miércoles, 3 de julio de 2023
+ * Purpose: Declaration of the class PilaChar
+ ***********************************************************************/
 #pragma once
 #include "NodoChar.h"
 #include <iostream>

@@ -1,3 +1,9 @@
+/***********************************************************************
+ * Module:  ListaCircularDoble.h
+ * Authors:  Aviles, Reyes
+ * Modified: miércoles, 22 de junio de 2023
+ * Purpose: Declaration of the class ListaCircularDoble
+ ***********************************************************************/
 #pragma once
 #include "NodoDoble.h"
 class ListaCircularDoble
@@ -16,11 +22,7 @@ public:
 	NodoDoble* getCabeza();
 	NodoDoble* getCola();
 
-
 	void intercambiarRecursivo(NodoDoble*, NodoDoble*, bool, int);
-
-
-
 
 	int dimencion();
 	int getPosicion(int);

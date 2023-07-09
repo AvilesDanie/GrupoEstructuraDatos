@@ -1,4 +1,10 @@
-
+/***************************************************
+Universidad de las Fuerzas Armadas ESPE
+Autores: Daniel Aviles, Ariel Reyes
+Fechas de Creacion: 22/06/2023
+Fecha de modificacion: 22/06/2023
+Calculadora Polaca Inversa
+****************************************************/
 #include <iostream>
 #include <cstdlib> // para usar system("cls") y system("pause")
 #include <string>
@@ -110,6 +116,13 @@ int main() {
     return 0;
 }
 
+/**
+* Valida si un numero es entero o no
+* 
+* @param string linea. La linea que que se quiere comprobar
+* 
+* @return booleano que comprueba si es entero
+**/
 bool esEntero(string linea) {
     int i = 0;
     if (linea[0] == '-') {
