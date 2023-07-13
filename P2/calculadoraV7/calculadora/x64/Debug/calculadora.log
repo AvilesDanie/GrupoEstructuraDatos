@@ -1,4 +1,3 @@
-﻿  Operaciones.cpp
-C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV7\calculadora\Operaciones.cpp(88,17): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV7\calculadora\Operaciones.cpp(308,9): warning C4244: 'return': conversión de 'double' a 'int'; posible pérdida de datos
-  calculadora.vcxproj -> C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\calculadoraV7\x64\Debug\calculadora.exe
+﻿  ValidacionDatos.cpp
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV7\calculadora\ValidacionDatos.cpp(351,4): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+  calculadora.vcxproj -> C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV7\x64\Debug\calculadora.exe

@@ -78,6 +78,7 @@ void Menu::menuPrincipal() {
 							} while (pasar);
 
 
+							pasar = objValidar.negativos(ecuacion);
 
 							if (pasar) {
 								cout << "error de negativos" << endl;

@@ -310,15 +310,15 @@ bool ValidacionDatos::negativos(std::string infija) {
 			numero.pop_back();
 		}
 
-		
 
 		if (numeroCompleto) {
 			for (size_t j = 0; j < numero.length(); j++) {
 				c2 = numero[j];
-				if (!((c >= 48 && c <= 57) || c == '.')) {
+
+				if (!((c2 >= 48 && c <= 57) || c2 == '.')) {
 					cont++;
 				}
-				if (cont == 2) {
+				if (cont == 1) {
 					return true;
 				}
 
