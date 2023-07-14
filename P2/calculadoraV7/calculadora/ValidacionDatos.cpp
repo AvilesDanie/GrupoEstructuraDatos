@@ -185,23 +185,25 @@ char* ValidacionDatos::lecturaTextoNumerico(char const* msj) {
 
 bool ValidacionDatos::parentesis(std::string infija) {
 	char c = 'a';
-	int contA = 0, contC = 0;
+	int cont = 0;
 	for (size_t i = 0; i < infija.length(); i++) {
 		c = infija[i];
 		if (c == '(') {
-			contA += 1;
+			cont += 1;
 		}
 		else if (c == ')') {
-			contC += 1;
+			cont -= 1;
+		}
+		if (cont < 0) {
+			return true;
 		}
 	}
 
-	if (contA == contC) {
-		return false;
-	}
-	else {
+	if (cont != 0) {
 		return true;
 	}
+	return false;
+	
 }
 
 /**
