@@ -1,3 +1,24 @@
-﻿  ValidacionDatos.cpp
-C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV7\calculadora\ValidacionDatos.cpp(353,4): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-  calculadora.vcxproj -> C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV7\x64\Debug\calculadora.exe
+﻿  calculadora.cpp
+  Menu.cpp
+C:\Users\ariel\Desktop\Ariel\U\3\GrupoEstructuraDatos\P2\calculadoraV7\calculadora\Menu.cpp(157,13): warning C4129: 'P': secuencia de escape de carácter no reconocida
+C:\Users\ariel\Desktop\Ariel\U\3\GrupoEstructuraDatos\P2\calculadoraV7\calculadora\Menu.cpp(33,14): warning C4101: 'ecuacionC': variable local sin referencia
+C:\Users\ariel\Desktop\Ariel\U\3\GrupoEstructuraDatos\P2\calculadoraV7\calculadora\Menu.cpp(29,7): warning C4101: 'enteroC': variable local sin referencia
+C:\Users\ariel\Desktop\Ariel\U\3\GrupoEstructuraDatos\P2\calculadoraV7\calculadora\Menu.cpp(35,6): warning C4101: 'entero': variable local sin referencia
+  Nodo.cpp
+  NodoChar.cpp
+  Operaciones.cpp
+C:\Users\ariel\Desktop\Ariel\U\3\GrupoEstructuraDatos\P2\calculadoraV7\calculadora\Operaciones.cpp(88,17): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\GrupoEstructuraDatos\P2\calculadoraV7\calculadora\Operaciones.cpp(305,9): warning C4244: 'return': conversión de 'double' a 'int'; posible pérdida de datos
+  Pila.cpp
+  PilaChar.cpp
+  Postfija.cpp
+C:\Users\ariel\Desktop\Ariel\U\3\GrupoEstructuraDatos\P2\calculadoraV7\calculadora\Postfija.cpp(168,2): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\GrupoEstructuraDatos\P2\calculadoraV7\calculadora\Postfija.cpp(226,4): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\GrupoEstructuraDatos\P2\calculadoraV7\calculadora\Postfija.cpp(278,6): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\ariel\Desktop\Ariel\U\3\GrupoEstructuraDatos\P2\calculadoraV7\calculadora\Postfija.cpp(317,24): warning C4267: '=': conversión de 'size_t' a 'int'; posible pérdida de datos
+  Prefija.cpp
+  ValidacionDatos.cpp
+C:\Users\ariel\Desktop\Ariel\U\3\GrupoEstructuraDatos\P2\calculadoraV7\calculadora\ValidacionDatos.cpp(353,4): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+  Generando código...
+  LINK : no se encontró C:\Users\ariel\Desktop\Ariel\U\3\GrupoEstructuraDatos\P2\calculadoraV7\x64\Debug\calculadora.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+  calculadora.vcxproj -> C:\Users\ariel\Desktop\Ariel\U\3\GrupoEstructuraDatos\P2\calculadoraV7\x64\Debug\calculadora.exe

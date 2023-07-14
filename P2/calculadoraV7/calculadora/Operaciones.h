@@ -23,5 +23,6 @@ public:
 	double cotangente(double);
 	int factorial(int);
 	int calcularMCD(int, int);
+	double obtenerAnguloEquivalente(double);
 };
 

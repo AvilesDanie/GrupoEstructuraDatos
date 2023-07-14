@@ -667,6 +667,10 @@ void Prefija::calcularPila() {
 					i -= 1;
 				}
 				else if (e1 == "tg") {
+					if (operaciones.tangente(stof(e2)) == std::numeric_limits<double>::infinity()) {
+						cout << "Math ERROR" << endl;
+						iteraciones = 0;
+					}
 					pila.push(to_string(operaciones.tangente(stof(e2))));
 					aux.push(e3);
 					i -= 1;

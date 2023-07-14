@@ -179,6 +179,7 @@ double Operaciones::raizCubica(double numero) {
 * @return sen a
 **/
 double Operaciones::seno(double angulo) {
+	angulo = obtenerAnguloEquivalente(angulo);
 	int iteraciones = 10;
 	double radianes = angulo * 3.14159265358979323846 / 180.0;
 	double resultado = radianes;
@@ -201,6 +202,7 @@ double Operaciones::seno(double angulo) {
 * @return cos a
 **/
 double Operaciones::coseno(double angulo) {
+	angulo = obtenerAnguloEquivalente(angulo);
 	int iteraciones = 10;
 	double radianes = angulo * 3.14159265358979323846 / 180.0;
 	double resultado = 1.0;  // Primer término de la serie
@@ -223,17 +225,12 @@ double Operaciones::coseno(double angulo) {
 * @return tg a
 **/
 double Operaciones::tangente(double angulo) {
-	int iteraciones = 10;
-	double radianes = angulo * 3.14159265358979323846 / 180.0;
-	double resultado = radianes;  // Primer término de la serie
-
-	for (int i = 1; i <= iteraciones; i++) {
-		double numerador = potencia(-1, i) * 2 * potencia(radianes, 2 * i - 1);
-		double denominador = factorial(2 * i);
-		double termino = numerador / denominador;
-		resultado += termino;
+	if (int(angulo) % 90 == 0 && int(angulo / 90.0) % 2 != 0) {
+		return std::numeric_limits<double>::infinity();
 	}
-
+	double sen = seno(angulo);
+	double cos = coseno(angulo);
+	double resultado = sen / cos;
 	return resultado;
 }
 
@@ -323,4 +320,19 @@ int Operaciones::calcularMCD(int a, int b) {
 	else {
 		return calcularMCD(b, a % b);
 	}
+}
+
+/**
+* Obtiene el gungulo equivalente para las operaciones trigonometricas
+*
+* @param double a. Angulo
+*
+* @return  Angulo equivalente
+**/
+double Operaciones::obtenerAnguloEquivalente(double a) {
+	double angulo_equivalente = int(a) % 360;
+	if (angulo_equivalente > 90.0) {
+		angulo_equivalente = 180.0 - angulo_equivalente;
+	}
+	return angulo_equivalente;
 }
