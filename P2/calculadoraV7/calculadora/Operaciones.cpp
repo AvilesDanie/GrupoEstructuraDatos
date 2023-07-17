@@ -85,8 +85,8 @@ double Operaciones::potencia(double a, double b) {
 	}
 	else {
 		double precision = 0.00001;
-		int numerador = b * 10000;
-		int denominador = 10000;
+		int numerador = b * 1000000000000;
+		int denominador = 1000000000000;
 		int mcd = calcularMCD(numerador, denominador);
 		numerador /= mcd;
 		denominador /= mcd;

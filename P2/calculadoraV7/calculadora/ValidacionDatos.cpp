@@ -272,7 +272,7 @@ bool ValidacionDatos::decimales(std::string infija) {
 				if (c2 == '.') {
 					cont++;
 				}
-				if (cont == 2) {
+				if (cont == 2 || numero[0]=='.') {
 					return true;
 				}
 			}
@@ -350,7 +350,7 @@ bool ValidacionDatos::letras(std::string infija) {
 			std::string raiz;
 			char e = '0';
 			std::string d;
-			for (int j = i; e != '('; i++) {
+			for (int j = i; e != '(' && i < infija.length(); i++) {
 				e = infija[i];
 				d = e;
 				raiz = raiz + d;
