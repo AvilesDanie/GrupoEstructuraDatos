@@ -179,6 +179,8 @@ double Operaciones::raizCubica(double numero) {
 * @return sen a
 **/
 double Operaciones::seno(double angulo) {
+	double aux = angulo;
+
 	angulo = obtenerAnguloEquivalente(angulo);
 	int iteraciones = 10;
 	double radianes = angulo * 3.14159265358979323846 / 180.0;
@@ -191,6 +193,10 @@ double Operaciones::seno(double angulo) {
 		resultado += termino;
 	}
 
+	/*if (int(aux) % 360 >= 180 && int(aux) % 360 <= 360) {
+		resultado *= -1;
+	}*/
+
 	return resultado;
 }
 
@@ -202,6 +208,8 @@ double Operaciones::seno(double angulo) {
 * @return cos a
 **/
 double Operaciones::coseno(double angulo) {
+	double aux = angulo;
+
 	angulo = obtenerAnguloEquivalente(angulo);
 	int iteraciones = 10;
 	double radianes = angulo * 3.14159265358979323846 / 180.0;
@@ -212,6 +220,11 @@ double Operaciones::coseno(double angulo) {
 		double denominador = factorial(2 * i);
 		double termino = (numerador * potencia(radianes, 2 * i)) / denominador;
 		resultado += termino;
+	}
+
+
+	if (int(aux)%360 >= 90 && int(aux)%360 <= 270) {
+		resultado *= -1;
 	}
 
 	return resultado;

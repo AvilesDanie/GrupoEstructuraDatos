@@ -139,7 +139,6 @@
     <ClCompile Include="ValidacionDatos.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="LecturaDatos.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Nodo.h" />
     <ClInclude Include="NodoChar.h" />

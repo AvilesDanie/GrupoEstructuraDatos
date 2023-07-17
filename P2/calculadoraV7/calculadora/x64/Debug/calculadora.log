@@ -1,3 +1,3 @@
 ﻿  ValidacionDatos.cpp
-C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV7\calculadora\ValidacionDatos.cpp(353,4): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV7\calculadora\ValidacionDatos.cpp(187,4): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
   calculadora.vcxproj -> C:\Users\ASUS\Desktop\ESPE\S3\GrupoEstructuraDatos\P2\calculadoraV7\x64\Debug\calculadora.exe
