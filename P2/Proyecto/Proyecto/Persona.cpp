@@ -59,9 +59,9 @@ void Persona::setFecha(Fecha newFecha)
 
 Persona::Persona()
 {
-	this->cedula = "NULL";
-	this->nombre = "NULL";
-	this->apellido = "NULL";
+	this->cedula = nullptr;
+	this->nombre = nullptr;
+	this->apellido = nullptr;
 	this->fecha;
 }
 

@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Administrador.cpp" />
     <ClCompile Include="Arbol.cpp" />
     <ClCompile Include="Archivos.cpp" />
     <ClCompile Include="Empleado.cpp" />
@@ -140,8 +141,10 @@
     <ClCompile Include="Persona.cpp" />
     <ClCompile Include="Proyecto.cpp" />
     <ClCompile Include="Registro.cpp" />
+    <ClCompile Include="ValidacionDatos.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Administrador.h" />
     <ClInclude Include="Arbol.h" />
     <ClInclude Include="Archivos.h" />
     <ClInclude Include="Empleado.h" />
@@ -154,6 +157,7 @@
     <ClInclude Include="NodoRegistro.h" />
     <ClInclude Include="Persona.h" />
     <ClInclude Include="Registro.h" />
+    <ClInclude Include="ValidacionDatos.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
