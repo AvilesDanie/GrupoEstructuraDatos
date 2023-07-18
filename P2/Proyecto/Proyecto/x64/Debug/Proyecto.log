@@ -1,2 +1,5 @@
-﻿  Empleado.cpp
-  Proyecto.vcxproj -> C:\Users\ASUS\Desktop\Proyecto\x64\Debug\Proyecto.exe
+﻿  Archivos.cpp
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\Proyecto\Proyecto\Archivos.cpp(58,50): warning C4101: 'es': variable local sin referencia
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\Proyecto\Proyecto\Archivos.cpp(58,45): warning C4101: 'emi': variable local sin referencia
+C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\Proyecto\Proyecto\Archivos.cpp(58,41): warning C4101: 'eh': variable local sin referencia
+  Proyecto.vcxproj -> C:\Users\ariel\Desktop\Ariel\U\3\Estructura\GrupoEstructuraDatos\P2\Proyecto\x64\Debug\Proyecto.exe

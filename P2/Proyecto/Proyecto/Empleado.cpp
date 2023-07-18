@@ -92,3 +92,12 @@ Empleado::~Empleado()
 {
 
 }
+
+void Empleado::imprimir() {
+	cout << "*************************" << endl;
+	cout << "Nombre: " << getNombre() << endl;
+	cout << "Apellido: " << getApellido() << endl;
+	cout << "Cedula: " << getCedula() << endl;
+	cout << "Sueldo: " << getSalario() << endl;
+	cout << "*************************" << endl;
+}

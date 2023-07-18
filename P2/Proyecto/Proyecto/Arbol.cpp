@@ -29,7 +29,7 @@ Nodo* Arbol::getArbol()
  *
  * @return Un puntero a un objeto Nodo.
  */
-Nodo* Arbol::crearNodo(Persona dato)
+Nodo* Arbol::crearNodo(Empleado dato)
 {
     Nodo* nuevoNodo = new Nodo();
     nuevoNodo->setValor(dato);
@@ -46,7 +46,7 @@ Nodo* Arbol::crearNodo(Persona dato)
  * @param arbol El árbol
  * @param dato el valor a insertar
  */
-void Arbol::insertarNodo(Nodo*& arbol, Persona dato)
+void Arbol::insertarNodoCedula(Nodo*& arbol, Empleado dato)
 {
     if (arbol == NULL)
     {
@@ -56,19 +56,140 @@ void Arbol::insertarNodo(Nodo*& arbol, Persona dato)
     }
     else
     {
-        string raiz = arbol->getValor();
-        if (dato < raiz)
+        string raiz = arbol->getValor().getCedula();
+        if (dato.getCedula() < raiz)
         {
-            insertarNodo(arbol->getIzquierda(), dato);
+            insertarNodoCedula(arbol->getIzquierda(), dato);
             cout << "Dato ingresado correctamente...\n";
         }
         else
         {
-            insertarNodo(arbol->getDerecha(), dato);
+            insertarNodoCedula(arbol->getDerecha(), dato);
             cout << "Dato ingresado correctamente...\n";
         }
     }
 }
+
+/**
+ * Si el árbol está vacío, cree un nuevo nodo y asígnelo al árbol. De lo contrario, si los datos son
+ * menores que la raíz, insértelos en el subárbol izquierdo. De lo contrario, insértelo en el subárbol
+ * derecho
+ *
+ * @param arbol El árbol
+ * @param dato el valor a insertar
+ */
+void Arbol::insertarNodoNombre(Nodo*& arbol, Empleado dato)
+{
+    if (arbol == NULL)
+    {
+        Nodo* nuevoNodo = crearNodo(dato);
+        arbol = nuevoNodo;
+        cout << "Dato ingresado correctamente...\n";
+    }
+    else
+    {
+        string raiz = arbol->getValor().getNombre();
+        if (dato.getNombre() < raiz)
+        {
+            insertarNodoNombre(arbol->getIzquierda(), dato);
+            cout << "Dato ingresado correctamente...\n";
+        }
+        else
+        {
+            insertarNodoNombre(arbol->getDerecha(), dato);
+            cout << "Dato ingresado correctamente...\n";
+        }
+    }
+}
+
+/**
+ * Si el árbol está vacío, cree un nuevo nodo y asígnelo al árbol. De lo contrario, si los datos son
+ * menores que la raíz, insértelos en el subárbol izquierdo. De lo contrario, insértelo en el subárbol
+ * derecho
+ *
+ * @param arbol El árbol
+ * @param dato el valor a insertar
+ */
+void Arbol::insertarNodoApellido(Nodo*& arbol, Empleado dato)
+{
+    if (arbol == NULL)
+    {
+        Nodo* nuevoNodo = crearNodo(dato);
+        arbol = nuevoNodo;
+        cout << "Dato ingresado correctamente...\n";
+    }
+    else
+    {
+        string raiz = arbol->getValor().getApellido();
+        if (dato.getApellido() < raiz)
+        {
+            insertarNodoApellido(arbol->getIzquierda(), dato);
+            cout << "Dato ingresado correctamente...\n";
+        }
+        else
+        {
+            insertarNodoApellido(arbol->getDerecha(), dato);
+            cout << "Dato ingresado correctamente...\n";
+        }
+    }
+}
+
+/**
+ * Si el árbol está vacío, cree un nuevo nodo y asígnelo al árbol. De lo contrario, si los datos son
+ * menores que la raíz, insértelos en el subárbol izquierdo. De lo contrario, insértelo en el subárbol
+ * derecho
+ *
+ * @param arbol El árbol
+ * @param dato el valor a insertar
+ */
+void Arbol::insertarNodoFecha(Nodo*& arbol, Empleado dato)
+{
+    if (arbol == NULL)
+    {
+        Nodo* nuevoNodo = crearNodo(dato);
+        arbol = nuevoNodo;
+        cout << "Dato ingresado correctamente...\n";
+    }
+    else
+    {
+        Fecha raiz = arbol->getValor().getFecha();
+        if (dato.getFecha().getAnio() < raiz.getAnio())
+        {
+            insertarNodoFecha(arbol->getIzquierda(), dato);
+            cout << "Dato ingresado correctamente...\n";
+        }
+        else if (dato.getFecha().getAnio() > raiz.getAnio())
+        {
+            insertarNodoFecha(arbol->getDerecha(), dato);
+            cout << "Dato ingresado correctamente...\n";
+        }
+        else if (dato.getFecha().getMes() < raiz.getMes())
+        {
+            insertarNodoFecha(arbol->getIzquierda(), dato);
+            cout << "Dato ingresado correctamente...\n";
+        }
+        else if (dato.getFecha().getMes() > raiz.getMes())
+        {
+            insertarNodoFecha(arbol->getDerecha(), dato);
+            cout << "Dato ingresado correctamente...\n";
+        }
+        else if (dato.getFecha().getDia() < raiz.getDia())
+        {
+            insertarNodoFecha(arbol->getIzquierda(), dato);
+            cout << "Dato ingresado correctamente...\n";
+        }
+        else if (dato.getFecha().getDia() > raiz.getDia())
+        {
+            insertarNodoFecha(arbol->getDerecha(), dato);
+            cout << "Dato ingresado correctamente...\n";
+        }
+        else {
+            insertarNodoFecha(arbol->getDerecha(), dato);
+            cout << "Dato ingresado correctamente...\n";
+        }
+    }
+}
+
 
 //Función mostrar
 void Arbol::mostrar(Nodo* arbol, int contador)
@@ -84,7 +205,7 @@ void Arbol::mostrar(Nodo* arbol, int contador)
         {
             cout << "  ";
         }
-        cout << arbol->getValor() << endl;
+        arbol->getValor().imprimir();
         mostrar(arbol->getIzquierda(), contador + 1);
     }
 }
@@ -144,7 +265,7 @@ void Arbol::preOrden(Nodo* arbol)
     }
     else
     {
-        cout << arbol->getValor() << "-";
+        arbol->getValor().imprimir();
         preOrden(arbol->getIzquierda());
         preOrden(arbol->getDerecha());
     }
@@ -168,45 +289,25 @@ void Arbol::inOrden(Nodo* arbol)
     else
     {
         inOrden(arbol->getIzquierda());
-        cout << arbol->getValor() << "->";
+        arbol->getValor().imprimir();
         inOrden(arbol->getDerecha());
     }
 }
 
-void Arbol::buscar(Nodo* arbol, int dato) {
+void Arbol::buscar(Nodo* arbol, std::string dato) {
     if (arbol == NULL) {
         cout << "No se encuentran datos en el arbol\n";
     }
-    else if (arbol->getValor() == dato) {
-        cout << arbol->getValor() << "\t " << "Dato encontrado correctamente...\n";
+    else if (arbol->getValor().getCedula() == dato) {
+        arbol->getValor().imprimir();
+        cout << "Dato encontrado correctamente...\n";
     }
-    else if (dato < arbol->getValor()) {
+    else if (dato < arbol->getValor().getCedula()) {
         buscar(arbol->getIzquierda(), dato);
     }
     else {
         buscar(arbol->getDerecha(), dato);
     }
-}
-
-//Es una función para buscar datos que cuenta con dos parámetros
-
-void Arbol::buscarporNivel(Nodo* arbol, int num) {
-
-    int nivel = 0;
-    while (arbol != NULL) {
-        if (arbol->getValor() == num) {
-            cout << "El numero " << num << " se encuentra en el nivel " << nivel << endl;
-            return;
-        }
-        else if (num < arbol->getValor()) {
-            arbol = arbol->getIzquierda();
-        }
-        else {
-            arbol = arbol->getDerecha();
-        }
-        nivel++;
-    }
-    cout << "El numero " << num << " no se encuentra en el arbol" << endl;
 }
 
 //Es una función para buscar datos que cuenta con dos parámetros
@@ -229,7 +330,7 @@ void Arbol::postOrden(Nodo* arbol) {
     {
         postOrden(arbol->getIzquierda());
         postOrden(arbol->getDerecha());
-        cout << arbol->getValor() << "->";
+        arbol->getValor().imprimir();
     }
 }
 
@@ -243,7 +344,7 @@ void Arbol::imprimirNivelActual(Nodo* arbol, int nivel)
     if (arbol == NULL)
         return;
     if (nivel == 1)
-        cout << arbol->getValor() << " ";
+        arbol->getValor().imprimir();
     else if (nivel > 1) {
         imprimirNivelActual(arbol->getIzquierda(), nivel - 1);
         imprimirNivelActual(arbol->getDerecha(), nivel - 1);
@@ -271,14 +372,14 @@ void Arbol::recorridoNivel(Nodo* arbol)
         imprimirNivelActual(arbol, i);
 }
 
-Nodo* Arbol::eliminarNodo(Nodo* raiz, int dato) {
+Nodo* Arbol::eliminarNodo(Nodo* raiz, std::string dato) {
 
     if (raiz == NULL)
         return raiz;
-    if (dato < raiz->getValor())
+    if (dato < raiz->getValor().getCedula())
         raiz->setIzquierda(eliminarNodo(raiz->getIzquierda(), dato));
 
-    else if (dato > raiz->getValor())
+    else if (dato > raiz->getValor().getCedula())
         raiz->setDerecha(eliminarNodo(raiz->getDerecha(), dato));
     else {
         if (raiz->getIzquierda() == NULL) {
@@ -304,54 +405,8 @@ Nodo* Arbol::eliminarNodo(Nodo* raiz, int dato) {
             Nodo* temp = getmax(raiz->getIzquierda());
 
             raiz->setValor(temp->getValor());
-            raiz->setIzquierda(eliminarNodo(raiz->getIzquierda(), temp->getValor()));
+            raiz->setIzquierda(eliminarNodo(raiz->getIzquierda(), temp->getValor().getCedula()));
         }
     }
     return raiz;
 }
-
-//funcion para calcular numeros primos del arbol 
-void Arbol::calcularPrimos(Nodo* arbol) {
-    if (arbol == NULL) {
-        cout << "No se encuentran datos en el arbol" << endl;
-        cout << "El arbol se encuentra vacio" << endl;
-    }
-    else if (arbol->getValor() == 2) {
-        cout << arbol->getValor() << "\t " << "El numero es primo" << endl;
-    }
-    else if (arbol->getValor() == 1) {
-        cout << arbol->getValor() << "\t " << "El numero no es un numero primo" << endl;
-    }
-    else if (arbol->getValor() % 2 == 0) {
-        cout << arbol->getValor() << "\t " << "El numero no es un numero primo" << endl;
-    }
-    else {
-        cout << arbol->getValor() << "\t " << "El numero es primo" << endl;
-    }
-    if (arbol->getIzquierda() != NULL) {
-        calcularPrimos(arbol->getIzquierda());
-    }
-    if (arbol->getDerecha() != NULL) {
-        calcularPrimos(arbol->getDerecha());
-    }
-}
-
-void Arbol::sumarDatosDecadaNivel(Nodo* arbol, int nivel) {
-    int suma = 0;
-    if (arbol == NULL) {
-        cout << "No se encuentran datos en el arbol" << endl;
-        cout << "El arbol se encuentra vacio" << endl;
-    }
-    else if (nivel == 1) {
-        suma = suma + arbol->getValor();
-        cout << "La suma de los datos del nivel " << nivel << " es: " << suma << endl;
-    }
-    else if (nivel > 1) {
-        suma = suma + arbol->getValor();
-        sumarDatosDecadaNivel(arbol->getIzquierda(), nivel - 1);
-        sumarDatosDecadaNivel(arbol->getDerecha(), nivel - 1);
-    }
-}
-
-
-

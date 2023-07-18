@@ -128,20 +128,32 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Arbol.cpp" />
+    <ClCompile Include="Archivos.cpp" />
     <ClCompile Include="Empleado.cpp" />
     <ClCompile Include="Fecha.cpp" />
+    <ClCompile Include="ListaEmpleados.cpp" />
+    <ClCompile Include="ListaRegistro.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Nodo.cpp" />
+    <ClCompile Include="NodoEmpleado.cpp" />
+    <ClCompile Include="NodoRegistro.cpp" />
     <ClCompile Include="Persona.cpp" />
     <ClCompile Include="Proyecto.cpp" />
+    <ClCompile Include="Registro.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Arbol.h" />
+    <ClInclude Include="Archivos.h" />
     <ClInclude Include="Empleado.h" />
     <ClInclude Include="Fecha.h" />
+    <ClInclude Include="ListaEmpleados.h" />
+    <ClInclude Include="ListaRegistro.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Nodo.h" />
+    <ClInclude Include="NodoEmpleado.h" />
+    <ClInclude Include="NodoRegistro.h" />
     <ClInclude Include="Persona.h" />
+    <ClInclude Include="Registro.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

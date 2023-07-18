@@ -5,7 +5,7 @@
  *
  * @param _dato El valor que se almacenará en el nodo.
  */
-void Nodo::setValor(Persona _dato)
+void Nodo::setValor(Empleado _dato)
 {
     valor = _dato;
 }
@@ -33,7 +33,7 @@ void Nodo::setDerecha(Nodo* _derecha)
  *
  * @return El valor del nodo.
  */
-Persona Nodo::getValor()
+Empleado Nodo::getValor()
 {
     return valor;
 }

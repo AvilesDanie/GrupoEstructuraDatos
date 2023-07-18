@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Persona.h"
+#include <string>
 using namespace std;
 
 class Empleado : public Persona
@@ -19,6 +20,7 @@ public:
     void setFecha(Fecha newFecha);
     double getSalario(void);
     void setSalario(double newSalario);
+    void imprimir();
 
 private:
     double salario;

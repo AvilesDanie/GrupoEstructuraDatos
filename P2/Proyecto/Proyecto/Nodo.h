@@ -1,21 +1,21 @@
 #pragma once
 #include <iostream>
 #include <stdio.h>
-#include "Persona.h"
+#include "Empleado.h"
 using namespace std;
 class Nodo
 {
 public:
-	Persona getValor();
+	Empleado getValor();
 	Nodo*& getDerecha();
 	Nodo*& getIzquierda();
 	Nodo*& getNivel();
-	void setValor(Persona);
+	void setValor(Empleado);
 	void setDerecha(Nodo*);
 	void setIzquierda(Nodo*);
 
 private:
-	Persona valor;
+	Empleado valor;
 	Nodo* derecha;
 	Nodo* izquierda;
 	Nodo* nivel;

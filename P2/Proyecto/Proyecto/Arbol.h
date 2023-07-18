@@ -1,5 +1,7 @@
 #pragma once
-#include "Nodo.cpp"
+#include "Nodo.h"
+#include <iostream>
+#include <string>
 
 class Arbol
 {
@@ -9,11 +11,13 @@ private:
 public:
     void setArbol(Nodo*);
     Nodo* getArbol();
-    Nodo* crearNodo(Persona);
-    void insertarNodo(Nodo*&, Persona);
+    Nodo* crearNodo(Empleado);
+    void insertarNodoCedula(Nodo*&, Empleado);
+    void insertarNodoNombre(Nodo*&, Empleado);
+    void insertarNodoApellido(Nodo*&, Empleado);
+    void insertarNodoFecha(Nodo*&, Empleado);
     void mostrar(Nodo*, int);
-    void buscar(Nodo*, int);
-    void buscarporNivel(Nodo*, int);
+    void buscar(Nodo*, std::string);
     void preOrden(Nodo*);
     void inOrden(Nodo*);
     void recorridoNivel(Nodo*);
@@ -22,7 +26,5 @@ public:
     int altura(Nodo*);
     bool simetria(Nodo*, Nodo*);
     bool simetrias(Nodo*);
-    void calcularPrimos(Nodo* arbol);
-    void sumarDatosDecadaNivel(Nodo* arbol, int nivel);
-    Nodo* eliminarNodo(Nodo*, int);
+    Nodo* eliminarNodo(Nodo*, std::string);
 };
