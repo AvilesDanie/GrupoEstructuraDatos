@@ -5,8 +5,8 @@ Administrador::~Administrador() {
 
 
 Administrador::Administrador() {
-	this->usuario = nullptr;
-	this->contrasenia = nullptr;
+	this->usuario = "NULL";
+	this->contrasenia = "NULL";
 	this->empleado;
 
 }

@@ -13,6 +13,8 @@
 #include "Registro.h"
 #include <ctime>
 #include "Administrador.h"
+#include <thread>
+#include <chrono>
 
 #define Tecla_Arriba 72
 #define Tecla_Abajo 80
@@ -72,8 +74,46 @@ void Menu::menuPrincipal() {
 				if (!(repetirCedula)) {
 					std::system("cls");
 
+
+
+					bool funcionTerminada = false;
+
+					std::thread hilo([&]() {
+						opcMN = menu("CEDULA NO VALIDA", opciones1, 2);
+						funcionTerminada = true;
+						});
+
+					int tiempoLimite = 5;
+
+					for (int segundos = 0; segundos < tiempoLimite; ++segundos)
+					{
+						if (funcionTerminada)
+						{
+							break;
+						}
+						std::this_thread::sleep_for(std::chrono::seconds(1));
+					}
+
+					if (!funcionTerminada)
+					{
+						
+						hilo.detach();
+						//hilo.join();
+
+						opcMN = 2;
+						//std::cout << "La función superó el tiempo límite de 1 minuto." << std::endl;
+					}
+					else
+					{
+						hilo.join();
+						//std::cout << "Resultado: " << resultado << std::endl;
+					}
+
+
+
+
 					
-					opcMN = menu("CEDULA NO VALIDA", opciones1, 2);
+					//opcMN = menu("CEDULA NO VALIDA", opciones1, 2);
 					switch (opcMN) {
 					case 1: {
 						std::system("cls");
@@ -222,7 +262,7 @@ void Menu::menuPrincipal() {
 
 			
 
-			std::system("pause");
+
 			break;
 		}
 		case 3: {
