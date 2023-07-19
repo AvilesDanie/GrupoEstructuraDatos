@@ -4,7 +4,15 @@
  * Modified: miércoles, 4 de julio de 2023
  * Purpose: Declaration of the class Menu
  ***********************************************************************/
+#define _CRT_SECURE_NO_WARNINGS
 #include "Menu.h"
+#include "ValidacionDatos.h"
+#include "Arbol.h"
+#include "ListaRegistro.h"
+#include "ListaEmpleados.h"
+#include "Registro.h"
+#include <ctime>
+#include "Administrador.h"
 
 #define Tecla_Arriba 72
 #define Tecla_Abajo 80
@@ -20,29 +28,201 @@ using namespace std;
 **/
 void Menu::menuPrincipal() {
 	int opcMP = 0, opcMN = 0;
-	bool repetir = true;
-
+	bool repetir = true, repetir1 = false, repetirCedula = false, repetirLI;
+	Arbol empleados;
+	ValidacionDatos validacion;
+	ListaRegistro listaRegistros;
+	ListaEmpleados listaEmpleados;
 	const char* titulo = "BIENVENIDO AL APLICATIVO DE REGISTRO";
-	const char* opciones[] = { "Registro de personal.","Log In.","Salir."};
+
+	const char* opciones[] = { "REGISTRO DE PERSONAL.","LOG IN.","SALIR."};
+	const char* opciones1[] = { "INTENTAR NUEVAMENTE.","SALIR."};
+	const char* opciones2[] = {"INGRESAR.","MODIFICAR.","ELIMINAR.","BUSCAR","ORDENAR","SALIR."};
+
+
+	Empleado e;
+	Administrador admin("u","c",e);
+
+
+	for (int i = 0; i<listaEmpleados.dimencion(); i++) {
+		Empleado empleado;
+		Registro registro;
+		empleado = listaEmpleados.getPosicion(i);
+		registro.setEmpleado(empleado);
+		listaRegistros.insertar(registro);
+	}
+
 	
 	do {
 		opcMP = menu(titulo, opciones, 3);
 		switch (opcMP) {
 		case 1: {
-			system("cls");
-			cout << "Registro de personal" << endl;
+			std::system("cls");
+			cout << "REGISTRO DE PERSONAL" << endl;
 
+			string cedula;
+
+			do {
+				cedula = "";
+				cout << "Ingrese la cedula: " << endl;
+				cin >> cedula;
+
+				repetirCedula = validacion.validarCedula(cedula);
+
+				if (!(repetirCedula)) {
+					std::system("cls");
+
+					
+					opcMN = menu("CEDULA NO VALIDA", opciones1, 2);
+					switch (opcMN) {
+					case 1: {
+						std::system("cls");
+						repetirCedula = false;
+
+						break;
+					}
+					case 2: {
+						std::system("cls");
+						repetirCedula = true;
+
+						break;
+					}
+					}
+
+
+				}
+
+			} while (!repetirCedula);
+
+			if (validacion.validarCedula(cedula) && listaRegistros.buscar(cedula)) {
+
+				Registro reg = listaRegistros.Recuperar(cedula);
+
+
+				time_t now = time(0);
+				tm* ltm = localtime(&now);
+
+				int dia = ltm->tm_mday;
+				int mes = 1 + ltm->tm_mon;
+				int anio = 1900 + ltm->tm_year;
+				int hora = ltm->tm_hour;
+				int minutos = ltm->tm_min;
+				int segundos = ltm->tm_sec;
+
+				Fecha fechaActual(dia, mes, anio, hora, minutos, segundos);
+
+				if (reg.getEntrada().getAnio() == 0) {
+					reg.setEntrada(fechaActual);
+				}
+				else if (reg.getSalidaAlmuerzo().getAnio() == 0) {
+					reg.setEntrada(fechaActual);
+				}
+				else if (reg.getEntradaAlmuerzo().getAnio() == 0) {
+					reg.setEntrada(fechaActual);
+				}
+				else if (reg.getSalida().getAnio() == 0) {
+					reg.setEntrada(fechaActual);
+				}
+				else {
+					cout << "YA A REALISADO LOS CUATRO REGISTROS" << endl;
+				}
+
+				std::system("pause");
+
+				listaRegistros.Modificar(reg);
+			}
 			
-			system("pause");
 			break;
 		}
 
 		case 2: {
-			system("cls");
-			cout << "Log In" << endl;
+			std::system("cls");
+			cout << "LOG IN" << endl;
+			string usuario, contrasenia;
+			do {
+				usuario = "";
+				cout << "Ingrese la usuario: " << endl;
+				cin >> usuario;
+
+				contrasenia = "";
+				cout << "Ingrese la contrasenia: " << endl;
+				cin >> contrasenia;
+
+				
+				repetirLI = usuario == admin.getUsuario() && contrasenia == admin.getContrasenia();
+
+				
+				if (!(repetirLI)) {
+					std::system("cls");
 
 
-			system("pause");
+					opcMN = menu("INGRESO NO VALIDO", opciones1, 2);
+					switch (opcMN) {
+					case 1: {
+						std::system("cls");
+						repetirLI = false;
+
+						break;
+					}
+					case 2: {
+						std::system("cls");
+						repetirLI = true;
+
+						break;
+					}
+					}
+
+
+				}
+				else {
+					do {
+						opcMN = menu("OPCIONES", opciones2, 6);
+						switch (opcMN) {
+						case 1: {
+							std::system("cls");
+							repetirLI = false;
+
+							break;
+						}
+						case 2: {
+							std::system("cls");
+							repetirLI = false;
+
+							break;
+						}
+						case 3: {
+							std::system("cls");
+							repetirLI = false;
+
+							break;
+						}
+						case 4: {
+							std::system("cls");
+							repetirLI = false;
+
+							break;
+						}
+						case 5: {
+							std::system("cls");
+							repetirLI = false;
+
+							break;
+						}
+						case 6: {
+							std::system("cls");
+							repetirLI = true;
+
+							break;
+						}
+						}
+					} while (!repetirLI);
+				}
+
+			} while (!repetirLI);
+
+			
+
+			std::system("pause");
 			break;
 		}
 		case 3: {

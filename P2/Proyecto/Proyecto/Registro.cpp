@@ -24,6 +24,15 @@ Registro::Registro(Empleado empleado, Fecha entrada, Fecha salidaAlmuerzo, Fecha
 	this->salida = salida;
 }
 
+
+Registro::Registro(Fecha entrada, Fecha salidaAlmuerzo, Fecha entradaAlmuerzo, Fecha salida) {
+	this->empleado = Empleado(NULL, NULL, NULL, Fecha(0, 0, 0), 0);
+	this->entrada = entrada;
+	this->entradaAlmuerzo = entradaAlmuerzo;
+	this->salidaAlmuerzo = salidaAlmuerzo;
+	this->salida = salida;
+}
+
 Registro::~Registro() {
 
 }

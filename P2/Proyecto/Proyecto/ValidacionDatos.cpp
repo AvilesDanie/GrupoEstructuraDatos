@@ -6,7 +6,6 @@ bool ValidacionDatos::validarCedula(std::string cedula) {
 	if (cedula.length() != 10) {
 		return false;
 	}
-
 	for (int i = 0; i < cedula.length();i++) {
 		char c;
 		c = cedula[i];
@@ -21,7 +20,7 @@ bool ValidacionDatos::validarCedula(std::string cedula) {
 		return false;
 	}
 
-	int tercero = std::stoi(cedula.substr(2, 3));
+	int tercero = cedula[2]-'0';
 
 	if (tercero > 6) {
 		return false;

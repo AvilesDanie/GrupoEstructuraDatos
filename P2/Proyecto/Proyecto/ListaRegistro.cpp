@@ -191,3 +191,55 @@ void ListaRegistro::setPosicion(Registro dato, int indice) {
 	}
 	aux->setDato(dato);
 }
+
+
+
+
+void ListaRegistro::Modificar(Registro dato)
+{
+	if (this->cabeza != nullptr)
+	{
+		NodoRegistro* aux = this->cabeza;
+		do
+		{
+			if (aux->getDato().getEmpleado().getCedula() == dato.getEmpleado().getCedula())
+			{
+
+				aux->setDato(dato);
+				return;
+			}
+			aux = aux->getSiguiente();
+		} while (aux != this->cabeza);
+	}
+}
+
+
+
+Registro ListaRegistro::Recuperar(string dato)
+{
+
+	if (this->cabeza != nullptr)
+	{
+		NodoRegistro* aux = this->cabeza;
+		do
+		{
+			if (aux->getDato().getEmpleado().getCedula() == dato)
+			{
+				return aux->getDato();
+			}
+			aux = aux->getSiguiente();
+		} while (aux != this->cabeza);
+	}
+
+
+	Fecha fecha(0,0,0,0,0,0);
+	Persona persona;
+
+	Empleado empleado;
+
+	Registro registro(empleado, fecha,fecha,fecha,fecha);
+
+	return registro;
+
+
+}

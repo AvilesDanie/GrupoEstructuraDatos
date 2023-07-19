@@ -22,5 +22,8 @@ public:
 	int dimencion();
 	Empleado getPosicion(int);
 	void setPosicion(Empleado, int);
+
+	Empleado Recuperar(std::string);
+
 };
 

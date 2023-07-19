@@ -14,6 +14,7 @@ public:
 	Registro();
 	Registro(Empleado);
 	Registro(Empleado,Fecha, Fecha, Fecha, Fecha);
+	Registro(Fecha, Fecha, Fecha, Fecha);
 	~Registro();
 	Empleado getEmpleado();
 	void setEmpleado(Empleado);

@@ -6,7 +6,6 @@
  ***********************************************************************/
 #pragma once
 #include "NodoRegistro.h"
-#include "Registro.h"
 #include <iostream>
 #include <string>
 class ListaRegistro
@@ -28,6 +27,11 @@ public:
 	int dimencion();
 	Registro getPosicion(int);
 	void setPosicion(Registro, int);
+
+
+	void Modificar(Registro);
+	Registro Recuperar(string dato);
+
 
 };
 

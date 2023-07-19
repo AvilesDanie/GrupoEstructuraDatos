@@ -154,13 +154,21 @@ NodoEmpleado* ListaEmpleados::getCola() {
 int ListaEmpleados::dimencion() {
 	NodoEmpleado* aux = cabeza;
 	int dim = 0;
-	aux = aux->getSiguiente();
-	dim += 1;
-	while (aux != cabeza) {
+
+	if (aux != nullptr) {
+
 		aux = aux->getSiguiente();
 		dim += 1;
+		while (aux != cabeza) {
+			aux = aux->getSiguiente();
+			dim += 1;
+		}
+		return dim;
 	}
+
 	return dim;
+
+	
 }
 
 /**
@@ -190,4 +198,21 @@ void ListaEmpleados::setPosicion(Empleado dato, int indice) {
 		aux = aux->getSiguiente();
 	}
 	aux->setDato(dato);
+}
+
+
+Empleado ListaEmpleados::Recuperar(string dato)
+{
+	if (this->cabeza != nullptr)
+	{
+		NodoEmpleado* aux = this->cabeza;
+		do
+		{
+			if (aux->getDato().getCedula() == dato)
+			{
+				return aux->getDato();
+			}
+			aux = aux->getSiguiente();
+		} while (aux != this->cabeza);
+	}
 }
