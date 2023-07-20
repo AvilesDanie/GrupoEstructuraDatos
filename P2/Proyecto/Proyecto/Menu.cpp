@@ -8,6 +8,7 @@
 #include "Menu.h"
 #include "ValidacionDatos.h"
 #include "Arbol.h"
+#include "Archivos.h"
 #include "ListaRegistro.h"
 #include "ListaEmpleados.h"
 #include "Registro.h"
@@ -30,30 +31,35 @@ using namespace std;
 **/
 void Menu::menuPrincipal() {
 	int opcMP = 0, opcMN = 0;
-	bool repetir = true, repetir1 = false, repetirCedula = false, repetirLI;
+	bool repetir = true, repetir1 = false, repetirCedula = false, repetirLI, repetirL2=false;
 	Arbol empleados;
 	ValidacionDatos validacion;
-	ListaRegistro listaRegistros;
-	ListaEmpleados listaEmpleados;
+	Archivos objArc;
+	ListaRegistro* listaRegistros = new ListaRegistro();
+	ListaRegistro* listaRegistrosR = new ListaRegistro();
+	ListaEmpleados* listaEmpleados = new ListaEmpleados();
 	const char* titulo = "BIENVENIDO AL APLICATIVO DE REGISTRO";
 
 	const char* opciones[] = { "REGISTRO DE PERSONAL.","LOG IN.","SALIR."};
 	const char* opciones1[] = { "INTENTAR NUEVAMENTE.","SALIR."};
 	const char* opciones2[] = {"INGRESAR.","MODIFICAR.","ELIMINAR.","BUSCAR","ORDENAR","SALIR."};
+	const char* opciones3[] = { "Nombre.","Apellido.","Sueldo","Atras"};
+	const char* opciones4[] = { "Ordenar por cedula" ,"Ordenar por nombre","Ordenar por apellido","Ordenas por nacimiento"};
 
 
 	Empleado e;
 	Administrador admin("u","c",e);
+	time_t now = time(0);
+	tm* ltm = localtime(&now);
 
+	int dia = ltm->tm_mday;
+	int mes = 1 + ltm->tm_mon;
+	int anio = 1900 + ltm->tm_year;
 
-	for (int i = 0; i<listaEmpleados.dimencion(); i++) {
-		Empleado empleado;
-		Registro registro;
-		empleado = listaEmpleados.getPosicion(i);
-		registro.setEmpleado(empleado);
-		listaRegistros.insertar(registro);
-	}
-
+	listaRegistros = objArc.leerListaRegistro();
+	listaRegistrosR = objArc.leerListaRegistro(anio, mes, dia);
+	listaEmpleados = objArc.leerListaEmpleados();
+	std::system("pause");
 	
 	do {
 		opcMP = menu(titulo, opciones, 3);
@@ -98,22 +104,14 @@ void Menu::menuPrincipal() {
 					{
 						
 						hilo.detach();
-						//hilo.join();
 
 						opcMN = 2;
-						//std::cout << "La función superó el tiempo límite de 1 minuto." << std::endl;
 					}
 					else
 					{
 						hilo.join();
-						//std::cout << "Resultado: " << resultado << std::endl;
 					}
 
-
-
-
-					
-					//opcMN = menu("CEDULA NO VALIDA", opciones1, 2);
 					switch (opcMN) {
 					case 1: {
 						std::system("cls");
@@ -134,9 +132,15 @@ void Menu::menuPrincipal() {
 
 			} while (!repetirCedula);
 
-			if (validacion.validarCedula(cedula) && listaRegistros.buscar(cedula)) {
+			if (validacion.validarCedula(cedula) || (listaRegistros->buscar(cedula)||listaRegistros->getCabeza() == NULL)) {
+				Registro reg;
 
-				Registro reg = listaRegistros.Recuperar(cedula);
+				if (listaRegistros->getCabeza() == NULL|| !listaRegistros->buscar(cedula)) {
+					reg.setEmpleado(listaEmpleados->Recuperar(cedula));
+				}
+				else {
+					reg = listaRegistrosR->Recuperar(cedula);
+				}
 
 
 				time_t now = time(0);
@@ -155,21 +159,27 @@ void Menu::menuPrincipal() {
 					reg.setEntrada(fechaActual);
 				}
 				else if (reg.getSalidaAlmuerzo().getAnio() == 0) {
-					reg.setEntrada(fechaActual);
+					reg.setSalidaAlmuerzo(fechaActual);
 				}
 				else if (reg.getEntradaAlmuerzo().getAnio() == 0) {
-					reg.setEntrada(fechaActual);
+					reg.setEntradaAlmuerzo(fechaActual);
 				}
 				else if (reg.getSalida().getAnio() == 0) {
-					reg.setEntrada(fechaActual);
+					reg.setSalida(fechaActual);
 				}
 				else {
 					cout << "YA A REALISADO LOS CUATRO REGISTROS" << endl;
 				}
-
+				if (listaRegistrosR->buscar(cedula)) {
+					listaRegistrosR->Modificar(reg);
+					listaRegistros->Modificar(reg);
+				}
+				else {
+					listaRegistrosR->insertar(reg);
+					listaRegistros->insertar(reg);
+				}
+				objArc.guardarListaRegistro(listaRegistros);
 				std::system("pause");
-
-				listaRegistros.Modificar(reg);
 			}
 			
 			break;
@@ -220,42 +230,402 @@ void Menu::menuPrincipal() {
 						switch (opcMN) {
 						case 1: {
 							std::system("cls");
-							repetirLI = false;
+							cout << "INGRESE LOS DATOS DEL EMPLEADO" << endl;
+							string cedula,nombre,apellido;
+							Fecha nacimiento;
+							double sueldo;
+							repetirCedula = false;
+							do {
+								cedula = "";
+								cout << "Ingrese la cedula: " << endl;
+								cin >> cedula;
 
+								repetirCedula = validacion.validarCedula(cedula);
+								if (listaEmpleados->buscar(cedula)) {
+									repetirCedula = false;
+								}
+
+								if (!(repetirCedula)) {
+									std::system("cls");
+
+									bool funcionTerminada = false;
+
+									std::thread hilo([&]() {
+										opcMN = menu("CEDULA NO VALIDA", opciones1, 2);
+										funcionTerminada = true;
+										});
+
+									int tiempoLimite = 5;
+
+									for (int segundos = 0; segundos < tiempoLimite; ++segundos)
+									{
+										if (funcionTerminada)
+										{
+											break;
+										}
+										std::this_thread::sleep_for(std::chrono::seconds(1));
+									}
+
+									if (!funcionTerminada)
+									{
+
+										hilo.detach();
+
+										opcMN = 2;
+	
+									}
+									else
+									{
+										hilo.join();
+
+									}
+
+									switch (opcMN) {
+									case 1: {
+										std::system("cls");
+										repetirCedula = false;
+
+										break;
+									}
+									case 2: {
+										std::system("cls");
+										repetirCedula = true;
+
+										break;
+									}
+									}
+
+								}
+
+							} while (!repetirCedula);
+							cout << "Ingrese el nombre: ";
+							cin >> nombre;
+							cout << "Ingrese el apellido: ";
+							cin >> apellido;
+							cout << "Ingrese la fecha de nacimiento" << endl;
+							nacimiento = validacion.ingresarFecha();
+							do {
+								cout << "Ingrese el sueldo: ";
+								cin >> sueldo;
+								if (!(sueldo >= 360 && sueldo <= 7000)) {
+									cout << "Ingrese un sueldo entre 360 y 7000 dolares" << endl;
+								}
+							} while (!(sueldo >= 360 && sueldo <= 7000));
+
+							Empleado empleado(cedula, nombre, apellido,nacimiento, sueldo);
+							listaEmpleados->insertar(empleado);
+							objArc.guardarListaEmpleados(listaEmpleados);
+							std::system("pause");
 							break;
 						}
 						case 2: {
-							std::system("cls");
-							repetirLI = false;
+								std::system("cls");
+								string cedula, nombre, apellido;
+								Fecha nacimiento;
+								double sueldo;
+								repetirCedula = false;
+								cout << "MODIFICAR DATOS EMPLEADO" << endl;
+								cout << "Ingrese la identidad de la persona que desea modificar" << endl;
+								do {
+								cedula = "";
+								cout << "Ingrese la cedula: " << endl;
+								cin >> cedula;
 
+								repetirCedula = validacion.validarCedula(cedula);
+
+								if (!(repetirCedula)) {
+									std::system("cls");
+
+									bool funcionTerminada = false;
+
+									std::thread hilo([&]() {
+										opcMN = menu("CEDULA NO VALIDA", opciones1, 2);
+										funcionTerminada = true;
+										});
+
+									int tiempoLimite = 5;
+
+									for (int segundos = 0; segundos < tiempoLimite; ++segundos)
+									{
+										if (funcionTerminada)
+										{
+											break;
+										}
+										std::this_thread::sleep_for(std::chrono::seconds(1));
+									}
+
+									if (!funcionTerminada)
+									{
+
+										hilo.detach();
+
+										opcMN = 2;
+
+									}
+									else
+									{
+										hilo.join();
+
+									}
+
+									switch (opcMN) {
+									case 1: {
+										std::system("cls");
+										repetirCedula = false;
+
+										break;
+									}
+									case 2: {
+										std::system("cls");
+										repetirCedula = true;
+
+										break;
+									}
+									}
+								}
+
+							} while (!repetirCedula);
+								if (!listaEmpleados->buscar(cedula)) {
+									cout << "No se encutra la cedula en la lista de empleados" << endl;
+									std::system("pause");
+									break;
+								}
+								else{
+								Empleado empleado = listaEmpleados->Recuperar(cedula);
+								empleado.imprimir();
+								std::system("pause");
+								int op = menu("¿QUE ATRIBUTO DESEA CAMBIAR",opciones3,4);
+								std::system("cls");
+								switch (op)
+								{
+								case 1: {
+									cout << "Ingrese el nombre: ";
+									cin >> nombre;
+									empleado.setNombre(nombre);
+									break;
+								}
+								case 2: {
+									cout << "Ingrese el apellido: ";
+									cin >> apellido;
+									empleado.setApellido(apellido);
+									break;
+								}
+								case 3: {
+									do {
+										cout << "Ingrese el sueldo: ";
+										cin >> sueldo;
+										if (!(sueldo >= 360 && sueldo <= 7000)) {
+											cout << "Ingrese un sueldo entre 360 y 7000 dolares" << endl;
+										}
+									} while (!(sueldo >= 360 && sueldo <= 7000));
+									empleado.setSalario(sueldo);
+									break;
+								}
+								case 4: {
+									break;
+								}
+								}
+								listaEmpleados->Modificar(empleado);
+							}
+								objArc.guardarListaEmpleados(listaEmpleados);
+								std::system("pause");
 							break;
 						}
 						case 3: {
 							std::system("cls");
-							repetirLI = false;
+							cout << "ELIMINAR EMPLEADO" << endl;
+							string cedula;
+							do {
+								cedula = "";
+								cout << "Ingrese la cedula: " << endl;
+								cin >> cedula;
 
+								repetirCedula = validacion.validarCedula(cedula);
+
+								if (!(repetirCedula)) {
+									std::system("cls");
+
+									bool funcionTerminada = false;
+
+									std::thread hilo([&]() {
+										opcMN = menu("CEDULA NO VALIDA", opciones1, 2);
+										funcionTerminada = true;
+										});
+
+									int tiempoLimite = 5;
+
+									for (int segundos = 0; segundos < tiempoLimite; ++segundos)
+									{
+										if (funcionTerminada)
+										{
+											break;
+										}
+										std::this_thread::sleep_for(std::chrono::seconds(1));
+									}
+
+									if (!funcionTerminada)
+									{
+
+										hilo.detach();
+
+										opcMN = 2;
+
+									}
+									else
+									{
+										hilo.join();
+
+									}
+
+									switch (opcMN) {
+									case 1: {
+										std::system("cls");
+										repetirCedula = false;
+
+										break;
+									}
+									case 2: {
+										std::system("cls");
+										repetirCedula = true;
+
+										break;
+									}
+									}
+								}
+
+							} while (!repetirCedula);
+							listaEmpleados->eliminar(cedula);
+							objArc.guardarListaEmpleados(listaEmpleados);
 							break;
 						}
 						case 4: {
 							std::system("cls");
-							repetirLI = false;
+							cout << "BUSCAR EMPLEADO" << endl;
+							Arbol arbol;
+							Nodo* aux = arbol.getArbol();
+							string cedula;
+							do {
+								cedula = "";
+								cout << "Ingrese la cedula: " << endl;
+								cin >> cedula;
 
+								repetirCedula = validacion.validarCedula(cedula);
+
+								if (!(repetirCedula)) {
+									std::system("cls");
+
+									bool funcionTerminada = false;
+
+									std::thread hilo([&]() {
+										opcMN = menu("CEDULA NO VALIDA", opciones1, 2);
+										funcionTerminada = true;
+										});
+
+									int tiempoLimite = 5;
+
+									for (int segundos = 0; segundos < tiempoLimite; ++segundos)
+									{
+										if (funcionTerminada)
+										{
+											break;
+										}
+										std::this_thread::sleep_for(std::chrono::seconds(1));
+									}
+
+									if (!funcionTerminada)
+									{
+
+										hilo.detach();
+
+										opcMN = 2;
+
+									}
+									else
+									{
+										hilo.join();
+
+									}
+
+									switch (opcMN) {
+									case 1: {
+										std::system("cls");
+										repetirCedula = false;
+
+										break;
+									}
+									case 2: {
+										std::system("cls");
+										repetirCedula = true;
+
+										break;
+									}
+									}
+								}
+
+							} while (!repetirCedula);
+							for (int i = 0; i < listaEmpleados->dimencion();i++) {
+								arbol.insertarNodoCedula(aux, listaEmpleados->getPosicion(i));
+							}
+							arbol.buscar(aux,cedula);
+							std::system("pause");
 							break;
 						}
 						case 5: {
 							std::system("cls");
-							repetirLI = false;
-
+							int op = menu("Tipos de ordenamiento",opciones4,4);
+							switch (op)
+							{
+							case 1: {
+								Arbol arbol;
+								Nodo* aux = arbol.getArbol();
+								for (int i = 0; i < listaEmpleados->dimencion(); i++) {
+									arbol.insertarNodoCedula(aux, listaEmpleados->getPosicion(i));
+								}
+								arbol.inOrden(aux);
+								std::system("pause");
+								break;
+							}
+							case 2: {
+								Arbol arbol;
+								Nodo* aux = arbol.getArbol();
+								for (int i = 0; i < listaEmpleados->dimencion(); i++) {
+									arbol.insertarNodoNombre(aux, listaEmpleados->getPosicion(i));
+								}
+								arbol.inOrden(aux);
+								std::system("pause");
+								break;
+							}
+							case 3: {
+								Arbol arbol;
+								Nodo* aux = arbol.getArbol();
+								for (int i = 0; i < listaEmpleados->dimencion(); i++) {
+									arbol.insertarNodoApellido(aux, listaEmpleados->getPosicion(i));
+								}
+								arbol.inOrden(aux);
+								std::system("pause");
+								break;
+							}
+							case 4: {
+								Arbol arbol;
+								Nodo* aux = arbol.getArbol();
+								for (int i = 0; i < listaEmpleados->dimencion(); i++) {
+									arbol.insertarNodoFecha(aux, listaEmpleados->getPosicion(i));
+								}
+								arbol.inOrden(aux);
+								std::system("pause");
+								break;
+							}
+							}
 							break;
 						}
 						case 6: {
 							std::system("cls");
-							repetirLI = true;
+							repetirL2 = true;
 
 							break;
 						}
 						}
-					} while (!repetirLI);
+					} while (!repetirL2);
 				}
 
 			} while (!repetirLI);

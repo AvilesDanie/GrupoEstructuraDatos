@@ -73,17 +73,15 @@ void Empleado::setSalario(double newSalario)
 
 
 
-Empleado::Empleado()
+Empleado::Empleado() :Persona()
 {
-	Persona::Persona();
 	this->salario = 0.0;
 }
 
 
 
-Empleado::Empleado(string newCedula, string newNombre, string newApellido, Fecha newFecha, double newSalario)
+Empleado::Empleado(string newCedula, string newNombre, string newApellido, Fecha newFecha, double newSalario) :Persona(newCedula, newNombre, newApellido, newFecha)
 {
-	Persona::Persona(newCedula, newNombre, newApellido, newFecha);
 	this->salario = newSalario;
 }
 

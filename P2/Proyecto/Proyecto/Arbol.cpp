@@ -52,7 +52,6 @@ void Arbol::insertarNodoCedula(Nodo*& arbol, Empleado dato)
     {
         Nodo* nuevoNodo = crearNodo(dato);
         arbol = nuevoNodo;
-        cout << "Dato ingresado correctamente...\n";
     }
     else
     {
@@ -60,12 +59,10 @@ void Arbol::insertarNodoCedula(Nodo*& arbol, Empleado dato)
         if (dato.getCedula() < raiz)
         {
             insertarNodoCedula(arbol->getIzquierda(), dato);
-            cout << "Dato ingresado correctamente...\n";
         }
         else
         {
             insertarNodoCedula(arbol->getDerecha(), dato);
-            cout << "Dato ingresado correctamente...\n";
         }
     }
 }
@@ -84,7 +81,6 @@ void Arbol::insertarNodoNombre(Nodo*& arbol, Empleado dato)
     {
         Nodo* nuevoNodo = crearNodo(dato);
         arbol = nuevoNodo;
-        cout << "Dato ingresado correctamente...\n";
     }
     else
     {
@@ -92,12 +88,10 @@ void Arbol::insertarNodoNombre(Nodo*& arbol, Empleado dato)
         if (dato.getNombre() < raiz)
         {
             insertarNodoNombre(arbol->getIzquierda(), dato);
-            cout << "Dato ingresado correctamente...\n";
         }
         else
         {
             insertarNodoNombre(arbol->getDerecha(), dato);
-            cout << "Dato ingresado correctamente...\n";
         }
     }
 }
@@ -116,7 +110,6 @@ void Arbol::insertarNodoApellido(Nodo*& arbol, Empleado dato)
     {
         Nodo* nuevoNodo = crearNodo(dato);
         arbol = nuevoNodo;
-        cout << "Dato ingresado correctamente...\n";
     }
     else
     {
@@ -124,12 +117,10 @@ void Arbol::insertarNodoApellido(Nodo*& arbol, Empleado dato)
         if (dato.getApellido() < raiz)
         {
             insertarNodoApellido(arbol->getIzquierda(), dato);
-            cout << "Dato ingresado correctamente...\n";
         }
         else
         {
             insertarNodoApellido(arbol->getDerecha(), dato);
-            cout << "Dato ingresado correctamente...\n";
         }
     }
 }
@@ -148,7 +139,6 @@ void Arbol::insertarNodoFecha(Nodo*& arbol, Empleado dato)
     {
         Nodo* nuevoNodo = crearNodo(dato);
         arbol = nuevoNodo;
-        cout << "Dato ingresado correctamente...\n";
     }
     else
     {
@@ -156,36 +146,29 @@ void Arbol::insertarNodoFecha(Nodo*& arbol, Empleado dato)
         if (dato.getFecha().getAnio() < raiz.getAnio())
         {
             insertarNodoFecha(arbol->getIzquierda(), dato);
-            cout << "Dato ingresado correctamente...\n";
         }
         else if (dato.getFecha().getAnio() > raiz.getAnio())
         {
             insertarNodoFecha(arbol->getDerecha(), dato);
-            cout << "Dato ingresado correctamente...\n";
         }
         else if (dato.getFecha().getMes() < raiz.getMes())
         {
             insertarNodoFecha(arbol->getIzquierda(), dato);
-            cout << "Dato ingresado correctamente...\n";
         }
         else if (dato.getFecha().getMes() > raiz.getMes())
         {
             insertarNodoFecha(arbol->getDerecha(), dato);
-            cout << "Dato ingresado correctamente...\n";
         }
         else if (dato.getFecha().getDia() < raiz.getDia())
         {
             insertarNodoFecha(arbol->getIzquierda(), dato);
-            cout << "Dato ingresado correctamente...\n";
         }
         else if (dato.getFecha().getDia() > raiz.getDia())
         {
             insertarNodoFecha(arbol->getDerecha(), dato);
-            cout << "Dato ingresado correctamente...\n";
         }
         else {
             insertarNodoFecha(arbol->getDerecha(), dato);
-            cout << "Dato ingresado correctamente...\n";
         }
     }
 }

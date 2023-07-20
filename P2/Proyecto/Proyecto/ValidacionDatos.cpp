@@ -78,7 +78,7 @@ Fecha ValidacionDatos::ingresarFecha() {
 
 		std::cout << "Ingrese el año: ";
 		a = ingresarDatosEnteros();
-		if (a < 2020) {
+		if (a < 1950) {
 			std::cout << "Año invalido" << std::endl;
 			pasar = true;
 		}

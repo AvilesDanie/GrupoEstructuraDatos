@@ -6,11 +6,13 @@
 #include "ListaRegistro.h"
 #include "Empleado.h"
 #include "Registro.h"
+#include <unordered_set>
 
 
 class Archivos {
 public:
 	void guardarListaRegistro(ListaRegistro* lista);
+	ListaRegistro* leerListaRegistro(int, int, int);
 	ListaRegistro* leerListaRegistro();
 	void guardarListaEmpleados(ListaEmpleados* lista);
 	ListaEmpleados* leerListaEmpleados();

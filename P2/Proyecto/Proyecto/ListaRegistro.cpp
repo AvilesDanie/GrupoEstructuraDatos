@@ -202,7 +202,10 @@ void ListaRegistro::Modificar(Registro dato)
 		NodoRegistro* aux = this->cabeza;
 		do
 		{
-			if (aux->getDato().getEmpleado().getCedula() == dato.getEmpleado().getCedula())
+			if (aux->getDato().getEmpleado().getCedula() == dato.getEmpleado().getCedula() &&
+				aux->getDato().getEntrada().getAnio() == dato.getEntrada().getAnio() &&
+				aux->getDato().getEntrada().getMes() == dato.getEntrada().getMes() &&
+				aux->getDato().getEntrada().getDia() == dato.getEntrada().getDia())
 			{
 
 				aux->setDato(dato);
@@ -212,7 +215,6 @@ void ListaRegistro::Modificar(Registro dato)
 		} while (aux != this->cabeza);
 	}
 }
-
 
 
 Registro ListaRegistro::Recuperar(string dato)

@@ -3,6 +3,7 @@
 #include "Empleado.h"
 #include <iostream>
 #include <string>
+#include "Fecha.h"
 class ListaEmpleados
 {
 private:
@@ -15,6 +16,7 @@ public:
 	void eliminar(std::string);
 	void mostrar();
 	bool buscar(std::string);
+	void Modificar(Empleado dato);
 
 	NodoEmpleado* getCabeza();
 	NodoEmpleado* getCola();

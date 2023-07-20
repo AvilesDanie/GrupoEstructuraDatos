@@ -216,3 +216,21 @@ Empleado ListaEmpleados::Recuperar(string dato)
 		} while (aux != this->cabeza);
 	}
 }
+
+
+void ListaEmpleados::Modificar(Empleado dato)
+{
+	if (this->cabeza != nullptr)
+	{
+		NodoEmpleado* aux = this->cabeza;
+		do
+		{
+			if (aux->getDato().getCedula() == dato.getCedula())
+			{
+				aux->setDato(dato);
+				return;
+			}
+			aux = aux->getSiguiente();
+		} while (aux != this->cabeza);
+	}
+}

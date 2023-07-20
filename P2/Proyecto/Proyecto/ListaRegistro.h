@@ -7,6 +7,7 @@
 #pragma once
 #include "NodoRegistro.h"
 #include <iostream>
+#include "Fecha.h"
 #include <string>
 class ListaRegistro
 {
